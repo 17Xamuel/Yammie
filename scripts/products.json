@@ -1,0 +1,79 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "name": "Jesa Milk",
+      "qty": "500ml",
+      "currentPrice": "2000",
+      "previousPrice": "2500",
+      "img": "../resources/jesa-milk.jpg",
+      "images": {
+        "img": "../resources/jesa-milk.jpg"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Lato Milk",
+      "qty": "500ml",
+      "currentPrice": "2000",
+      "previousPrice": "2500",
+      "img": "../resources/latoMilk.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Kakira Sugar",
+      "qty": "1kg",
+      "currentPrice": "2000",
+      "previousPrice": "2500",
+      "img": "../resources/sugar.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Kakira Sugar",
+      "qty": "1kg",
+      "currentPrice": "2000",
+      "previousPrice": "2500",
+      "img": "../resources/sugar.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Kakira Sugar",
+      "qty": "1kg",
+      "currentPrice": "2000",
+      "previousPrice": "2500",
+      "img": "../resources/sugar.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Kakira Sugar",
+      "qty": "1kg",
+      "currentPrice": "2000",
+      "previousPrice": "2500",
+      "img": "../resources/sugar.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Kakira Sugar",
+      "qty": "1kg",
+      "currentPrice": "2000",
+      "previousPrice": "2500",
+      "img": "../resources/sugar.jpg"
+    },
+    {
+      "id": "8",
+      "name": "Kakira Sugar",
+      "qty": "1kg",
+      "currentPrice": "2000",
+      "previousPrice": "2500",
+      "img": "../resources/sugar.jpg"
+    },
+    {
+      "id": "9",
+      "name": "Kakira Sugar",
+      "qty": "1kg",
+      "currentPrice": "2000",
+      "previousPrice": "2500",
+      "img": "../resources/sugar.jpg"
+    }
+  ]
+}

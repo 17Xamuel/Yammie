@@ -1,0 +1,236 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  background-color: #a1a1a1 !important;
+}
+.btn {
+  width: 100px;
+  margin-left: 35px;
+}
+.cart {
+  position: relative;
+  display: none;
+}
+.cart-icon {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+}
+.cart-items-number {
+  position: absolute;
+  top: -25px;
+  right: -30px;
+  padding: 0px 6px;
+  background-color: orange;
+  border-radius: 30%;
+}
+.navsearch {
+  width: 350px;
+  height: 30px;
+  border: 0px;
+  outline: none;
+  font-size: 20px;
+  padding: 2px 2px 2px 10px;
+}
+.left {
+  display: flex;
+  list-style: none;
+  padding: 0px 20px;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  height: 50px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding: 5px 50px;
+}
+.navlink {
+  margin-left: 30px;
+}
+.navlink > a {
+  color: white;
+  text-decoration: none;
+}
+.navlink > a:hover {
+  color: orange;
+  text-decoration: none;
+}
+.navlist {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin-top: 10px;
+}
+.navlist > li {
+  margin-left: 60px;
+}
+.product-group-link {
+  color: black;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
+.product-group-link:hover {
+  color: orange;
+  text-decoration: none;
+}
+.search {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+.search:hover {
+  box-shadow: 2px 2px 5px 2px #d2d2d2;
+  border: 1px solid #b2b2b2;
+}
+.search-nav {
+  position: static;
+  top: 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  height: 75px;
+  padding: 2px 30px;
+  border-bottom: 1px solid black;
+}
+
+@media screen and (max-width: 1080px) {
+  .left,
+  .right {
+    display: none;
+  }
+  .harmburger {
+    margin-left: 100px;
+    z-index: 2;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-around;
+  }
+  .navsearch {
+    width: 300px;
+    height: 30px;
+    border: 0px;
+    outline: none;
+    font-size: 15px;
+    padding: 2px 2px 2px 10px;
+  }
+  .search {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-right: 30px;
+    width: 400px;
+  }
+  .line {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+    transition: all 1s ease-in-out;
+  }
+  .middle-line.cross {
+    opacity: 0;
+  }
+  .upper-line.cross {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .lower-line.cross {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  .navlist {
+    position: absolute;
+    width: 65vw;
+    height: 50vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    top: 40px;
+    right: -5px;
+    background-color: orange;
+    clip-path: circle(100px at 90% -30%);
+    -webkit-clip-path: circle(100px at 90% -30%);
+    transition: all 1s ease-out;
+    /* display: none; */
+  }
+  .navlist.open {
+    clip-path: circle(100px at 90% -15%);
+    -webkit-clip-path: circle(1080px at 90% -15%);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .left,
+  .right {
+    display: none;
+  }
+  .cart {
+    display: block;
+  }
+  .harmburger {
+    margin-left: 60px;
+    z-index: 2;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-around;
+  }
+  .navsearch {
+    width: 100px;
+    height: 30px;
+    border: 0px;
+    outline: none;
+    font-size: 15px;
+    padding: 2px 2px 2px 10px;
+  }
+  .search {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-right: 30px;
+    width: 150px;
+  }
+  .line {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+    transition: all 1s ease-in-out;
+  }
+  .middle-line.cross {
+    opacity: 0;
+  }
+  .upper-line.cross {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .lower-line.cross {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  .navlist {
+    position: absolute;
+    width: 60vw;
+    height: 50vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    top: 40px;
+    padding-top: 35px;
+    right: -5px;
+    background-color: orange;
+    clip-path: circle(100px at 90% -30%);
+    -webkit-clip-path: circle(100px at 90% -30%);
+    transition: all 1s ease-out;
+    /* display: none; */
+  }
+  .navlist.open {
+    clip-path: circle(100px at 90% -15%);
+    -webkit-clip-path: circle(1080px at 90% -15%);
+  }
+}
