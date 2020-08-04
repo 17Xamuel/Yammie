@@ -1,74 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="../resources/letter_b_PNG27.png" />
-    <link rel="stylesheet" href="../styles/main.css" />
-    <link rel="stylesheet" href="../styles/products.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
-    <link rel="stylesheet" href="../bootstrap-4.3.1/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../styles/items.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../font-awesome/css/all.css" />
     <title>Yummy | Grocery Store</title>
   </head>
   <body>
-    <nav class="nav">
-      <ul class="left">
-        <li class="navlink"><a href="#">All Products</a></li>
-        <li class="navlink"><a href="#">Foods &amp; Drinks</a></li>
-        <li class="navlink"><a href="#">Other</a></li>
-      </ul>
-      <div class="center">
-        <b>Logo for Yummy</b>
+    <div id="yummie">
+      <div class="banner">
+        Banner
       </div>
-      <div class="cart">
-        <span class="cart-icon">
-          <i class="fas fa-cart-plus fa-2x"></i>
-        </span>
-        <div class="cart-items-number">0</div>
+      <div class="search-nav">
+        <div class="logo">
+          <img src="../resources/logo.png" alt="YUMMY" width="75" height="75" />
+        </div>
+        <div class="search">
+          <form action="#">
+            <input
+              type="text"
+              name=""
+              placeholder="Search Groceries...."
+              class="navsearch"
+            />
+            <button type="submit" id="search-button">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+        <div class="cart-login">
+          <div class="login">
+            <i class="fas fa-chevron-down"></i>
+            <span class="account-info">My Account</span>
+          </div>
+          <div class="cart">
+            <i class="fas fa-cart-plus"></i>
+            <span class="cart-number">2</span>
+            <span style="margin-left: 10px;">Cart</span>
+          </div>
+        </div>
       </div>
-      <div class="right">
-        <button class="right btn btn-warning">
-          <span> <i class="fas fa-phone mr-2"></i>Call</span>
-        </button>
-        <button class="right btn btn-warning">
-          <span class=""> <i class="fas fa-user mr-2"></i>login </span>
-        </button>
-        <button class="right btn btn-warning">
-          <span class="">
-            <i class="fas fa-shopping-basket mr-2"></i>Cart
-          </span>
-        </button>
-      </div>
-    </nav>
-    <div class="search-nav">
-      <div class="search">
-        <i class="fas fa-search"></i>
-        <input
-          type="text"
-          name=""
-          placeholder="Search Groceries...."
-          class="navsearch"
-        />
-      </div>
-      <ul class="navlist">
-        <li><a href="" class="product-group-link">FOODs &amp; DRINKs</a></li>
-        <li><a href="" class="product-group-link">MEASURED ITEMS</a></li>
-        <li><a href="" class="product-group-link">PLASTICS</a></li>
-        <li><a href="" class="product-group-link">SPECIAL ORDER</a></li>
-      </ul>
-      <div class="harmburger" title="Click to Navigate">
-        <div class="line upper-line"></div>
-        <div class="line middle-line"></div>
-        <div class="line lower-line"></div>
-      </div>
-      <!-- <i class="fas fa-bars fa-2x menu"></i> -->
-    </div>
-    <div class="container">
-      <div class="container2">
-        <div class="left-container">rjfnjfnrem fgrjk</div>
-        <div class="middle-container">sakdsmkdms</div>
-        <div class="right-container">kmakdfmwekfji</div>
+
+      <div class="container">
+        <div class="container1">
+          <div class="categories">
+            <ul class="up-container">
+              <li><a href="#">Food Items</a></li>
+              <li>
+                <a href="#">Kitchen Ware</a>
+              </li>
+              <li>
+                <a href="#">Furniture</a>
+              </li>
+              <li>
+                <a href="#">Electrical Appliances</a>
+              </li>
+              <li>
+                <a href="#">Phones &amp; Computers</a>
+              </li>
+              <li>
+                <a href="#">Clothings</a>
+              </li>
+              <li>
+                <a href="#">Sports Attire</a>
+              </li>
+            </ul>
+            <ul class="down-container">
+              <li>
+                <a href="#">Food Items</a>
+              </li>
+              <li>
+                <a href="#">Kitchen Ware</a>
+              </li>
+              <li>
+                <a href="#">Furniture</a>
+              </li>
+              <li>
+                <a href="#">Electrical Appliances</a>
+              </li>
+              <li>
+                <a href="#">Phones &amp; Computers</a>
+              </li>
+              <li>
+                <a href="#">Clothings</a>
+              </li>
+              <li>
+                <a href="#">Sports Attire</a>
+              </li>
+            </ul>
+          </div>
+          <a href="#" class="" id="slider">
+            <div class="back" onclick="back()">
+              <i class="fas fa-chevron-left fa-2x"></i>
+            </div>
+            <div class="next" onclick="next()">
+              <i class="fas fa-chevron-right fa-2x"></i>
+            </div>
+
+            <img
+              src="../resources/image-slider/sugar.jpg"
+              alt="yummie"
+              width="950px"
+              height="100%"
+              style="border-radius: 10px;"
+              id="slide-image"
+            />
+          </a>
+          <div class="other-info">
+            <ul class="">
+              <li>
+                Shop With Us
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="category">
         <div class="see-all">
@@ -223,6 +272,43 @@
         </div>
       </div>
     </div>
+
+    <div class="category">
+      <!-- Start Shop Newsletter  -->
+      <section class="shop-newsletter section">
+        <div class="container">
+          <div class="inner-top">
+            <div class="row">
+              <!-- Start Newsletter Inner -->
+              <div class="inner">
+                <h4>Newsletter</h4>
+                <p>
+                  Subscribe to our newsletter and get <span>10%</span> off your
+                  first purchase
+                </p>
+                <form
+                  action=""
+                  method="get"
+                  target="_blank"
+                  class="newsletter-inner"
+                >
+                  <input
+                    name="EMAIL"
+                    placeholder="Your email address"
+                    required=""
+                    type="email"
+                  />
+                  <button class="btn">Subscribe</button>
+                </form>
+              </div>
+              <!-- End Newsletter Inner -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Shop Newsletter -->
+    </div>
+
     <footer class="footer">
       <div class="first">
         <h4 class="footer-h4">Explore Yummy</h4>
@@ -292,5 +378,6 @@
     <!--scripts-->
     <script src="../scripts/index.js"></script>
     <!--scripts-->
+    </div>
   </body>
 </html>
