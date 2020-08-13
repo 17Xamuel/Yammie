@@ -1,0 +1,101 @@
+.footer {
+  background-color: #000;
+  color: #fff;
+  height: 50vh;
+  margin-top: 15px;
+  padding: 25px 5px 40px 5px;
+  font-size: 15px;
+}
+.ftr-app {
+  margin-top: 10px;
+}
+/* .ftr-app-stores {
+  display: flex;
+  justify-content: space-around;
+} */
+.ftr-down {
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.ftr-up {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+#comment {
+  border: 0px;
+  outline: none;
+  padding: 10px 5px;
+  width: 250px;
+  margin: 10px 5px;
+  border-radius: 3px;
+}
+#customer-email {
+  border: 0px;
+  outline: none;
+  padding: 8px 5px;
+  width: 250px;
+  margin: 15px 5px;
+  border-radius: 3px;
+}
+.icon-button > .fab {
+  font-size: 1.5rem;
+}
+.icon-button {
+  color: white;
+  opacity: 0.8;
+  margin-right: 10px;
+  transition: all 0.2s ease-in;
+}
+.icon-button:hover {
+  color: orange;
+}
+
+.footer-form-button {
+  padding: 5px;
+  border: 0px;
+  outline: none;
+  color: black;
+  background-color: orange;
+  opacity: 0.8;
+  font-weight: bold;
+  margin: 5px 5px;
+  border-radius: 5px;
+  transition: all 0.4s ease-in-out;
+}
+.footer-form-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+.footer-h4 {
+  opacity: 0.9;
+  /* all h4's in the footer to have the same opacity. */
+}
+.footer-list {
+  list-style-type: none;
+  padding: 2px 10px;
+}
+.footer-list > li {
+  margin-top: 10px;
+}
+.footer-list > .second-list {
+  margin-top: 10px;
+  color: white;
+  opacity: 0.8;
+}
+.footer-list > li > a {
+  color: white;
+  opacity: 0.8;
+  transition: all 0.3s ease-in;
+  text-decoration: none;
+}
+.footer-list > li > a:hover {
+  text-decoration: none;
+  color: orange;
+}
+.social-icons {
+  margin-top: 10px;
+}

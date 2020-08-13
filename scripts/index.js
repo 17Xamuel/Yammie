@@ -1,55 +1,64 @@
-//script for the index page
+// variables
+const topSellingContainer = document.querySelector("#tp-s");
+const phoneAccessoriesContainer = document.querySelector("#phone-acs");
+const plasticsContainer = document.querySelector("#plastics");
 
-//variables
-const menu = document.querySelector(".harmburger");
-const navlist = document.querySelector(".navlist");
-const middleLine = document.querySelector(".middle-line");
-const upperLine = document.querySelector(".upper-line");
-const lowerLine = document.querySelector(".lower-line");
-const products = document.getElementsByClassName("products");
-const product = document.getElementsByClassName("product");
-
-console.log(products[0].children.length);
-console.log(products[0].childNodes);
-console.log(products[0]);
-
-if (products[0].children.length < 6) {
-  products[0].classList.add("display-inline");
-  for (let i = 0; i < product.length; i++) {
-    product[i].classList.add("margin-right");
-  }
-}
-menu.addEventListener("click", () => {
-  navlist.classList.toggle("open");
-  middleLine.classList.toggle("cross");
-  upperLine.classList.toggle("cross");
-  lowerLine.classList.toggle("cross");
-});
-
-class Products {
+class Items {
   async getProducts() {
     try {
       let result = await fetch("../scripts/products.json");
-      let data = result.json();
-      return data;
+      return result.json();
     } catch (error) {
       console.log(error);
     }
   }
 }
-class DisplayProducts {}
+class DisplayItems {
+  display(items) {
+    let item = "";
+    items.forEach((el) => {
+      item += `<div class="item">
+        <img
+          src=${el.img}
+          alt=""
+          width="150"
+          height="150"
+        />
+        <div class="item-info">
+          <div class="it-nm">
+            Jesa Milk - 500ml
+          </div>
+          <div class="it-pr pr">
+            UGX 500
+          </div>
+          <div class="pre-it-pr pr">
+            UGX 750
+          </div>
+        </div>
+      </div>`;
+    });
+    return item;
+  }
+}
 class Storage {}
 
 document.addEventListener("DOMContentLoaded", () => {
-  const products = new Products();
-  products
+  const items = new Items();
+  const displayItems = new DisplayItems();
+  items
     .getProducts()
-    .then(products => {
-      /*products param holds the whole items-array from the 
+    .then((items) => {
+      /*items param holds the whole items-array from the 
     json data*/
-      console.log(products.items[2].id);
+
+      let { topSelling } = items;
+      let { item } = items;
+      console.log(topSelling);
+      topSellingContainer.innerHTML = displayItems.display(topSelling);
+      phoneAccessoriesContainer.innerHTML = displayItems.display(item);
+      plasticsContainer.innerHTML = displayItems.display(item);
     })
-    .catch(reject => {
+    .catch((reject) => {
       console.log("No Products got");
     });
 });

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="../resources/letter_b_PNG27.png" />
     <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
     <!-- <link rel="stylesheet" href="../bootstrap-4.3.1/dist/css/bootstrap.css" /> -->
     <link rel="stylesheet" href="../font-awesome/css/all.css" />
@@ -12,63 +13,60 @@
     <title>Login | Yammie</title>
   </head>
   <body>
-    <nav class="nav">
-      <ul class="left">
-        <li class="navlink"><a href="#">All Products</a></li>
-        <li class="navlink"><a href="#">Foods &amp; Drinks</a></li>
-        <li class="navlink"><a href="#">Other</a></li>
-      </ul>
-      <div class="center">
-        <b>Logo for Yummy</b>
-      </div>
-      <div class="cart">
-        <span class="cart-icon">
-          <i class="fas fa-cart-plus fa-2x"></i>
-        </span>
-        <div class="cart-items-number">0</div>
-      </div>
-      <div class="right">
-        <button class="right btn btn-warning">
-          <span> <i class="fas fa-phone mr-2"></i>Call</span>
-        </button>
-        <button class="right btn btn-warning">
-          <span class=""> <i class="fas fa-user mr-2"></i>login </span>
-        </button>
-        <button class="right btn btn-warning">
-          <span class="">
-            <i class="fas fa-shopping-basket mr-2"></i>Cart
-          </span>
-        </button>
-      </div>
-    </nav>
+    <div class="banner">
+      Banner
+    </div>
     <div class="search-nav">
+      <div class="logo">
+        <div class="menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <img src="../resources/Y-logo.png" alt="YUMMY" width="75" height="60" />
+      </div>
       <div class="search">
-        <i class="fas fa-search"></i>
-        <input
-          type="text"
-          name=""
-          placeholder="Search Groceries...."
-          class="navsearch"
-        />
+        <form action="#">
+          <input
+            type="text"
+            name=""
+            placeholder="Search Groceries...."
+            class="navsearch"
+          />
+          <button type="submit" id="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
       </div>
-      <ul class="navlist">
-        <li><a href="" class="product-group-link">FOODs &amp; DRINKs</a></li>
-        <li><a href="" class="product-group-link">MEASURED ITEMS</a></li>
-        <li><a href="" class="product-group-link">PLASTICS</a></li>
-        <li><a href="" class="product-group-link">SPECIAL ORDER</a></li>
-      </ul>
-      <div class="harmburger" title="Click to Navigate">
-        <div class="line upper-line"></div>
-        <div class="line middle-line"></div>
-        <div class="line lower-line"></div>
+      <div class="cart-login">
+        <div class="login" id="login">
+          <i class="fas fa-user" id="userLoginIcon"></i>
+          <span class="account-info">Account</span>
+          <div class="login-opt" id="login-opt">
+            <button class="lg-b">
+              <a href="../home/login.html">LOGIN</a>
+            </button>
+            <span class="no-ac">Have no Account?</span>
+            <button class="rg-b"><a href="">REGISTER</a></button>
+            <!-- <div class="no-ac"></div> -->
+          </div>
+        </div>
+        <div class="cart">
+          <i class="fas fa-cart-plus" style="font-size: 25px;"></i>
+          <span class="cart-number" id="cartNumberItems">11</span>
+          <span
+            class="cart-wrd"
+            style="margin-left: 10px; font-size: 22px; margin-bottom: 40px;"
+            >Cart</span
+          >
+        </div>
       </div>
-      <!-- <i class="fas fa-bars fa-2x menu"></i> -->
     </div>
 
-    <div class="login-page">
+    <div class="login-page" style="background-color: #e1e1e1;">
       <div class="login-container" id="container">
         <div class="form-container signup-container">
-          <form action="#">
+          <form action="#" autocomplete="off">
             <h1>Register</h1>
 
             <div class="social-container">
@@ -126,7 +124,10 @@
             <button>Login</button>
           </form>
         </div>
-        <div class="overlay-container">
+        <div
+          class="overlay-container"
+          style="z-index: 5; background-color: #e1e1e1;"
+        >
           <div class="overlay">
             <div class="overlay-panel overlay-left">
               <h1>Welcome Back!</h1>
@@ -136,7 +137,7 @@
               <button class="ghost" id="sign-in">Login</button>
             </div>
             <div class="overlay-panel overlay-right">
-              <h1>Hello Dear!</h1>
+              <h1>Hello, Customer!</h1>
               <p>Please enter your details and start enjoying with Yammie</p>
               <button class="ghost" id="sign-up">Register</button>
             </div>
@@ -213,6 +214,7 @@
     </footer>
     <!--scripts-->
     <script src="../scripts/login.js"></script>
+    <script src="../scripts/index.js"></script>
     <!--scripts-->
   </body>
 </html>

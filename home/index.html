@@ -3,13 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="../resources/letter_b_PNG27.png" />
+    <link rel="shortcut icon" href="../resources/cartlink.png" />
     <link rel="stylesheet" href="../styles/footer.css" />
     <link rel="stylesheet" href="../styles/items.css" />
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../styles/products.css" />
-    <link rel="stylesheet" href="../styles/footer.css" />
     <link rel="stylesheet" href="../font-awesome/css/all.css" />
     <title>Yummy | Grocery Store</title>
   </head>
@@ -20,7 +19,17 @@
       </div>
       <div class="search-nav">
         <div class="logo">
-          <img src="../resources/logo.png" alt="YUMMY" width="75" height="75" />
+          <div class="menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+          <img
+            src="../resources/yammie.png"
+            alt="YUMMY"
+            width="200"
+            height="75"
+          />
         </div>
         <div class="search">
           <form action="#">
@@ -36,66 +45,703 @@
           </form>
         </div>
         <div class="cart-login">
-          <div class="login">
-            <i class="fas fa-chevron-down"></i>
-            <span class="account-info">My Account</span>
+          <div class="login" id="login">
+            <i class="fas fa-user" id="userLoginIcon"></i>
+            <span class="account-info">Account</span>
+            <div class="login-opt" id="login-opt">
+              <button class="lg-b">
+                <a href="../home/login.html">LOGIN</a>
+              </button>
+              <span class="no-ac">Have no Account?</span>
+              <button class="rg-b"><a href="">REGISTER</a></button>
+              <!-- <div class="no-ac"></div> -->
+            </div>
           </div>
           <div class="cart">
-            <i class="fas fa-cart-plus"></i>
-            <span class="cart-number">2</span>
-            <span style="margin-left: 10px;">Cart</span>
+            <!-- <i class="fas fa-cart-plus" style="font-size: 25px;"></i> -->
+            <img src="../resources/shopping-cart.svg" alt="" />
+            <span class="cart-number" id="cartNumberItems">11</span>
+            <span
+              class="cart-wrd"
+              style="margin-left: 10px; font-size: 22px; margin-bottom: 40px;"
+              >Cart</span
+            >
           </div>
+        </div>
+        <div id="sideNav">
+          <ul class="sideList1">
+            <li class="sideNavlistItem">item 1</li>
+            <li class="sideNavlistItem">item 2</li>
+            <li class="sideNavlistItem">item 2</li>
+            <li class="sideNavlistItem">item 2</li>
+            <li class="sideNavlistItem">item 2</li>
+            <li class="sideNavlistItem">item 2</li>
+          </ul>
+          <ul class="sideList2">
+            <li class="sideNavlistItem">item 1</li>
+            <li class="sideNavlistItem">item 2</li>
+            <li class="sideNavlistItem">item 2</li>
+            <li class="sideNavlistItem">item 2</li>
+            <li class="sideNavlistItem">item 2</li>
+            <li class="sideNavlistItem">item 2</li>
+          </ul>
+          <ul class="sideList3">
+            <li class="sideNavlistItem">item 1</li>
+            <li class="sideNavlistItem">item 2</li>
+            <li class="sideNavlistItem">item 2</li>
+            <li class="sideNavlistItem">item 2</li>
+            <li class="sideNavlistItem">item 2</li>
+            <li class="sideNavlistItem">item 2</li>
+          </ul>
+          <ul class="sideList4">
+            <li class="sideNavlistItem">item 1</li>
+            <li class="sideNavlistItem">item 2</li>
+            <li class="sideNavlistItem">item 2</li>
+            <li class="sideNavlistItem">item 2</li>
+            <li class="sideNavlistItem">item 2</li>
+            <li class="sideNavlistItem">item 2</li>
+          </ul>
         </div>
       </div>
 
-      <div class="container">
+      <div class="d-app" id="d-app">
+        <span>
+          <a href="#"> Download Our App <span class="here">Here</span></a>
+          For Better Shopping.
+        </span>
+        <i class="fas fa-times close-icon"></i>
+      </div>
+
+      <div class="m-ctr">
         <div class="container1">
-          <div class="categories">
-            <ul class="up-container">
-              <li><a href="#">Food Items</a></li>
-              <li>
-                <a href="#">Kitchen Ware</a>
-              </li>
-              <li>
-                <a href="#">Furniture</a>
-              </li>
-              <li>
-                <a href="#">Electrical Appliances</a>
-              </li>
-              <li>
-                <a href="#">Phones &amp; Computers</a>
-              </li>
-              <li>
-                <a href="#">Clothings</a>
-              </li>
-              <li>
-                <a href="#">Sports Attire</a>
-              </li>
-            </ul>
-            <ul class="down-container">
-              <li>
-                <a href="#">Food Items</a>
-              </li>
-              <li>
-                <a href="#">Kitchen Ware</a>
-              </li>
-              <li>
-                <a href="#">Furniture</a>
-              </li>
-              <li>
-                <a href="#">Electrical Appliances</a>
-              </li>
-              <li>
-                <a href="#">Phones &amp; Computers</a>
-              </li>
-              <li>
-                <a href="#">Clothings</a>
-              </li>
-              <li>
-                <a href="#">Sports Attire</a>
-              </li>
-            </ul>
-          </div>
+          <ul class="ctg-li">
+            <li class="ctg-item" id="ctg-easy-market">
+              <span class="ctg-name">
+                <a href="./easy-market.html">
+                  <i class="fas fa-shopping-basket ctg-icon"></i>
+                  EasyMarket with Yummie
+                </a>
+              </span>
+              <div class="ctg-dtl" id="ctg-dtl-easy-m">
+                <div class="ctg-dtl-s1">
+                  <ul class="ctg-dtl-list">
+                    <h3>Food Items</h3>
+                    <li>Posho Flour</li>
+                    <li>Spagheti/Noodles</li>
+                    <li>Irish</li>
+                    <li>Matooke</li>
+                    <li>Eggs</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s2">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s3">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="ctg-item" id="ctg-foods-drinks">
+              <span class="ctg-name">
+                <a href="">
+                  <i class="fas fa-pizza-slice ctg-icon"></i>
+                  Fast Foods &amp; Drinks
+                </a>
+              </span>
+              <div class="ctg-dtl" id="ctg-dtl-f-d">
+                <div class="ctg-dtl-s1">
+                  <ul class="ctg-dtl-list">
+                    <h3>Changed Items</h3>
+                    <li>Posho Flour</li>
+                    <li>Spagheti/Noodles</li>
+                    <li>Irish</li>
+                    <li>Matooke</li>
+                    <li>Eggs</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s2">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s3">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="ctg-item" id="ctg-phones">
+              <span class="ctg-name">
+                <a href="">
+                  <i class="fas fa-headphones-alt ctg-icon"></i>
+                  Phones &amp; Accessories
+                </a>
+              </span>
+              <div class="ctg-dtl" id="ctg-dtl-phones">
+                <div class="ctg-dtl-s1">
+                  <ul class="ctg-dtl-list">
+                    <h3>Phones Cap</h3>
+                    <li>Posho Flour</li>
+                    <li>Spagheti/Noodles</li>
+                    <li>Irish</li>
+                    <li>Matooke</li>
+                    <li>Eggs</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s2">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s3">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="ctg-item" id="ctg-electronics">
+              <span class="ctg-name">
+                <a href="./electronics.html">
+                  <i class="fas fa-charging-station ctg-icon"></i>
+                  Electronics
+                </a>
+              </span>
+              <div class="ctg-dtl" id="ctg-dtl-electronics">
+                <div class="ctg-dtl-s1">
+                  <ul class="ctg-dtl-list">
+                    <h3>Food Items</h3>
+                    <li>Posho Flour</li>
+                    <li>Spagheti/Noodles</li>
+                    <li>Irish</li>
+                    <li>Matooke</li>
+                    <li>Eggs</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s2">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s3">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="ctg-item" id="ctg-clothes">
+              <span class="ctg-name">
+                <a href="./clothing.html">
+                  <i class="fas fa-tshirt ctg-icon"></i>
+                  Clothes &amp; Shoes
+                </a>
+              </span>
+              <div class="ctg-dtl" id="ctg-dtl-clothes">
+                <div class="ctg-dtl-s1">
+                  <ul class="ctg-dtl-list">
+                    <h3>Food Items</h3>
+                    <li>Posho Flour</li>
+                    <li>Spagheti/Noodles</li>
+                    <li>Irish</li>
+                    <li>Matooke</li>
+                    <li>Eggs</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s2">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s3">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="ctg-item" id="ctg-kitchen">
+              <span class="ctg-name">
+                <i class="fas fa-utensils ctg-icon"></i>
+                Kitchen Staff & Utensils
+              </span>
+              <div class="ctg-dtl" id="ctg-dtl-kitchen">
+                <div class="ctg-dtl-s1">
+                  <ul class="ctg-dtl-list">
+                    <h3>Food Items</h3>
+                    <li>Posho Flour</li>
+                    <li>Spagheti/Noodles</li>
+                    <li>Irish</li>
+                    <li>Matooke</li>
+                    <li>Eggs</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s2">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s3">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="ctg-item" id="ctg-computing">
+              <span class="ctg-name">
+                <a href="">
+                  <i class="fas fa-desktop ctg-icon"></i>
+                  Computing &amp; Accessories
+                </a>
+              </span>
+              <div class="ctg-dtl" id="ctg-dtl-computing">
+                <div class="ctg-dtl-s1">
+                  <ul class="ctg-dtl-list">
+                    <h3>Food Items</h3>
+                    <li>Posho Flour</li>
+                    <li>Spagheti/Noodles</li>
+                    <li>Irish</li>
+                    <li>Matooke</li>
+                    <li>Eggs</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s2">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s3">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="ctg-item" id="ctg-kids">
+              <span class="ctg-name">
+                <a href="">
+                  <i class="fas fa-child ctg-icon"></i>
+                  Kid's Section
+                </a>
+              </span>
+              <div class="ctg-dtl" id="ctg-dtl-kids">
+                <div class="ctg-dtl-s1">
+                  <ul class="ctg-dtl-list">
+                    <h3>Food Items</h3>
+                    <li>Posho Flour</li>
+                    <li>Spagheti/Noodles</li>
+                    <li>Irish</li>
+                    <li>Matooke</li>
+                    <li>Eggs</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s2">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s3">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="ctg-item" id="ctg-cleaning">
+              <span class="ctg-name">
+                <a href="">
+                  <img src="../resources/clean-hands.png" alt="" />
+                  Cleaning, Healthy &amp; Beauty
+                </a>
+              </span>
+              <div class="ctg-dtl" id="ctg-dtl-cleaning">
+                <div class="ctg-dtl-s1">
+                  <ul class="ctg-dtl-list">
+                    <h3>Food Items</h3>
+                    <li>Posho Flour</li>
+                    <li>Spagheti/Noodles</li>
+                    <li>Irish</li>
+                    <li>Matooke</li>
+                    <li>Eggs</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s2">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s3">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="ctg-item" id="ctg-stationery">
+              <span class="ctg-name">
+                <a href="">
+                  <i class="fas fa-paperclip ctg-icon"></i>
+                  Stationery
+                </a>
+              </span>
+              <div class="ctg-dtl" id="ctg-dtl-stationery">
+                <div class="ctg-dtl-s1">
+                  <ul class="ctg-dtl-list">
+                    <h3>Food Items</h3>
+                    <li>Posho Flour</li>
+                    <li>Spagheti/Noodles</li>
+                    <li>Irish</li>
+                    <li>Matooke</li>
+                    <li>Eggs</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Breakfast</h3>
+                    <li>Sugar</li>
+                    <li>Mangarine</li>
+                    <li>Tea Leaves</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s2">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+                <div class="ctg-dtl-s3">
+                  <ul class="ctg-dtl-list">
+                    <h3>Spices</h3>
+                    <li>Tomatoes</li>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Salt</li>
+                  </ul>
+                  <ul class="ctg-dtl-list">
+                    <h3>Other</h3>
+                    <li>Pounded Gnuts</li>
+                    <li>Cooking Oil</li>
+                    <li>Pasted Gnuts</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="ctg-item">
+              <span class="ctg-name">
+                <a href="">
+                  <i class="fas fa-layer-group ctg-icon"></i>
+                  All Items
+                </a>
+              </span>
+            </li>
+          </ul>
           <a href="#" class="" id="slider">
             <div class="back" onclick="back()">
               <i class="fas fa-chevron-left fa-2x"></i>
@@ -105,282 +751,202 @@
             </div>
 
             <img
-              src="../resources/image-slider/sugar.jpg"
+              src="../resources/image-slider/mask.jpg"
               alt="yummie"
-              width="950px"
-              height="100%"
               style="border-radius: 10px;"
               id="slide-image"
+              width="100%"
+              height="100%"
             />
+            <!-- width="375px"
+              height="100%" -->
           </a>
-          <div class="other-info">
-            <ul class="">
+          <div class="categories">
+            <ul class="up-container">
               <li>
-                Shop With Us
+                Want a Special Order?
+                <a href="#">
+                  <button class="h-btns">CLick Here</button>
+                </a>
+              </li>
+              <li>
+                Make Chart With Us
+                <a href="#">
+                  <button class="h-btns">Live Chart</button>
+                </a>
+              </li>
+              <li>
+                Request An Item?
+                <a href="#">
+                  <button class="h-btns">CLick Here</button>
+                </a>
+              </li>
+            </ul>
+            <ul class="down-container">
+              <li>
+                <h3>FLASH SALES!!</h3>
+                <div class="timer">
+                  <h1 id="pms-timer"><small>Loading...</small></h1>
+                </div>
+                <span>Check Out <b>HERE</b></span>
+                <div class="d-m-u">
+                  <h1>
+                    DON'T MISS OUT!!!
+                  </h1>
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span class="location">Yammie Lira</span>
+                </div>
               </li>
             </ul>
           </div>
         </div>
-      </div>
-      <div class="category">
-        <div class="see-all">
-          <span>Food</span>
-          <span>
-            See ALL
-            <i class="fas fa-chevron-right"></i>
-          </span>
-        </div>
-        <div class="items-container">
-          <div class="item">
-            <img
-              src="../resources/jesa-milk.jpg"
-              alt=""
-              width="150"
-              height="150"
-            />
-            <div class="item-info">
-              Add to cart
-              <i class="fas fa-cart-plus"></i> <br />
-              item Qty <br />
-              price <br />
-              crossed-price <br />
-            </div>
-          </div>
-          <div class="item">
-            <img
-              src="../resources/jesa-milk.jpg"
-              alt=""
-              width="150"
-              height="150"
-            />
-            <div class="item-info">
-              Add to cart
-              <i class="fas fa-cart-plus"></i> <br />
-              item Qty <br />
-              price <br />
-              crossed-price <br />
-            </div>
-          </div>
-          <div class="item">
-            <img
-              src="../resources/jesa-milk.jpg"
-              alt=""
-              width="150"
-              height="150"
-            />
-            <div class="item-info">
-              Add to cart
-              <i class="fas fa-cart-plus"></i> <br />
-              item Qty <br />
-              price <br />
-              crossed-price <br />
-            </div>
-          </div>
-          <div class="item">
-            <img
-              src="../resources/jesa-milk.jpg"
-              alt=""
-              width="150"
-              height="150"
-            />
-            <div class="item-info">
-              Add to cart
-              <i class="fas fa-cart-plus"></i> <br />
-              item Qty <br />
-              price <br />
-              crossed-price <br />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="category">
-        <div class="see-all">
-          <span>Latest Items</span>
-          <span>
-            See ALL
-            <i class="fas fa-chevron-right"></i>
-          </span>
-        </div>
-        <div class="items-container">
-          <div class="item">
-            <img
-              src="../resources/jesa-milk.jpg"
-              alt=""
-              width="150"
-              height="150"
-            />
-            <div class="item-info">
-              Add to cart
-              <i class="fas fa-cart-plus"></i> <br />
-              item Qty <br />
-              price <br />
-              crossed-price <br />
-            </div>
-          </div>
-          <div class="item">
-            <img
-              src="../resources/jesa-milk.jpg"
-              alt=""
-              width="150"
-              height="150"
-            />
-            <div class="item-info">
-              Add to cart
-              <i class="fas fa-cart-plus"></i> <br />
-              item Qty <br />
-              price <br />
-              crossed-price <br />
-            </div>
-          </div>
-          <div class="item">
-            <img
-              src="../resources/jesa-milk.jpg"
-              alt=""
-              width="150"
-              height="150"
-            />
-            <div class="item-info">
-              Add to cart
-              <i class="fas fa-cart-plus"></i> <br />
-              item Qty <br />
-              price <br />
-              crossed-price <br />
-            </div>
-          </div>
-          <div class="item">
-            <img
-              src="../resources/jesa-milk.jpg"
-              alt=""
-              width="150"
-              height="150"
-            />
-            <div class="item-info">
-              Add to cart
-              <i class="fas fa-cart-plus"></i> <br />
-              item Qty <br />
-              price <br />
-              crossed-price <br />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="category">
-        <div class="images">
-          <div class="left-image">
-            <img src="../resources/milk.jpg" alt="" />
-          </div>
-          <div class="right-image">
-            <img src="../resources/latoMilk.jpg" alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="category">
-      <!-- Start Shop Newsletter  -->
-      <section class="shop-newsletter section">
-        <div class="container">
-          <div class="inner-top">
-            <div class="row">
-              <!-- Start Newsletter Inner -->
-              <div class="inner">
-                <h4>Newsletter</h4>
-                <p>
-                  Subscribe to our newsletter and get <span>10%</span> off your
-                  first purchase
-                </p>
-                <form
-                  action=""
-                  method="get"
-                  target="_blank"
-                  class="newsletter-inner"
-                >
-                  <input
-                    name="EMAIL"
-                    placeholder="Your email address"
-                    required=""
-                    type="email"
-                  />
-                  <button class="btn">Subscribe</button>
-                </form>
+        <div class="category">
+          <div class="see-all">
+            <span>Frequently Bought</span>
+            <span>
+              Check
+              <i class="fas fa-chevron-right"></i>
+            </span>
+          </div>
+          <div class="items-container" id="tp-s"></div>
+        </div>
+        <div class="category">
+          <div class="see-all">
+            <span>Your Phone Accessories</span>
+            <span>
+              Check
+              <i class="fas fa-chevron-right"></i>
+            </span>
+          </div>
+          <div class="items-container" id="phone-acs"></div>
+        </div>
+        <div class="category">
+          <div class="images">
+            <div class="left-image">
+              <img src="../resources/milk.jpg" alt="" />
+            </div>
+            <div class="right-image">
+              <img src="../resources/latoMilk.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="category">
+          <div class="see-all">
+            <span>Just Added Items</span>
+            <span>
+              See ALL
+              <i class="fas fa-chevron-right"></i>
+            </span>
+          </div>
+          <div class="items-container" id="plastics"></div>
+        </div>
+        <div class="category">
+          <!-- Start Shop Newsletter  -->
+          <section class="shop-newsletter section">
+            <div class="container">
+              <div class="inner-top">
+                <div class="row">
+                  <!-- Start Newsletter Inner -->
+                  <div class="inner">
+                    <h4>Newsletter</h4>
+                    <p>
+                      Subscribe to our newsletter and get <span>10%</span> off
+                      your first purchase
+                    </p>
+                    <form
+                      action=""
+                      method="get"
+                      target="_blank"
+                      class="newsletter-inner"
+                    >
+                      <input
+                        name="EMAIL"
+                        placeholder="Your email address"
+                        required=""
+                        type="email"
+                      />
+                      <button class="n-btn">Subscribe</button>
+                    </form>
+                  </div>
+                  <!-- End Newsletter Inner -->
+                </div>
               </div>
-              <!-- End Newsletter Inner -->
             </div>
-          </div>
+          </section>
+          <!-- End Shop Newsletter -->
         </div>
-      </section>
-      <!-- End Shop Newsletter -->
-    </div>
-
-    <footer class="footer">
-      <div class="first">
-        <h4 class="footer-h4">Explore Yummy</h4>
-        <ul class="footer-list">
-          <li><a href="#">How to Order</a></li>
-          <li><a href="#">Our Partners</a></li>
-          <li><a href="#">Staff</a></li>
-          <li><a href="#">FAQs</a></li>
-        </ul>
       </div>
-      <div class="second">
-        <h4 class="footer-h4">Contact Us</h4>
-        <ul class="footer-list">
-          <li class="second-list">
-            <a href="">
-              <i class="fas fa-shopping-cart"></i>
-              Yummy Shoppers
-            </a>
-          </li>
-          <li class="second-list">
-            <a href="mailto:#">
-              <i class="fas fa-envelope"></i>
-              customer@yummy.com
-            </a>
-          </li>
-          <li class="second-list">
-            <a href="#">
-              <i class="fas fa-map-marker-alt"></i>
-              Lira Campus
-            </a>
-          </li>
-        </ul>
-        <form action="#">
-          <input
-            type="textbox"
-            name=""
-            id="comment"
-            placeholder="Leave a Comment"
-          />
-          <br />
-          <input
-            type="text"
-            name=""
-            id="customer-email"
-            placeholder="Email or Phone Number(Optional)"
-          />
-          <br />
-          <button class="footer-form-button">submit</button>
-        </form>
-      </div>
-      <div class="third">
-        <h4 class="footer-h4">Products &amp; Groceries</h4>
-        <ul class="footer-list">
-          <li><a href="#">New Product</a></li>
-          <li><a href="#">Most Ordered Products</a></li>
-          <li><a href="#">Rankings</a></li>
-          <li><a href="#">Request a Product</a></li>
-        </ul>
-      </div>
-      <div class="fourth">
-        <h4 class="footer-h4">Follow Us</h4>
-        <a href="" class="icon-button"><i class="fab fa-facebook-f"></i></a>
-        <a href="" class="icon-button"><i class="fab fa-twitter"></i></a>
-        <a href="" class="icon-button"><i class="fab fa-instagram"></i></a>
-      </div>
-    </footer>
-    <!--scripts-->
-    <script src="../scripts/index.js"></script>
-    <!--scripts-->
+      <footer class="footer">
+        <div class="first">
+          <h4 class="footer-h4">Explore Yummy</h4>
+          <ul class="footer-list">
+            <li><a href="#">How to Order</a></li>
+            <li><a href="#">Our Partners</a></li>
+            <li><a href="#">Staff</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="second">
+          <h4 class="footer-h4">Contact Us</h4>
+          <ul class="footer-list">
+            <li class="second-list">
+              <a href="">
+                <i class="fas fa-shopping-cart"></i>
+                Yummy Shoppers
+              </a>
+            </li>
+            <li class="second-list">
+              <a href="mailto:#">
+                <i class="fas fa-envelope"></i>
+                customer@yummy.com
+              </a>
+            </li>
+            <li class="second-list">
+              <a href="#">
+                <i class="fas fa-map-marker-alt"></i>
+                Lira Campus
+              </a>
+            </li>
+          </ul>
+          <form action="#">
+            <input
+              type="textbox"
+              name=""
+              id="comment"
+              placeholder="Leave a Comment"
+            />
+            <br />
+            <input
+              type="text"
+              name=""
+              id="customer-email"
+              placeholder="Email or Phone Number(Optional)"
+            />
+            <br />
+            <button class="footer-form-button">submit</button>
+          </form>
+        </div>
+        <div class="third">
+          <h4 class="footer-h4">Products &amp; Groceries</h4>
+          <ul class="footer-list">
+            <li><a href="#">New Product</a></li>
+            <li><a href="#">Most Ordered Products</a></li>
+            <li><a href="#">Rankings</a></li>
+            <li><a href="#">Request a Product</a></li>
+          </ul>
+        </div>
+        <div class="fourth">
+          <h4 class="footer-h4">Follow Us</h4>
+          <a href="" class="icon-button"><i class="fab fa-facebook-f"></i></a>
+          <a href="" class="icon-button"><i class="fab fa-twitter"></i></a>
+          <a href="" class="icon-button"><i class="fab fa-instagram"></i></a>
+        </div>
+      </footer>
+      <!--scripts-->
+      <script src="../scripts/index.js"></script>
+      <script src="../scripts/index2.js"></script>
+      <!--scripts-->
     </div>
   </body>
 </html>
