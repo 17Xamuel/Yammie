@@ -141,40 +141,100 @@ const timerFunc = () => {
 };
 timerFunc();
 
-// slider images for home page below
-let sliderImages = [
-  "../resources/image-slider/mask.jpg",
-  "../resources/image-slider/rice.jpg",
-  "../resources/image-slider/shoe.jpg",
-  "../resources/image-slider/shoe1.jpg",
-  "../resources/image-slider/sugar.jpg",
-];
+const sliderContainer = document.querySelector(".img-slider-lk");
+const sliderImages = document.querySelectorAll(".img-slider-lk img");
+const nextBtn = document.querySelector("#nextBtn");
+const prevBtn = document.querySelector("#prevBtn");
+const rightButtonDiv = document.querySelector(".right-b-slider");
+const leftButtonDiv = document.querySelector(".left-b-slider");
+//end of slider variables
 
-var image = 0;
+let counter = 1;
+let sliderSize = sliderContainer.clientWidth;
+sliderContainer.style.transform = "translateX(" + -sliderSize * counter + "px)";
 
-function next() {
-  let slider = document.getElementById("slide-image");
-  image++;
-  if (image >= sliderImages.length) {
-    image = 0;
+let slideInterval = setInterval(() => {
+  if (counter >= sliderImages.length - 1) return;
+  sliderContainer.style.transition = "transform 0.3s ease-in-out";
+  counter++;
+  sliderContainer.style.transform =
+    "translateX(" + -sliderSize * counter + "px)";
+}, 4000);
+
+nextBtn.addEventListener("click", () => {
+  if (counter >= sliderImages.length - 1) return;
+  sliderContainer.style.transition = "transform 0.3s ease-in-out";
+  counter++;
+  sliderContainer.style.transform =
+    "translateX(" + -sliderSize * counter + "px)";
+});
+prevBtn.addEventListener("click", () => {
+  if (counter <= 0) return;
+  sliderContainer.style.transition = "transform 0.3s ease-in-out";
+  counter--;
+  sliderContainer.style.transform =
+    "translateX(" + -sliderSize * counter + "px)";
+});
+
+sliderContainer.addEventListener("transitionend", () => {
+  if (sliderImages[counter].id === "firstimage") {
+    sliderContainer.style.transition = "none";
+    counter = sliderImages.length - 2;
+    sliderContainer.style.transform =
+      "translateX(" + -sliderSize * counter + "px)";
   }
-  slider.src = sliderImages[image];
-}
-
-function back() {
-  let slider = document.getElementById("slide-image");
-  image--;
-  if (image < 0) {
-    image = sliderImages.length - 1;
+  if (sliderImages[counter].id === "lastImage") {
+    sliderContainer.style.transition = "none";
+    counter = sliderImages.length - counter;
+    sliderContainer.style.transform =
+      "translateX(" + -sliderSize * counter + "px)";
   }
-  slider.src = sliderImages[image];
-}
+});
 
-function slideimage(time) {
-  setInterval(next, time);
-}
-slideimage(5000);
+sliderContainer.addEventListener("mouseover", () => {
+  prevBtn.style.opacity = 1;
+  prevBtn.style.cursor = "pointer";
+  nextBtn.style.opacity = 1;
+  nextBtn.style.cursor = "pointer";
+});
 
-if (screen.availWidth <= 1024) {
-  slideimage(3000);
-}
+// sliderContainer.addEventListener("mouseout", () => {
+//   rightButtonDiv.style.opacity = 0;
+//   leftButtonDiv.style.opacity = 0;
+// });
+// let sliderImages = [
+//   "../resources/image-slider/mask.jpg",
+//   "../resources/image-slider/rice.jpg",
+//   "../resources/image-slider/shoe.jpg",
+//   "../resources/image-slider/shoe1.jpg",
+//   "../resources/image-slider/sugar.jpg",
+// ];
+
+// var image = 0;
+
+// function next() {
+//   let slider = document.getElementById("slide-image");
+//   image++;
+//   if (image >= sliderImages.length) {
+//     image = 0;
+//   }
+//   slider.src = sliderImages[image];
+// }
+
+// function back() {
+//   let slider = document.getElementById("slide-image");
+//   image--;
+//   if (image < 0) {
+//     image = sliderImages.length - 1;
+//   }
+//   slider.src = sliderImages[image];
+// }
+
+// function slideimage(time) {
+//   setInterval(next, time);
+// }
+// slideimage(5000);
+
+// if (screen.availWidth <= 1024) {
+//   slideimage(3000);
+// }

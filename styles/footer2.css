@@ -9,12 +9,12 @@
 .ftr-app {
   margin-top: 10px;
 }
-/* .ftr-app-stores {
-  display: flex;
-  justify-content: space-around;
-} */
+
+.ftr-sm-s {
+  display: none;
+}
 .ftr-down {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #a5a5a5;
   display: flex;
   justify-content: space-around;
   padding-top: 10px;
@@ -47,7 +47,7 @@
 .icon-button {
   color: white;
   opacity: 0.8;
-  margin-right: 10px;
+  margin-right: 20px;
   transition: all 0.2s ease-in;
 }
 .icon-button:hover {
@@ -98,4 +98,17 @@
 }
 .social-icons {
   margin-top: 10px;
+}
+
+@media screen and (max-width: 765px) {
+  .ftr-sm-s {
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer {
+    height: 150px;
+  }
+  .ftr-up {
+    display: none;
+  }
 }

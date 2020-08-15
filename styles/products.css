@@ -68,6 +68,10 @@
     border-radius: 0;
     margin: 2px 0px;
   }
+  #prevBtn,
+  #nextBtn {
+    display: none;
+  }
   .categories,
   .other-info {
     display: none;
@@ -81,12 +85,10 @@
     margin: 10px 0px 0px 0px;
     width: 100vw;
   }
-  #slider {
+  .slider-container {
     margin: 0;
-  }
-  .back,
-  .next {
-    display: none;
+    width: 100%;
+    overflow-x: scroll;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -117,8 +119,8 @@
   #slider {
     margin: 0;
   }
-  .back,
-  .next {
+  #prevBtn,
+  #nextBtn {
     display: none;
   }
 }
