@@ -6,8 +6,7 @@
 }
 .cart {
   position: relative;
-  font-size: 17px;
-  padding: 0px 20px;
+  padding: 0px;
 }
 .cart-login {
   display: flex;
@@ -15,24 +14,27 @@
 .cart-number {
   position: absolute;
   background-color: orange;
-  /* padding: 1px 5px; */
   border-radius: 100%;
   font-size: 15px;
   top: -10px;
-  left: 40px;
+  left: 22px;
 }
 .d-app {
   display: none;
 }
-.account-info {
+.login-text {
   padding: 5px 10px 10px 1px;
-  margin: 5px 15px 10px 1px;
-  font-size: 20px;
+  margin: 5px 35px 10px 1px;
+  font-size: 22px;
   cursor: pointer;
 }
-#userLoginIcon {
-  font-size: 25px;
+.cart-text {
+  padding: 5px 10px 10px 1px;
+  margin: 5px 5px 10px 0px;
+  font-size: 22px;
+  cursor: pointer;
 }
+
 .login {
   font-size: 17px;
   position: relative;
@@ -111,7 +113,7 @@
   display: flex;
 }
 .navsearch {
-  width: 550px;
+  width: 450px;
   padding: 5px 3px;
   font-size: 20px;
   border: 0;
@@ -134,7 +136,7 @@
   align-items: center;
   padding: 5px 120px 5px 150px;
   background-color: #fff;
-  z-index: 100;
+  z-index: 20;
 }
 .search {
   border: 1px solid black;

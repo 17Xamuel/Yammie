@@ -1,3 +1,9 @@
+.a-search {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e3e3e3;
+}
 .ctlg-m-ctr {
   margin: 10px auto;
   width: 80vw;
@@ -5,13 +11,109 @@
 .ctlg-ctr {
   display: flex;
 }
+.ctlg-nav-panel {
+  padding: 10px;
+}
 .ctlg-itm-ctr {
   flex: 4;
   margin: 0px 8px 0px 0px;
-  background-color: red;
+  background-color: white;
+  border-radius: 5px;
 }
 .ctlg-sort {
   flex: 1;
   margin: 0px 0px 0px 8px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 5px;
+  height: fit-content;
+}
+.ctlg-sort > form {
+  border-bottom: 1px solid #c3c3c3;
+  padding: 5px 0px;
+}
+.ctlg-sort > h3 {
+  padding: 5px 0px 0px 15px;
+}
+.ctlg-sort > form > .sort-list {
+  padding-left: 25px;
+  list-style-type: none;
+}
+.input-field {
+  padding: 5px 10px;
+}
+.input-field > label {
+  padding-left: 5px;
+}
+.sort-btn {
+  width: 75%;
+  margin: 5px 25px;
+  padding: 5px 0px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  background-color: orange;
+  font-size: 18px;
+}
+
+/* price slider*/
+.price-form {
+  position: relative;
+  background-color: red;
+}
+.slider {
+  position: relative;
+  z-index: 1;
+  height: 10px;
+}
+.slider > .track {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  border-radius: 5px;
+  background-color: purple;
+}
+.slider > .range {
+  position: absolute;
+  z-index: 2;
+  left: 20%;
+  right: 20%;
+  top: 0;
+  bottom: 0;
+  border-radius: 5px;
   background-color: green;
 }
+.slider > .thumb {
+  position: absolute;
+  z-index: 3;
+  width: 25px;
+  height: 25px;
+  background-color: green;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+.slider > .thumb.left {
+  left: 22%;
+  transform: translate(-15px, -8px);
+}
+.slider > .thumb.right {
+  right: 10%;
+  transform: translate(-15px, -8px);
+}
+input[type="range"] {
+  position: absolute;
+  z-index: 2;
+  height: 10px;
+  width: 100%;
+}
+#input-slide-left {
+  top: -50px;
+}
+#input-slide-right {
+  top: -25px;
+}
+
+/* end of price slider*/

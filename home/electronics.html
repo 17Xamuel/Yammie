@@ -70,27 +70,24 @@
       </div>
       <div class="cart-login">
         <div class="login" id="login">
-          <i class="fas fa-user" id="userLoginIcon"></i>
-          <span class="account-info">Account</span>
-          <div class="login-opt" id="login-opt">
-            <button class="lg-b">
-              <a href="../home/login.html">LOGIN</a>
-            </button>
-            <span class="no-ac">Have no Account?</span>
-            <button class="rg-b"><a href="">REGISTER</a></button>
-            <!-- <div class="no-ac"></div> -->
-          </div>
+          <img src="../resources/person.svg" alt="" />
+          <span class="login-text">Account</span>
         </div>
         <div class="cart">
-          <!-- <i class="fas fa-cart-plus" style="font-size: 25px;"></i> -->
           <img src="../resources/shopping-cart.svg" alt="" />
+          <span class="cart-number" id="cartNumberItems">11</span>
+          <span class="cart-text">Cart</span>
+        </div>
+        <!-- <div class="cart">
+           <i class="fas fa-cart-plus" style="font-size: 25px;"></i> -->
+        <!-- <img src="../resources/shopping-cart.svg" alt="" />
           <span class="cart-number" id="cartNumberItems">11</span>
           <span
             class="cart-wrd"
             style="margin-left: 10px; font-size: 22px; margin-bottom: 40px;"
             >Cart</span
           >
-        </div>
+        </div> -->
       </div>
       <div id="sideNav">
         <ul class="sideList1">
@@ -385,5 +382,24 @@
         </div>
       </div>
     </footer>
+    <script>
+      //cart item number
+      const cartValue = document.getElementById("cartNumberItems");
+
+      if (cartValue.textContent == 1) {
+        cartValue.style.padding = "0px 9px";
+      }
+      if (cartValue.textContent < 10 && cartValue.textContent != 1) {
+        cartValue.style.padding = "1px 6px";
+      }
+      if (cartValue.textContent >= 10) {
+        cartValue.style.padding = "1px 4px";
+      }
+      if (cartValue.textContent == 11) {
+        cartValue.style.letterSpacing = "1px";
+        cartValue.style.padding = "1px 6px";
+      }
+      //cart item number end
+    </script>
   </body>
 </html>

@@ -385,5 +385,24 @@
         </div>
       </div>
     </footer>
+    <script>
+      //cart item number
+      const cartValue = document.getElementById("cartNumberItems");
+
+      if (cartValue.textContent == 1) {
+        cartValue.style.padding = "0px 9px";
+      }
+      if (cartValue.textContent < 10 && cartValue.textContent != 1) {
+        cartValue.style.padding = "1px 6px";
+      }
+      if (cartValue.textContent >= 10) {
+        cartValue.style.padding = "1px 4px";
+      }
+      if (cartValue.textContent == 11) {
+        cartValue.style.letterSpacing = "1px";
+        cartValue.style.padding = "1px 6px";
+      }
+      //cart item number end
+    </script>
   </body>
 </html>

@@ -1,9 +1,6 @@
 // All Variables
-const login = document.getElementById("login");
-const loginOpt = document.getElementById("login-opt");
 const closeAppBanner = document.querySelector(".close-icon");
 const AppBanner = document.getElementById("d-app");
-const cartValue = document.getElementById("cartNumberItems");
 const menu = document.querySelector(".menu");
 const sideNav = document.querySelector("#sideNav");
 const menuLine1 = document.querySelector(".line1");
@@ -79,36 +76,9 @@ menu.addEventListener("click", () => {
   menuLine2.classList.toggle("rotateLine2");
   menuLine3.classList.toggle("rotateLine3");
 });
-console.log(cartValue.textContent);
-if (cartValue.textContent == 1) {
-  cartValue.style.padding = "0px 9px";
-  cartValue.style.top = "-7px";
-  cartValue.style.left = "40px";
-}
-if (cartValue.textContent < 10 && cartValue.textContent != 1) {
-  cartValue.style.padding = "1px 6px";
-  cartValue.style.top = "-7px";
-  cartValue.style.left = "40px";
-}
-if (cartValue.textContent >= 10) {
-  cartValue.style.padding = "1px 4px";
-  cartValue.style.top = "-8px";
-  cartValue.style.left = "40px";
-}
-if (cartValue.textContent >= 11) {
-  cartValue.style.letterSpacing = "1px";
-  cartValue.style.padding = "1px 6px";
-  cartValue.style.top = "-8px";
-  cartValue.style.left = "40px";
-}
+
 closeAppBanner.addEventListener("click", () => {
   AppBanner.style.display = "none";
-});
-login.addEventListener("click", () => {
-  loginOpt.classList.toggle("showLogin");
-});
-loginOpt.addEventListener("mouseleave", () => {
-  loginOpt.classList.toggle("showLogin");
 });
 
 // Promotions timer

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../styles/footer2.css" />
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/catalog.css" />
+    <link rel="stylesheet" href="../styles/products.css" />
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../font-awesome/css/all.css" />
     <title>Yammie | Online Store for Groceries and Home Items</title>
@@ -43,27 +44,24 @@
       </div>
       <div class="cart-login">
         <div class="login" id="login">
-          <i class="fas fa-user" id="userLoginIcon"></i>
-          <span class="account-info">Account</span>
-          <div class="login-opt" id="login-opt">
-            <button class="lg-b">
-              <a href="../home/login.html">LOGIN</a>
-            </button>
-            <span class="no-ac">Have no Account?</span>
-            <button class="rg-b"><a href="">REGISTER</a></button>
-            <!-- <div class="no-ac"></div> -->
-          </div>
+          <img src="../resources/person.svg" alt="" />
+          <span class="login-text">Account</span>
         </div>
         <div class="cart">
-          <!-- <i class="fas fa-cart-plus" style="font-size: 25px;"></i> -->
           <img src="../resources/shopping-cart.svg" alt="" />
+          <span class="cart-number" id="cartNumberItems">11</span>
+          <span class="cart-text">Cart</span>
+        </div>
+        <!-- <div class="cart">
+           <i class="fas fa-cart-plus" style="font-size: 25px;"></i> -->
+        <!-- <img src="../resources/shopping-cart.svg" alt="" />
           <span class="cart-number" id="cartNumberItems">11</span>
           <span
             class="cart-wrd"
             style="margin-left: 10px; font-size: 22px; margin-bottom: 40px;"
             >Cart</span
           >
-        </div>
+        </div> -->
       </div>
       <div id="sideNav">
         <ul class="sideList1">
@@ -102,92 +100,148 @@
     </div>
 
     <div class="ctlg-m-ctr">
-      <div class="nav-panel">
-        hello, Poppy
+      <div class="ctlg-nav-panel">
+        Home &gt; Electronics &gt; "Televisions"
       </div>
       <div class="ctlg-ctr">
         <div class="ctlg-itm-ctr">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-            pariatur ducimus tenetur ipsam repudiandae soluta amet tempore
-            reiciendis maxime architecto facilis odio blanditiis nihil rem
-            ratione, culpa atque beatae explicabo.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-            pariatur ducimus tenetur ipsam repudiandae soluta amet tempore
-            reiciendis maxime architecto facilis odio blanditiis nihil rem
-            ratione, culpa atque beatae explicabo.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-            pariatur ducimus tenetur ipsam repudiandae soluta amet tempore
-            reiciendis maxime architecto facilis odio blanditiis nihil rem
-            ratione, culpa atque beatae explicabo.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-            pariatur ducimus tenetur ipsam repudiandae soluta amet tempore
-            reiciendis maxime architecto facilis odio blanditiis nihil rem
-            ratione, culpa atque beatae explicabo.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-            pariatur ducimus tenetur ipsam repudiandae soluta amet tempore
-            reiciendis maxime architecto facilis odio blanditiis nihil rem
-            ratione, culpa atque beatae explicabo.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-            pariatur ducimus tenetur ipsam repudiandae soluta amet tempore
-            reiciendis maxime architecto facilis odio blanditiis nihil rem
-            ratione, culpa atque beatae explicabo.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-            pariatur ducimus tenetur ipsam repudiandae soluta amet tempore
-            reiciendis maxime architecto facilis odio blanditiis nihil rem
-            ratione, culpa atque beatae explicabo.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-            pariatur ducimus tenetur ipsam repudiandae soluta amet tempore
-            reiciendis maxime architecto facilis odio blanditiis nihil rem
-            ratione, culpa atque beatae explicabo.
-          </p>
+          <div class="a-search">
+            <span class="items-got">10235 Products Got</span>
+            <span class="search-input"> You searched for : "Televisions"</span>
+          </div>
         </div>
         <div class="ctlg-sort">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-            officiis in architecto quis expedita error, facere vitae possimus
-            voluptatum nulla? Ab eum illum porro voluptates dicta totam officiis
-            commodi nemo!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-            officiis in architecto quis expedita error, facere vitae possimus
-            voluptatum nulla? Ab eum illum porro voluptates dicta totam officiis
-            commodi nemo!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-            officiis in architecto quis expedita error, facere vitae possimus
-            voluptatum nulla? Ab eum illum porro voluptates dicta totam officiis
-            commodi nemo!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-            officiis in architecto quis expedita error, facere vitae possimus
-            voluptatum nulla? Ab eum illum porro voluptates dicta totam officiis
-            commodi nemo!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-            officiis in architecto quis expedita error, facere vitae possimus
-            voluptatum nulla? Ab eum illum porro voluptates dicta totam officiis
-            commodi nemo!
-          </p>
+          <h3>Sort By Price</h3>
+          <form action="#" method="POST" class="price-form">
+            <div class="price-slide">
+              <input
+                type="range"
+                name=""
+                id="input-slide-left"
+                min="0"
+                max="100"
+                value="25"
+              />
+              <input
+                type="range"
+                name=""
+                id="input-slide-right"
+                min="0"
+                max="100"
+                value="75"
+              />
+              <div class="slider">
+                <div class="track"></div>
+                <div class="range"></div>
+                <div class="thumb left"></div>
+                <div class="thumb right"></div>
+              </div>
+            </div>
+            <button class="sort-btn">Apply</button>
+          </form>
+          <h3>Sort By Discount</h3>
+          <form action="" method="POST">
+            <ul class="sort-list">
+              <li class="input-field">
+                <input type="checkbox" name="" id="" />
+                <label for="discount"> &lt; 10%</label>
+              </li>
+              <li class="input-field">
+                <input type="checkbox" name="" id="" />
+                <label for="discount">10% - 20%</label>
+              </li>
+              <li class="input-field">
+                <input type="checkbox" name="" id="" />
+                <label for="discount">20% - 30%</label>
+              </li>
+              <li class="input-field">
+                <input type="checkbox" name="" id="" />
+                <label for="discount">30% - 40%</label>
+              </li>
+              <li class="input-field">
+                <input type="checkbox" name="" id="" />
+                <label for="discount">40% - 50%</label>
+              </li>
+              <li class="input-field">
+                <input type="checkbox" name="" id="" />
+                <label for="discount"> &gt; 50%</label>
+              </li>
+            </ul>
+            <button class="sort-btn">Apply</button>
+          </form>
+          <h3>Sort By Brand</h3>
+          <form action="#" method="POST">
+            <ul class="sort-list">
+              <li class="input-field">
+                <input type="checkbox" name="" id="" />
+                <label for="brand">SkyWorth</label>
+              </li>
+              <li class="input-field">
+                <input type="checkbox" name="" id="" />
+                <label for="brand">Hisense</label>
+              </li>
+              <li class="input-field">
+                <input type="checkbox" name="" id="" />
+                <label for="brand">Acer</label>
+              </li>
+              <li class="input-field">
+                <input type="checkbox" name="" id="" />
+                <label for="brand">GlobalStar</label>
+              </li>
+              <li class="input-field">
+                <input type="checkbox" name="" id="" />
+                <label for="brand">Sky</label>
+              </li>
+              <li class="input-field">
+                <input type="checkbox" name="" id="" />
+                <label for="brand">Sumsung</label>
+              </li>
+              <li class="input-field">
+                <input type="checkbox" name="" id="" />
+                <label for="brand">Startimes</label>
+              </li>
+            </ul>
+            <button class="sort-btn">Apply</button>
+          </form>
+          <h3>Sort By Seller Location</h3>
+          <form action="#" method="POST" style="border: none;">
+            <ul class="sort-list">
+              <li class="input-field">
+                <input type="checkbox" name="" id="" />
+                <label for="seller-location">Lira Campus</label>
+              </li>
+              <li class="input-field">
+                <input type="checkbox" name="" id="" />
+                <label for="seller-location">Lira</label>
+              </li>
+              <li class="input-field">
+                <input type="checkbox" name="" id="" />
+                <label for="seller-location">Kampala</label>
+              </li>
+            </ul>
+            <button class="sort-btn">Apply</button>
+          </form>
         </div>
+      </div>
+      <div class="category">
+        <div class="see-all">
+          <span>You May Also Like</span>
+          <span>
+            Check
+            <i class="fas fa-chevron-right"></i>
+          </span>
+        </div>
+        <div class="items-container" id="tp-s"></div>
+      </div>
+      <div class="category">
+        <div class="see-all">
+          <span>You May Also Like</span>
+          <span>
+            Check
+            <i class="fas fa-chevron-right"></i>
+          </span>
+        </div>
+        <div class="items-container" id="tp-s"></div>
       </div>
     </div>
     <footer class="footer">
@@ -318,8 +372,35 @@
       </div>
     </footer>
     <!--scripts-->
-    <script src="../scripts/index.js"></script>
-    <script src="../scripts/index2.js"></script>
+    <script>
+      //cart item number
+      const cartValue = document.getElementById("cartNumberItems");
+
+      if (cartValue.textContent == 1) {
+        cartValue.style.padding = "0px 9px";
+      }
+      if (cartValue.textContent < 10 && cartValue.textContent != 1) {
+        cartValue.style.padding = "1px 6px";
+      }
+      if (cartValue.textContent >= 10) {
+        cartValue.style.padding = "1px 4px";
+      }
+      if (cartValue.textContent == 11) {
+        cartValue.style.letterSpacing = "1px";
+        cartValue.style.padding = "1px 6px";
+      }
+      //cart item number end
+      //price slider
+      let inputLeft = document.getElementById("input-slide-left");
+      let inputRight = document.getElementById("input-slide-right");
+
+      let thumbLeft = document.querySelector(".slider > .thumb.left");
+      let thumbRight = document.querySelector(".slider > .thumb.right");
+      let range = document.querySelector(".slider > .range");
+
+      function setInputValue() {}
+      //price slider end
+    </script>
     <!--scripts-->
   </body>
 </html>

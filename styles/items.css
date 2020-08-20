@@ -10,9 +10,10 @@
   justify-content: space-between;
   height: 500px;
   width: 100%;
+  margin: 20px 0px;
 }
 .categories {
-  margin: 8px 0px;
+  /* margin: 8px 0px; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -27,7 +28,7 @@
   border-radius: 5px;
   background-color: #fff;
   width: 22%;
-  margin: 8px 0px 8px 0px;
+  /* margin: 8px 0px 8px 0px; */
 }
 .ctg-name {
   padding: 10px 0px 10px 5px;
@@ -57,9 +58,9 @@
   display: none;
   justify-content: space-around;
   width: 650px;
-  height: 485px;
+  height: 500px;
   left: 370px;
-  top: 178px;
+  top: 187px;
   z-index: 6;
   border-radius: 5px 8px 8px 5px;
   border-left: 1px solid #e2e2e2;
@@ -80,7 +81,7 @@
 }
 .up-container {
   background-color: #fff;
-
+  margin-top: 0px;
   list-style-type: none;
   margin-bottom: 4px;
   border-radius: 5px;
@@ -167,7 +168,7 @@
 .slider-container {
   width: 60%;
   height: 100%;
-  margin: 5px 0px;
+  /* margin: 5px 0px; */
   border-radius: 5px;
   overflow-x: hidden;
   position: relative;
