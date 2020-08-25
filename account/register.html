@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../resources/cartlink.png" />
+    <link rel="stylesheet" href="../styles/footer2.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../font-awesome/css/all.css" />
+    <title>Yammie | Create My Account</title>
+    <style>
+      body {
+        background-color: #fff;
+      }
+      .cr-m-ctr {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .cr-ctr {
+        width: 70vw;
+        margin: 10px auto;
+        margin-top: 20px;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        height: 75vh;
+      }
+      .cr-heading {
+        font-weight: bold;
+      }
+      .cr-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 75%;
+      }
+      .cr-f-1,
+      .cr-f-2,
+      .cr-f-3 {
+        display: flex;
+        justify-content: space-between;
+      }
+      .cr-i-c > input {
+        padding: 10px 5px;
+        font-size: 20px;
+        width: 450px;
+        border: none;
+        outline: none;
+      }
+      .cr-p-h {
+        position: absolute;
+        top: 5px;
+        font-size: 18px;
+        pointer-events: none;
+        transition: all 0.3s ease-in-out;
+      }
+      .cr-i-c {
+        position: relative;
+        border-bottom: 1px solid #93a3b3;
+        transition: all 0.3s ease-in-out;
+      }
+      .cr-i-c .fas {
+        font-size: 25px;
+      }
+      .cr-firstname,
+      .cr-email,
+      .cr-phone-n {
+        margin-right: 15px;
+      }
+      .cr-email {
+        position: relative;
+      }
+      .used-e,
+      .password,
+      .gender,
+      .phone-m {
+        position: absolute;
+        color: red;
+        font-size: 14px;
+        opacity: 0;
+      }
+      .cr-lastname,
+      .cr-password,
+      .cr-gender {
+        margin-left: 15px;
+      }
+      .cr-password {
+        position: relative;
+      }
+      .cr-password > .eye-icon {
+        position: absolute;
+        right: 15px;
+        cursor: pointer;
+      }
+      .cr-btn-c {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .cr-btn {
+        padding: 15px 5px;
+        font-size: 20px;
+        border: none;
+        outline: none;
+        background-color: orange;
+        color: white;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px #c3c3c3;
+        transform: translateY(-4px);
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+      .cr-btn:hover {
+        transform: translateY(-7px);
+        box-shadow: 5px 5px 7px #c3c3c3;
+      }
+      .cr-o-btn {
+        position: relative;
+        width: 30vw;
+        padding: 10px;
+        font-size: 17px;
+        border: none;
+        outline: none;
+        background-color: #40588a;
+        color: white;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px #c3c3c3;
+        transform: translateY(-4px);
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+      .cr-o-btn:hover {
+        transform: translateY(-7px);
+        box-shadow: 5px 5px 7px #c3c3c3;
+      }
+      .cr-o-btn > a {
+        color: white;
+      }
+      .cr-o-btn > .fab {
+        position: absolute;
+        right: 10px;
+        font-size: 25px;
+      }
+      .cr-or {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 10px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search-nav">
+      <div class="logo">
+        <div class="menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <a href="../home/index.html">
+          <img
+            src="../resources/yammie.png"
+            alt="YUMMY"
+            width="200"
+            height="75"
+          />
+        </a>
+      </div>
+      <div class="search">
+        <form action="#">
+          <input
+            type="text"
+            name=""
+            placeholder="Search Groceries...."
+            class="navsearch"
+          />
+          <button type="submit" id="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+      <div class="cart-login">
+        <div class="login" id="login">
+          <img src="../resources/person.svg" alt="" />
+          <span class="login-text">Account</span>
+        </div>
+        <div class="cart">
+          <img src="../resources/shopping-cart.svg" alt="" />
+          <span class="cart-number" id="cartNumberItems">11</span>
+          <span class="cart-text">Cart</span>
+        </div>
+      </div>
+      <div id="sideNav">
+        <ul class="sideList1">
+          <li class="sideNavlistItem">item 1</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+        </ul>
+        <ul class="sideList2">
+          <li class="sideNavlistItem">item 1</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+        </ul>
+        <ul class="sideList3">
+          <li class="sideNavlistItem">item 1</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+        </ul>
+        <ul class="sideList4">
+          <li class="sideNavlistItem">item 1</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cr-m-ctr">
+      <div class="cr-ctr">
+        <div class="cr-heading">
+          <h2>Create Your Yammie Account</h2>
+        </div>
+        <form onsubmit="crte()" class="cr-form" autocomplete="off" action="#">
+          <div class="cr-f-1">
+            <div class="cr-firstname cr-i-c">
+              <i class="fas fa-user-circle"></i>
+              <span class="cr-p-h" id="cr-p-h-f">First Name</span>
+              <input type="text" id="cr-f-name" />
+            </div>
+            <div class="cr-lastname cr-i-c">
+              <i class="fas fa-user-circle"></i>
+              <span class="cr-p-h" id="cr-p-h-l">Last Name</span>
+              <input type="text" id="cr-l-name" />
+            </div>
+          </div>
+          <div class="cr-f-2">
+            <div class="cr-email cr-i-c">
+              <i class="fas fa-envelope"></i>
+              <span class="cr-p-h" id="cr-p-h-e">E-mail</span>
+              <input type="email" id="cr-email" />
+              <div class="used-e">This email Exists</div>
+            </div>
+            <div class="cr-password cr-i-c">
+              <i class="fas fa-lock"></i>
+              <i class="fas fa-eye eye-icon"></i>
+              <span class="cr-p-h" id="cr-p-h-p">Password</span>
+              <input type="password" id="cr-password" />
+              <div class="password">Should be More than 5 characters</div>
+            </div>
+          </div>
+          <div class="cr-f-3">
+            <div class="cr-phone-n cr-i-c">
+              <i class="fas fa-phone-volume"></i>
+              <span class="cr-p-h" id="cr-p-h-ph">Phone Number</span>
+              <input type="text" id="cr-phone" />
+              <div class="phone-m">Phone Number is incorrect</div>
+            </div>
+            <div class="cr-gender cr-i-c">
+              <i class="fas fa-user"></i>
+              <span class="cr-p-h" id="cr-p-h-g">Gender</span>
+              <input type="text" id="cr-gender" list="gender" />
+              <div class="gender">Please Select</div>
+              <datalist id="gender">
+                <option value="MALE">MALE</option>
+                <option value="FEMALE">FEMALE</option>
+              </datalist>
+            </div>
+          </div>
+          <div class="cr-btn-c">
+            <button type="submit" class="cr-btn">
+              Create Your Account
+            </button>
+            <span style="align-self: flex-end;">
+              Already Have An Account?
+              <a href="/account/login.html" style="color: orange;">Login</a>
+            </span>
+          </div>
+        </form>
+        <div class="cr-other-m">
+          <button class="cr-o-btn">
+            <i class="fab fa-facebook-square"></i>
+            <a href="">Register With FaceBook</a>
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="ftr-sm-s">
+        <span>
+          Terms &amp; Conditions
+        </span>
+        <span>
+          Help Center
+        </span>
+        <span>
+          Contact Us
+        </span>
+      </div>
+      <div class="ftr-up">
+        <div class="ftr-u-first">
+          <div class="ftr-logo">
+            <img
+              src="../resources/yammie.png"
+              alt="YAMMIE"
+              width="250px"
+              height="100px"
+            />
+          </div>
+          <div class="ftr-message">
+            <p>
+              Your online Market Store For Groceries, <br />
+              Food Items, Clothings, Gadgets And Many More.
+            </p>
+          </div>
+          <div class="ftr-app">
+            <h3>Get the Yammie App On . . . .</h3>
+            <div class="ftr-app-stores" style="margin-top: 15px;">
+              <a href="">
+                <img
+                  src="../resources/play-store-3.jpg"
+                  alt=""
+                  height="45"
+                  width="150"
+                  style="margin-right: 5px;"
+                />
+              </a>
+              <a href="">
+                <img
+                  src="../resources/apple-store.jpg"
+                  alt=""
+                  height="45"
+                  width="150"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="ftr-u-second">
+          <h4 class="footer-h4">Explore Yummie</h4>
+          <ul class="footer-list">
+            <li><a href="#">About Yammie</a></li>
+            <li><a href="#">How to Order</a></li>
+            <li><a href="#">Help &amp; FAQs</a></li>
+            <li><a href="#">Our Partners</a></li>
+            <li><a href="#">Terms &amp; Conditions For Use</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="ftr-u-third">
+          <h4 class="footer-h4">Contact Us</h4>
+          <ul class="footer-list">
+            <li class="second-list">
+              <a href="">
+                <i class="fas fa-shopping-cart"></i>
+                Yummie Shoppers
+              </a>
+            </li>
+            <li class="second-list">
+              <a href="mailto:#">
+                <i class="fas fa-envelope"></i>
+                customer@yummie.com
+              </a>
+            </li>
+            <li class="second-list">
+              <a href="#">
+                <i class="fas fa-map-marker-alt"></i>
+                Lira Campus
+              </a>
+            </li>
+          </ul>
+          <form action="#">
+            <input
+              type="text"
+              name=""
+              id="comment"
+              placeholder="Leave a Comment"
+            />
+            <br />
+            <input
+              type="text"
+              name=""
+              id="customer-email"
+              placeholder="Email or Phone Number(Optional)"
+            />
+            <br />
+            <button class="footer-form-button">submit</button>
+          </form>
+        </div>
+        <div class="ftr-u-fourth">
+          <h4 class="footer-h4">Products &amp; Groceries</h4>
+          <ul class="footer-list">
+            <li><a href="#">Special Order</a></li>
+            <li><a href="#">Delivery Time</a></li>
+            <li><a href="#">Payment Methods</a></li>
+            <li><a href="#">Request An Item</a></li>
+            <li><a href="#">Report an Item</a></li>
+            <li><a href="#">Return Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ftr-down">
+        <div class="ftr-official">
+          &copy; 2020 Yammie. All rights reserved
+          <div class="social-icons">
+            <a href="" class="icon-button"><i class="fab fa-facebook-f"></i></a>
+            <a href="" class="icon-button"><i class="fab fa-twitter"></i></a>
+            <a href="" class="icon-button"><i class="fab fa-instagram"></i></a>
+            <a href="" class="icon-button"><i class="fab fa-youtube"></i></a>
+            <a href="" class="icon-button"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--scripts-->
+
+    <script>
+      //cart item number
+      const cartValue = document.getElementById("cartNumberItems");
+
+      if (cartValue.textContent == 1) {
+        cartValue.style.padding = "0px 9px";
+      }
+      if (cartValue.textContent < 10 && cartValue.textContent != 1) {
+        cartValue.style.padding = "1px 6px";
+      }
+      if (cartValue.textContent >= 10) {
+        cartValue.style.padding = "1px 4px";
+      }
+      if (cartValue.textContent == 11) {
+        cartValue.style.letterSpacing = "1px";
+        cartValue.style.padding = "1px 6px";
+      }
+      //cart item number end
+      //input focus
+      function focus(input, elMove, elMoveGroup, icon) {
+        document.querySelector(input).addEventListener("focus", () => {
+          document.querySelector(elMove).style.fontSize = "13px";
+          document.querySelector(elMove).style.transform = "translateY(-15px)";
+          document.querySelector(elMoveGroup).style.borderBottom =
+            "1px solid orange";
+          document.querySelector(icon).style.color = "orange";
+        });
+        document.querySelector(input).addEventListener("blur", () => {
+          if (document.querySelector(input).value === "") {
+            document.querySelector(elMove).style.transform = "translateY(0px)";
+            document.querySelector(elMove).style.fontSize = "20px";
+          }
+          document.querySelector(elMoveGroup).style.borderBottom =
+            "1px solid #93a3b3";
+          document.querySelector(icon).style.color = "black";
+        });
+      }
+      focus("#cr-f-name", "#cr-p-h-f", ".cr-firstname", ".cr-firstname .fas");
+      focus("#cr-l-name", "#cr-p-h-l", ".cr-lastname", ".cr-lastname .fas");
+      focus("#cr-email", "#cr-p-h-e", ".cr-email", ".cr-email .fas");
+      focus("#cr-password", "#cr-p-h-p", ".cr-password", ".cr-password .fas");
+      focus("#cr-phone", "#cr-p-h-ph", ".cr-phone-n", ".cr-phone-n .fas");
+      focus("#cr-gender", "#cr-p-h-g", ".cr-gender", ".cr-gender .fas");
+
+      //input focus end
+
+      //eye password icon
+      let eyeIcon = document.querySelector(".eye-icon");
+      eyeIcon.addEventListener("click", () => {
+        let password = document.getElementById("cr-password");
+        const type =
+          password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+
+        eyeIcon.classList.toggle("fa-eye-slash");
+      });
+      //eye password icon ends
+    </script>
+    <script src="./in.js"></script>
+    <!--scripts-->
+  </body>
+</html>

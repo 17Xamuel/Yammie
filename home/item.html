@@ -472,10 +472,10 @@
       otherImagesPopUp.forEach((el) => {
         el.addEventListener("click", () => {
           let mainImagePopUp = document.querySelector(".main-img-pp img");
-          console.log(mainImagePopUp.src);
           mainImagePopUp.src = el.src;
         });
       });
+
       //for the image pop-up end
       // pop-up below
       function imageDialog() {

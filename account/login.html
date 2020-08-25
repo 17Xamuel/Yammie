@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../resources/cartlink.png" />
+    <link rel="stylesheet" href="../styles/footer2.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../font-awesome/css/all.css" />
+    <title>Yammie | Login</title>
+    <style>
+      body {
+        background-color: #fff;
+      }
+      .lg-m-ctr {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .lg-ctr {
+        width: 75vw;
+        margin: 20px auto;
+        margin-top: 20px;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 70vh;
+      }
+      .lg-info {
+        width: 40%;
+        height: 100%;
+        padding: 5px 20px 5px 5px;
+        border-right: 1px solid #c3c3c3;
+      }
+      .lg-info > p {
+        word-spacing: 4px;
+        font-size: 18px;
+        margin-top: 15px;
+      }
+      .lg-info > h2 {
+        word-spacing: 4px;
+        font-size: 20px;
+        margin: 15px 0px;
+      }
+      .lg-form {
+        width: 45%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      .lg-form > h1 {
+        margin: 15px 0px;
+      }
+      .cr-heading {
+        font-weight: bold;
+      }
+
+      .lg-i-c > input {
+        padding: 10px 5px;
+        font-size: 20px;
+        width: 400px;
+        border: none;
+        outline: none;
+      }
+      .cr-p-h {
+        position: absolute;
+        top: 5px;
+        font-size: 20px;
+        pointer-events: none;
+        transition: all 0.3s ease-in-out;
+      }
+      .lg-i-c {
+        position: relative;
+        border-bottom: 1px solid #93a3b3;
+        transition: all .3s ease-in-out;
+        margin: 10px 0px 35px 0px;
+      }
+      #wrong-e,
+      #wrong-p{
+        position: absolute;
+        font-size: 14px;
+        color: red;
+        opacity: 0;
+        transition: all .3s ease-in-out;
+      }
+      .lg-i-c .fas {
+        font-size: 25px;
+        color: orange;
+      }
+      .cr-y-btn{
+        width: 250px;
+        padding: 10px 5px;
+        font-size: 18px;
+        border: 0px;
+        outline: none;
+        background-color: orange;
+        color: white;
+        border-radius: 5px;
+        box-shadow: 5px 5px 7px #e2e2e2;
+        transform: translateY(-2px);
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+      }
+      .cr-y-btn:hover{
+        transform: translateY(-4px);
+      }
+      .lg-btn-c {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+      }
+      .lg-btn {
+        padding: 15px 5px;
+        width: 100%;
+        font-size: 20px;
+        border: none;
+        outline: none;
+        background-color: orange;
+        color: white;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px #c3c3c3;
+        transform: translateY(-4px);
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+      .lg-btn:hover {
+        transform: translateY(-7px);
+        box-shadow: 5px 5px 7px #c3c3c3;
+      }
+      .rem-me{
+        align-self: flex-end;
+        margin-bottom: 20px;
+      }
+      .forgot-p{
+        align-self: flex-end;
+        margin-top: 5px;
+      }
+      .forgot-p > a{
+        transition: all .3s ease-in-out;
+      }
+      .forgot-p:hover > a{
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search-nav">
+      <div class="logo">
+        <div class="menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <a href="../home/index.html">
+          <img
+            src="../resources/yammie.png"
+            alt="YUMMY"
+            width="200"
+            height="75"
+          />
+        </a>
+      </div>
+      <div class="search">
+        <form action="#">
+          <input
+            type="text"
+            name=""
+            placeholder="Search Groceries...."
+            class="navsearch"
+          />
+          <button type="submit" id="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+      <div class="cart-login">
+        <div class="login" id="login">
+          <img src="../resources/person.svg" alt="" />
+          <span class="login-text">Account</span>
+        </div>
+        <div class="cart">
+          <img src="../resources/shopping-cart.svg" alt="" />
+          <span class="cart-number" id="cartNumberItems">11</span>
+          <span class="cart-text">Cart</span>
+        </div>
+      </div>
+      <div id="sideNav">
+        <ul class="sideList1">
+          <li class="sideNavlistItem">item 1</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+        </ul>
+        <ul class="sideList2">
+          <li class="sideNavlistItem">item 1</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+        </ul>
+        <ul class="sideList3">
+          <li class="sideNavlistItem">item 1</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+        </ul>
+        <ul class="sideList4">
+          <li class="sideNavlistItem">item 1</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+        </ul>
+      </div>
+    </div>
+    <div class="lg-m-ctr">
+      <div class="lg-ctr">
+        <div class="lg-info">
+          <h1>
+            Get Personilized Shopping With A 
+            <span style="color: orange;">Yammie Account</span>
+          </h1>
+         
+          <p>
+            "<strong>LOGIN</strong> to get personlized shopping, your likes and make your
+            payments easily. <br />
+            <h2>Create Your Yammie Account</h2>
+            <a href="/account/register.html"> <button class="cr-y-btn">CREATE ACCOUNT</button></a><br />
+            <p>
+              Get Your Shopping easy with yammie
+            </p>
+            <i>the yammie team</i>
+          </p>
+        </div>
+        <form action="#" class="lg-form" autocomplete="off" onsubmit="c()">
+          <i class="fas fa-user-circle fa-10x"></i>
+          <h1>Welcome</h1>
+          <div class="lg-f">
+            <div class="cr-email lg-i-c">
+              <i class="fas fa-envelope"></i>
+              <span class="cr-p-h" id="cr-p-h-f">Email or Phone</span>
+              <input type="text" id="cr-f-name" />
+              <div id="wrong-e">Check Email or Phone Number</div>
+            </div>
+            <div class="cr-password lg-i-c">
+              <i class="fas fa-lock"></i>
+              <span class="cr-p-h" id="cr-p-h-l">Password</span>
+              <input type="password" id="cr-l-name" />
+              <div id="wrong-p">Check Password</div>
+            </div>
+          </div>
+          <div class="lg-btn-c">
+            <div 
+            class="rem-me" 
+            title="So that next time you use yammie, No need for signin in"
+            >
+              <input type="checkbox" id="rem-me">
+              <span>Remember Me</span>
+           </div>
+            <button type="submit" class="lg-btn">Login</button>
+            <span class="forgot-p">
+              <a href="#">Forgot Password?</a>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="ftr-sm-s">
+        <span>
+          Terms &amp; Conditions
+        </span>
+        <span>
+          Help Center
+        </span>
+        <span>
+          Contact Us
+        </span>
+      </div>
+      <div class="ftr-up">
+        <div class="ftr-u-first">
+          <div class="ftr-logo">
+            <img
+              src="../resources/yammie.png"
+              alt="YAMMIE"
+              width="250px"
+              height="100px"
+            />
+          </div>
+          <div class="ftr-message">
+            <p>
+              Your online Market Store For Groceries, <br />
+              Food Items, Clothings, Gadgets And Many More.
+            </p>
+          </div>
+          <div class="ftr-app">
+            <h3>Get the Yammie App On . . . .</h3>
+            <div class="ftr-app-stores" style="margin-top: 15px;">
+              <a href="">
+                <img
+                  src="../resources/play-store-3.jpg"
+                  alt=""
+                  height="45"
+                  width="150"
+                  style="margin-right: 5px;"
+                />
+              </a>
+              <a href="">
+                <img
+                  src="../resources/apple-store.jpg"
+                  alt=""
+                  height="45"
+                  width="150"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="ftr-u-second">
+          <h4 class="footer-h4">Explore Yummie</h4>
+          <ul class="footer-list">
+            <li><a href="#">About Yammie</a></li>
+            <li><a href="#">How to Order</a></li>
+            <li><a href="#">Help &amp; FAQs</a></li>
+            <li><a href="#">Our Partners</a></li>
+            <li><a href="#">Terms &amp; Conditions For Use</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="ftr-u-third">
+          <h4 class="footer-h4">Contact Us</h4>
+          <ul class="footer-list">
+            <li class="second-list">
+              <a href="">
+                <i class="fas fa-shopping-cart"></i>
+                Yummie Shoppers
+              </a>
+            </li>
+            <li class="second-list">
+              <a href="mailto:#">
+                <i class="fas fa-envelope"></i>
+                customer@yummie.com
+              </a>
+            </li>
+            <li class="second-list">
+              <a href="#">
+                <i class="fas fa-map-marker-alt"></i>
+                Lira Campus
+              </a>
+            </li>
+          </ul>
+          <form action="#">
+            <input
+              type="text"
+              name=""
+              id="comment"
+              placeholder="Leave a Comment"
+            />
+            <br />
+            <input
+              type="text"
+              name=""
+              id="customer-email"
+              placeholder="Email or Phone Number(Optional)"
+            />
+            <br />
+            <button class="footer-form-button">submit</button>
+          </form>
+        </div>
+        <div class="ftr-u-fourth">
+          <h4 class="footer-h4">Products &amp; Groceries</h4>
+          <ul class="footer-list">
+            <li><a href="#">Special Order</a></li>
+            <li><a href="#">Delivery Time</a></li>
+            <li><a href="#">Payment Methods</a></li>
+            <li><a href="#">Request An Item</a></li>
+            <li><a href="#">Report an Item</a></li>
+            <li><a href="#">Return Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ftr-down">
+        <div class="ftr-official">
+          &copy; 2020 Yammie. All rights reserved
+          <div class="social-icons">
+            <a href="" class="icon-button"><i class="fab fa-facebook-f"></i></a>
+            <a href="" class="icon-button"><i class="fab fa-twitter"></i></a>
+            <a href="" class="icon-button"><i class="fab fa-instagram"></i></a>
+            <a href="" class="icon-button"><i class="fab fa-youtube"></i></a>
+            <a href="" class="icon-button"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--scripts-->
+
+    <script>
+      //cart item number
+      const cartValue = document.getElementById("cartNumberItems");
+
+      if (cartValue.textContent == 1) {
+        cartValue.style.padding = "0px 9px";
+      }
+      if (cartValue.textContent < 10 && cartValue.textContent != 1) {
+        cartValue.style.padding = "1px 6px";
+      }
+      if (cartValue.textContent >= 10) {
+        cartValue.style.padding = "1px 4px";
+      }
+      if (cartValue.textContent == 11) {
+        cartValue.style.letterSpacing = "1px";
+        cartValue.style.padding = "1px 6px";
+      }
+      //cart item number end
+      //input focus
+      function focus(input, elMove, elMoveGroup) {
+        document.querySelector(input).addEventListener("focus", () => {
+          document.querySelector(elMove).style.fontSize = "13px";
+          document.querySelector(elMove).style.transform = "translateY(-15px)";
+          document.querySelector(elMoveGroup).style.borderBottom =
+            "1px solid orange";
+        });
+        document.querySelector(input).addEventListener("blur", () => {
+          if (document.querySelector(input).value === "") {
+            document.querySelector(elMove).style.transform = "translateY(0px)";
+            document.querySelector(elMove).style.fontSize = "20px";
+            document.getElementById("wrong-e").style.opacity = 0;
+            document.getElementById("wrong-p").style.opacity = 0;
+          }
+          document.querySelector(elMoveGroup).style.borderBottom =
+            "1px solid #93a3b3";
+        });
+      }
+      focus("#cr-f-name", "#cr-p-h-f", ".cr-email");
+      focus("#cr-l-name", "#cr-p-h-l", ".cr-password");
+      //input focus end
+      
+
+    </script>
+    <script src="./yammie.js"></script>
+    <!--scripts-->
+  </body>
+</html>
