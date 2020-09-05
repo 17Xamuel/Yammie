@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../resources/cartlink.png" />
+    <link rel="stylesheet" href="../styles/footer2.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../font-awesome/css/all.css" />
+    <title>Cart | Yammie online Market for Groceries</title>
+    <style>
+      /*cart*/
+      .cart-ctr {
+        width: 100%;
+      }
+      .head-ctr {
+        font-weight: bold;
+        margin: 5px 0px;
+      }
+      .cart-itm {
+        border-radius: 5px;
+        background-color: #fff;
+        height: fit-content + 30px;
+        margin: 10px 0px;
+      }
+      .cart-itm-sm {
+        display: none;
+      }
+      .head-ctr,
+      .cart-itm {
+        display: flex;
+      }
+      .ct-itm-name-hd,
+      .ct-itm-name {
+        width: 40%;
+      }
+      .ct-itm-qty-hd,
+      .ct-itm-qty {
+        width: 20%;
+        text-align: center;
+        border-left: 1px solid #e4e4e4;
+      }
+      .ct-itm-unit-price-hd,
+      .ct-itm-unit-price {
+        width: 20%;
+        text-align: center;
+        border-left: 1px solid #e4e4e4;
+      }
+      .ct-itm-sub-total-hd,
+      .ct-itm-sub-total {
+        width: 20%;
+        text-align: center;
+        border-left: 1px solid #e4e4e4;
+      }
+      /*itm*/
+      .ct-itm-name {
+        display: flex;
+      }
+      /* .ct-left {
+         flex: 1;
+      } */
+      .ct-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .like-remove {
+        display: flex;
+        justify-content: space-around;
+      }
+      /*itm end*/
+      /*qty*/
+      .ct-itm-qty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .ct-qty-center > button {
+        border-radius: 50%;
+        background-color: orange;
+        border: none;
+        outline: none;
+        width: 30px;
+        height: 30px;
+        color: white;
+        margin: 0px 15px;
+        font-size: 25px;
+        cursor: pointer;
+        opacity: 0.8;
+        transition: all 0.2s ease-in-out;
+      }
+      .ct-qty-center > button:hover {
+        opacity: 1;
+      }
+      .ct-qty-center > span {
+        font-size: 30px;
+        padding: 0px 15px;
+        border-bottom: 1px solid #000;
+      }
+      /*qty end*/
+
+      /*unit price*/
+      .ct-itm-unit-price {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .save {
+        color: rgb(2, 88, 2);
+        font-weight: bold;
+      }
+      .discount {
+        background-color: rgba(255, 166, 0, 0.3);
+        width: 50px;
+        margin: 0px auto;
+        border-radius: 5px;
+      }
+      /*unit price end*/
+      /*sub-total*/
+      .ct-itm-sub-total {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      /*sub-total-end*/
+      /*cart end*/
+      .ct-heading {
+        width: 100%;
+      }
+
+      .ct-m-ctr {
+        width: 70vw;
+        margin: 30px auto;
+      }
+      .category {
+        background-color: #fff;
+        padding: 15px 10px;
+        margin: 30px 0px 0px 0px;
+        border-radius: 10px;
+        position: relative;
+      }
+
+      /* product */
+      .see-all {
+        display: flex;
+        justify-content: space-between;
+        background-color: orange;
+        padding: 10px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-radius: 10px 10px 0px 0px;
+        height: 50px;
+        font-weight: bold;
+      }
+      .items-container {
+        margin-top: 50px;
+        display: flex;
+        padding-bottom: 15px;
+        overflow-x: scroll;
+      }
+      /*media*/
+      @media screen and (max-width: 1024px) {
+        .cart-itm-sm {
+          display: block;
+        }
+        .ct-m-ctr {
+          width: 95vw;
+          margin: 5px auto;
+        }
+        .head-ctr {
+          display: none;
+        }
+        .ct-itm-name,
+        .ct-itm-qty,
+        .ct-itm-sub-total,
+        .ct-itm-unit-price {
+          display: none;
+        }
+        .ct-itm-sm {
+          display: block;
+          width: 100%;
+          padding: 5px;
+          margin: 10px;
+        }
+        .ct-sm-top {
+          display: flex;
+        }
+        .ct-sm-img {
+          margin: 5px;
+        }
+        .ct-sm-bottom {
+          border-top: 1px solid rgba(0, 0, 0, 0.2);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0px 5px;
+        }
+        .ct-qty-center > button {
+          border-radius: 50%;
+          background-color: orange;
+          border: none;
+          outline: none;
+          width: 20px;
+          height: 20px;
+          color: white;
+          margin: 0px 5px;
+          font-size: 18px;
+          cursor: pointer;
+          opacity: 0.8;
+          transition: all 0.2s ease-in-out;
+        }
+        .ct-qty-center > span {
+          font-size: 24px;
+          padding: 0px 15px;
+          border: none;
+        }
+      }
+      /*media end*/
+    </style>
+  </head>
+  <body>
+    <div class="search-nav">
+      <div class="logo">
+        <div class="menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <a href="../home/index.html">
+          <img
+            src="../resources/yammie.png"
+            alt="YUMMY"
+            width="200"
+            height="75"
+          />
+        </a>
+      </div>
+      <div class="search">
+        <form
+          id="f-search"
+          autocomplete="off"
+          action="../home/catalog.html"
+          method="GET"
+        >
+          <input
+            type="text"
+            name="q"
+            placeholder="Search Groceries...."
+            class="navsearch"
+            id="v-search"
+          />
+          <button type="submit" id="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+      <div class="cart-login">
+        <div class="login" id="login">
+          <img src="../resources/person.svg" alt="" />
+          <span class="login-text">Account</span>
+        </div>
+        <div class="cart">
+          <img src="../resources/shopping-cart.svg" alt="" />
+          <span class="cart-number" id="cartNumberItems">10</span>
+          <span class="cart-text">Cart</span>
+        </div>
+      </div>
+      <div id="sideNav">
+        <ul class="sideList1">
+          <li class="sideNavlistItem">item 1</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+        </ul>
+        <ul class="sideList2">
+          <li class="sideNavlistItem">item 1</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+        </ul>
+        <ul class="sideList3">
+          <li class="sideNavlistItem">item 1</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+        </ul>
+        <ul class="sideList4">
+          <li class="sideNavlistItem">item 1</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+          <li class="sideNavlistItem">item 2</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ct-m-ctr">
+      <h2 class="ct-heading">My Cart (5 items)</h2>
+      <div class="cart-ctr">
+        <div class="head-ctr">
+          <div class="ct-itm-name-hd">ITEM</div>
+          <div class="ct-itm-qty-hd">QUANTITY</div>
+          <div class="ct-itm-unit-price-hd">UNIT PRICE</div>
+          <div class="ct-itm-sub-total-hd">SUB. TOTAL</div>
+        </div>
+        <div class="cart-itm">
+          <div class="cart-itm-sm">
+            <div class="ct-sm-top">
+              <div class="ct-sm-img">
+                <img
+                  src="../resources/phone_1.png"
+                  alt="Iphone"
+                  width="100px"
+                  height="100px"
+                />
+              </div>
+              <div class="ct-sm-name-price">
+                <h3>
+                  Iphone 11 Pro Max. 6GB RAM, 512GB ROM, Long Battery Life.
+                </h3>
+                <h2>UGX 4500</h2>
+                <div class="delivery">YammieDelivery</div>
+              </div>
+            </div>
+            <div class="ct-sm-bottom">
+              <div class="ct-sm-b-left">
+                <span>
+                  <i class="fas fa-trash"></i>
+                  Remove From Cart
+                </span>
+              </div>
+              <div class="ct-sm-b-right">
+                <div class="ct-qty-center">
+                  <button>&minus;</button>
+                  <span class="ct-number">4</span>
+                  <button>&plus;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ct-itm-name">
+            <div class="ct-left">
+              <img
+                src="../resources/phone_1.png"
+                alt="Iphone"
+                width="120px"
+                height="120px"
+              />
+            </div>
+            <div class="ct-right">
+              <div class="ct-itm">
+                <div class="seller">Yammie Shoppers</div>
+                <h3>
+                  Iphone 11 Pro Max. 6GB RAM, 512GB ROM, Long Battery Life.
+                </h3>
+              </div>
+              <div class="delivery">YammieDelivery</div>
+              <div class="like-remove">
+                <span>
+                  <i class="far fa-heart"></i>
+                  Like
+                </span>
+                <span>
+                  <i class="fas fa-trash"></i>
+                  Remove From Cart
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="ct-itm-qty">
+            <div class="ct-qty-center">
+              <button>&minus;</button>
+              <span class="ct-number">4</span>
+              <button>&plus;</button>
+            </div>
+          </div>
+          <div class="ct-itm-unit-price">
+            <div class="ct-a-price">
+              <h2>UGX 5000</h2>
+            </div>
+            <div class="ct-discount-s">
+              <div class="discount">-30%</div>
+              <div class="save">Save: UGX 1700</div>
+            </div>
+          </div>
+          <div class="ct-itm-sub-total">
+            <h2>UGX 4500</h2>
+          </div>
+        </div>
+        <div class="cart-itm">
+          <div class="ct-itm-name">
+            <div class="ct-left">
+              <img
+                src="../resources/phone_1.png"
+                alt="Iphone"
+                width="120px"
+                height="120px"
+              />
+            </div>
+            <div class="ct-right">
+              <div class="ct-itm">
+                <div class="seller">Yammie Shoppers</div>
+                <h3>
+                  Iphone 11 Pro Max. 6GB RAM, 512GB ROM, Long Battery Life.
+                </h3>
+              </div>
+              <div class="delivery">YammieDelivery</div>
+              <div class="like-remove">
+                <span>
+                  <i class="far fa-heart"></i>
+                  Like
+                </span>
+                <span>
+                  <i class="fas fa-trash"></i>
+                  Remove From Cart
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="ct-itm-qty">
+            <div class="ct-qty-center">
+              <button>&minus;</button>
+              <span class="ct-number">4</span>
+              <button>&plus;</button>
+            </div>
+          </div>
+          <div class="ct-itm-unit-price">
+            <div class="ct-a-price">
+              <h2>UGX 5000</h2>
+            </div>
+            <div class="ct-discount-s">
+              <div class="discount">-30%</div>
+              <div class="save">Save: UGX 1700</div>
+            </div>
+          </div>
+          <div class="ct-itm-sub-total">
+            <h2>UGX 4500</h2>
+          </div>
+        </div>
+      </div>
+      <div class="category">
+        <div class="see-all">
+          <span>Your Phone Accessories</span>
+          <span>
+            Check
+            <i class="fas fa-chevron-right"></i>
+          </span>
+        </div>
+        <div class="items-container" class="phone-acs"></div>
+      </div>
+      <div class="category">
+        <div class="see-all">
+          <span>Your Phone Accessories</span>
+          <span>
+            Check
+            <i class="fas fa-chevron-right"></i>
+          </span>
+        </div>
+        <div class="items-container" class="phone-acs"></div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="ftr-sm-s">
+        <span> Terms &amp; Conditions </span>
+        <span> Help Center </span>
+        <span> Contact Us </span>
+      </div>
+      <div class="ftr-up">
+        <div class="ftr-u-first">
+          <div class="ftr-logo">
+            <img
+              src="../resources/yammie.png"
+              alt="YAMMIE"
+              width="250px"
+              height="100px"
+            />
+          </div>
+          <div class="ftr-message">
+            <p>
+              Your online Market Store For Groceries, <br />
+              Food Items, Clothings, Gadgets And Many More.
+            </p>
+          </div>
+          <div class="ftr-app">
+            <h3>Get the Yammie App On . . . .</h3>
+            <div class="ftr-app-stores" style="margin-top: 15px">
+              <a href="">
+                <img
+                  src="../resources/play-store-3.jpg"
+                  alt=""
+                  height="45"
+                  width="150"
+                  style="margin-right: 5px"
+                />
+              </a>
+              <a href="">
+                <img
+                  src="../resources/apple-store.jpg"
+                  alt=""
+                  height="45"
+                  width="150"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="ftr-u-second">
+          <h4 class="footer-h4">Explore Yummie</h4>
+          <ul class="footer-list">
+            <li><a href="#">About Yammie</a></li>
+            <li><a href="#">How to Order</a></li>
+            <li><a href="#">Help &amp; FAQs</a></li>
+            <li><a href="#">Our Partners</a></li>
+            <li><a href="#">Terms &amp; Conditions For Use</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="ftr-u-third">
+          <h4 class="footer-h4">Contact Us</h4>
+          <ul class="footer-list">
+            <li class="second-list">
+              <a href="">
+                <i class="fas fa-shopping-cart"></i>
+                Yummie Shoppers
+              </a>
+            </li>
+            <li class="second-list">
+              <a href="mailto:#">
+                <i class="fas fa-envelope"></i>
+                customer@yummie.com
+              </a>
+            </li>
+            <li class="second-list">
+              <a href="#">
+                <i class="fas fa-map-marker-alt"></i>
+                Lira Campus
+              </a>
+            </li>
+          </ul>
+          <form action="#">
+            <input
+              type="text"
+              name=""
+              id="comment"
+              placeholder="Leave a Comment"
+            />
+            <br />
+            <input
+              type="text"
+              name=""
+              id="customer-email"
+              placeholder="Email or Phone Number(Optional)"
+            />
+            <br />
+            <button class="footer-form-button">submit</button>
+          </form>
+        </div>
+        <div class="ftr-u-fourth">
+          <h4 class="footer-h4">Products &amp; Groceries</h4>
+          <ul class="footer-list">
+            <li><a href="#">Special Order</a></li>
+            <li><a href="#">Delivery Time</a></li>
+            <li><a href="#">Payment Methods</a></li>
+            <li><a href="#">Request An Item</a></li>
+            <li><a href="#">Report an Item</a></li>
+            <li><a href="#">Return Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ftr-down">
+        <div class="ftr-official">
+          &copy; 2020 Yammie. All rights reserved
+          <div class="social-icons">
+            <a href="" class="icon-button"><i class="fab fa-facebook-f"></i></a>
+            <a href="" class="icon-button"><i class="fab fa-twitter"></i></a>
+            <a href="" class="icon-button"><i class="fab fa-instagram"></i></a>
+            <a href="" class="icon-button"><i class="fab fa-youtube"></i></a>
+            <a href="" class="icon-button"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--scripts-->
+    <script>
+      //cart item number
+      // const cartValue = document.getElementById("cartNumberItems");
+
+      // if (cartValue.textContent == 1) {
+      //   cartValue.style.padding = "0px 9px";
+      // }
+      // if (cartValue.textContent < 10 && cartValue.textContent != 1) {
+      //   cartValue.style.padding = "1px 6px";
+      // }
+      // if (cartValue.textContent >= 10) {
+      //   cartValue.style.padding = "1px 4px";
+      // }
+      // if (cartValue.textContent == 11) {
+      //   cartValue.style.letterSpacing = "1px";
+      //   cartValue.style.padding = "1px 6px";
+      // }
+      //cart item number end
+    </script>
+    <!--scripts-->
+  </body>
+</html>

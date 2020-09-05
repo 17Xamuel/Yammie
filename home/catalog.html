@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../styles/products.css" />
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../font-awesome/css/all.css" />
-    <title>Yammie | Online Store for Groceries and Home Items</title>
+    <title id="title"></title>
   </head>
   <body>
     <div class="search-nav">
@@ -30,12 +30,18 @@
         </a>
       </div>
       <div class="search">
-        <form action="#">
+        <form
+          id="f-search"
+          autocomplete="off"
+          action="../home/catalog.html"
+          method="GET"
+        >
           <input
             type="text"
-            name=""
+            name="q"
             placeholder="Search Groceries...."
             class="navsearch"
+            id="v-search"
           />
           <button type="submit" id="search-button">
             <i class="fas fa-search"></i>
@@ -52,16 +58,6 @@
           <span class="cart-number" id="cartNumberItems">11</span>
           <span class="cart-text">Cart</span>
         </div>
-        <!-- <div class="cart">
-           <i class="fas fa-cart-plus" style="font-size: 25px;"></i> -->
-        <!-- <img src="../resources/shopping-cart.svg" alt="" />
-          <span class="cart-number" id="cartNumberItems">11</span>
-          <span
-            class="cart-wrd"
-            style="margin-left: 10px; font-size: 22px; margin-bottom: 40px;"
-            >Cart</span
-          >
-        </div> -->
       </div>
       <div id="sideNav">
         <ul class="sideList1">
@@ -99,546 +95,22 @@
       </div>
     </div>
 
-    <div class="ctlg-m-ctr">
+    <div class="ctlg-m-ctr" id="ctlg-m-ctr">
       <div class="ctlg-nav-panel">
         <a href="index.html">Home</a> &gt;
         <a href="./easy-market.html">Easy Market</a> &gt; "Lato"
       </div>
-      <div class="ctlg-ctr">
+      <div class="ctlg-ctr" id="ctlg-ctr">
         <div class="ctlg-itm-ctr">
           <div class="a-search">
             <span class="items-got">10235 Products Got</span>
-            <span class="search-input"> You searched for : "Lato"</span>
+            <span class="search-input">
+              You searched for : "<span id="s-word"></span>"
+            </span>
           </div>
-          <div class="itms-ctr">
-            <a href="#" class="itm-searched">
-              <div class="a-s-discount">-25%</div>
-              <div class="itm-s-img">
-                <img
-                  src="../resources/latoMilk.jpg"
-                  alt="Lato Milk 0.5kg Tin packed"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="itm-s-dtl">
-                <div class="itm-name">
-                  Lato Milk 0.5kg Tin packed - Powdererd Milk
-                </div>
-                <div class="price-current">UGX 5000</div>
-                <div class="price-prev">UGX 7500</div>
-                <div class="location">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <span>Lira</span>
-                </div>
-                <div class="delivery-by">
-                  <i class="fab fa-telegram-plane"></i>
-                  Yammie Delivery
-                </div>
-                <div class="a-t-c">
-                  <img
-                    src="../resources/shopping_cart_add_white.svg"
-                    alt=""
-                    width="25px"
-                    height="25px"
-                  />
-                  <span>Add to Cart</span>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="itm-searched">
-              <div class="a-s-discount">-25%</div>
-              <div class="itm-s-img">
-                <img
-                  src="../resources/latoMilk.jpg"
-                  alt="Lato Milk 0.5kg Tin packed"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="itm-s-dtl">
-                <div class="itm-name">
-                  Lato Milk 0.5kg Tin packed - Powdererd Milk
-                </div>
-                <div class="price-current">UGX 5000</div>
-                <div class="price-prev">UGX 7500</div>
-                <div class="location">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <span>Lira</span>
-                </div>
-                <div class="delivery-by">
-                  <i class="fab fa-telegram-plane"></i>
-                  Yammie Delivery
-                </div>
-                <div class="a-t-c">
-                  <img
-                    src="../resources/shopping_cart_add_white.svg"
-                    alt=""
-                    width="25px"
-                    height="25px"
-                  />
-                  <span>Add to Cart</span>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="itm-searched">
-              <div class="a-s-discount">-25%</div>
-              <div class="itm-s-img">
-                <img
-                  src="../resources/asus.png"
-                  alt="Lato Milk 0.5kg Tin packed"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="itm-s-dtl">
-                <div class="itm-name">
-                  Asus Computer - 4GB RAM - 500GB Hard Disk
-                </div>
-                <div class="price-current">UGX 5000</div>
-                <div class="price-prev">UGX 7500</div>
-                <div class="location">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <span>Lira</span>
-                </div>
-                <div class="delivery-by">
-                  <i class="fab fa-telegram-plane"></i>
-                  Yammie Delivery
-                </div>
-                <div class="a-t-c">
-                  <img
-                    src="../resources/shopping_cart_add_white.svg"
-                    alt=""
-                    width="25px"
-                    height="25px"
-                  />
-                  <span>Add to Cart</span>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="itm-searched">
-              <div class="a-s-discount">-25%</div>
-              <div class="itm-s-img">
-                <img
-                  src="../resources/asus.png"
-                  alt="Lato Milk 0.5kg Tin packed"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="itm-s-dtl">
-                <div class="itm-name">
-                  Asus Computer - 4GB RAM - 500GB Hard Disk
-                </div>
-                <div class="price-current">UGX 5000</div>
-                <div class="price-prev">UGX 7500</div>
-                <div class="location">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <span>Lira</span>
-                </div>
-                <div class="delivery-by">
-                  <i class="fab fa-telegram-plane"></i>
-                  Yammie Delivery
-                </div>
-                <div class="a-t-c">
-                  <img
-                    src="../resources/shopping_cart_add_white.svg"
-                    alt=""
-                    width="25px"
-                    height="25px"
-                  />
-                  <span>Add to Cart</span>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="itm-searched">
-              <div class="a-s-discount">-25%</div>
-              <div class="itm-s-img">
-                <img
-                  src="../resources/asus.png"
-                  alt="Lato Milk 0.5kg Tin packed"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="itm-s-dtl">
-                <div class="itm-name">
-                  Asus Computer - 4GB RAM - 500GB Hard Disk
-                </div>
-                <div class="price-current">UGX 5000</div>
-                <div class="price-prev">UGX 7500</div>
-                <div class="location">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <span>Lira</span>
-                </div>
-                <div class="delivery-by">
-                  <i class="fab fa-telegram-plane"></i>
-                  Yammie Delivery
-                </div>
-                <div class="a-t-c">
-                  <img
-                    src="../resources/shopping_cart_add_white.svg"
-                    alt=""
-                    width="25px"
-                    height="25px"
-                  />
-                  <span>Add to Cart</span>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="itm-searched">
-              <div class="a-s-discount">-25%</div>
-              <div class="itm-s-img">
-                <img
-                  src="../resources/asus.png"
-                  alt="Lato Milk 0.5kg Tin packed"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="itm-s-dtl">
-                <div class="itm-name">
-                  Asus Computer - 4GB RAM - 500GB Hard Disk
-                </div>
-                <div class="price-current">UGX 5000</div>
-                <div class="price-prev">UGX 7500</div>
-                <div class="location">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <span>Lira</span>
-                </div>
-                <div class="delivery-by">
-                  <i class="fab fa-telegram-plane"></i>
-                  Yammie Delivery
-                </div>
-                <div class="a-t-c">
-                  <img
-                    src="../resources/shopping_cart_add_white.svg"
-                    alt=""
-                    width="25px"
-                    height="25px"
-                  />
-                  <span>Add to Cart</span>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="itm-searched">
-              <div class="a-s-discount">-25%</div>
-              <div class="itm-s-img">
-                <img
-                  src="../resources/asus.png"
-                  alt="Lato Milk 0.5kg Tin packed"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="itm-s-dtl">
-                <div class="itm-name">
-                  Asus Computer - 4GB RAM - 500GB Hard Disk
-                </div>
-                <div class="price-current">UGX 5000</div>
-                <div class="price-prev">UGX 7500</div>
-                <div class="location">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <span>Lira</span>
-                </div>
-                <div class="delivery-by">
-                  <i class="fab fa-telegram-plane"></i>
-                  Yammie Delivery
-                </div>
-                <div class="a-t-c">
-                  <img
-                    src="../resources/shopping_cart_add_white.svg"
-                    alt=""
-                    width="25px"
-                    height="25px"
-                  />
-                  <span>Add to Cart</span>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="itm-searched">
-              <div class="a-s-discount">-25%</div>
-              <div class="itm-s-img">
-                <img
-                  src="../resources/asus.png"
-                  alt="Lato Milk 0.5kg Tin packed"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="itm-s-dtl">
-                <div class="itm-name">
-                  Asus Computer - 4GB RAM - 500GB Hard Disk
-                </div>
-                <div class="price-current">UGX 5000</div>
-                <div class="price-prev">UGX 7500</div>
-                <div class="location">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <span>Lira</span>
-                </div>
-                <div class="delivery-by">
-                  <i class="fab fa-telegram-plane"></i>
-                  Yammie Delivery
-                </div>
-                <div class="a-t-c">
-                  <img
-                    src="../resources/shopping_cart_add_white.svg"
-                    alt=""
-                    width="25px"
-                    height="25px"
-                  />
-                  <span>Add to Cart</span>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="itm-searched">
-              <div class="a-s-discount">-25%</div>
-              <div class="itm-s-img">
-                <img
-                  src="../resources/asus.png"
-                  alt="Lato Milk 0.5kg Tin packed"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="itm-s-dtl">
-                <div class="itm-name">
-                  Asus Computer - 4GB RAM - 500GB Hard Disk
-                </div>
-                <div class="price-current">UGX 5000</div>
-                <div class="price-prev">UGX 7500</div>
-                <div class="location">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <span>Lira</span>
-                </div>
-                <div class="delivery-by">
-                  <i class="fab fa-telegram-plane"></i>
-                  Yammie Delivery
-                </div>
-                <div class="a-t-c">
-                  <img
-                    src="../resources/shopping_cart_add_white.svg"
-                    alt=""
-                    width="25px"
-                    height="25px"
-                  />
-                  <span>Add to Cart</span>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="itm-searched">
-              <div class="a-s-discount">-25%</div>
-              <div class="itm-s-img">
-                <img
-                  src="../resources/asus.png"
-                  alt="Lato Milk 0.5kg Tin packed"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="itm-s-dtl">
-                <div class="itm-name">
-                  Asus Computer - 4GB RAM - 500GB Hard Disk
-                </div>
-                <div class="price-current">UGX 5000</div>
-                <div class="price-prev">UGX 7500</div>
-                <div class="location">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <span>Lira</span>
-                </div>
-                <div class="delivery-by">
-                  <i class="fab fa-telegram-plane"></i>
-                  Yammie Delivery
-                </div>
-                <div class="a-t-c">
-                  <img
-                    src="../resources/shopping_cart_add_white.svg"
-                    alt=""
-                    width="25px"
-                    height="25px"
-                  />
-                  <span>Add to Cart</span>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="itm-searched">
-              <div class="a-s-discount">-25%</div>
-              <div class="itm-s-img">
-                <img
-                  src="../resources/asus.png"
-                  alt="Lato Milk 0.5kg Tin packed"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="itm-s-dtl">
-                <div class="itm-name">
-                  Asus Computer - 4GB RAM - 500GB Hard Disk
-                </div>
-                <div class="price-current">UGX 5000</div>
-                <div class="price-prev">UGX 7500</div>
-                <div class="location">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <span>Lira</span>
-                </div>
-                <div class="delivery-by">
-                  <i class="fab fa-telegram-plane"></i>
-                  Yammie Delivery
-                </div>
-                <div class="a-t-c">
-                  <img
-                    src="../resources/shopping_cart_add_white.svg"
-                    alt=""
-                    width="25px"
-                    height="25px"
-                  />
-                  <span>Add to Cart</span>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="itm-searched">
-              <div class="a-s-discount">-25%</div>
-              <div class="itm-s-img">
-                <img
-                  src="../resources/asus.png"
-                  alt="Lato Milk 0.5kg Tin packed"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="itm-s-dtl">
-                <div class="itm-name">
-                  Asus Computer - 4GB RAM - 500GB Hard Disk
-                </div>
-                <div class="price-current">UGX 5000</div>
-                <div class="price-prev">UGX 7500</div>
-                <div class="location">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <span>Lira</span>
-                </div>
-                <div class="delivery-by">
-                  <i class="fab fa-telegram-plane"></i>
-                  Yammie Delivery
-                </div>
-                <div class="a-t-c">
-                  <img
-                    src="../resources/shopping_cart_add_white.svg"
-                    alt=""
-                    width="25px"
-                    height="25px"
-                  />
-                  <span>Add to Cart</span>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="itm-searched">
-              <div class="a-s-discount">-25%</div>
-              <div class="itm-s-img">
-                <img
-                  src="../resources/asus.png"
-                  alt="Lato Milk 0.5kg Tin packed"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="itm-s-dtl">
-                <div class="itm-name">
-                  Asus Computer - 4GB RAM - 500GB Hard Disk
-                </div>
-                <div class="price-current">UGX 5000</div>
-                <div class="price-prev">UGX 7500</div>
-                <div class="location">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <span>Lira</span>
-                </div>
-                <div class="delivery-by">
-                  <i class="fab fa-telegram-plane"></i>
-                  Yammie Delivery
-                </div>
-                <div class="a-t-c">
-                  <img
-                    src="../resources/shopping_cart_add_white.svg"
-                    alt=""
-                    width="25px"
-                    height="25px"
-                  />
-                  <span>Add to Cart</span>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="itm-searched">
-              <div class="a-s-discount">-25%</div>
-              <div class="itm-s-img">
-                <img
-                  src="../resources/asus.png"
-                  alt="Lato Milk 0.5kg Tin packed"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="itm-s-dtl">
-                <div class="itm-name">
-                  Asus Computer - 4GB RAM - 500GB Hard Disk
-                </div>
-                <div class="price-current">UGX 5000</div>
-                <div class="price-prev">UGX 7500</div>
-                <div class="location">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <span>Lira</span>
-                </div>
-                <div class="delivery-by">
-                  <i class="fab fa-telegram-plane"></i>
-                  Yammie Delivery
-                </div>
-                <div class="a-t-c">
-                  <img
-                    src="../resources/shopping_cart_add_white.svg"
-                    alt=""
-                    width="25px"
-                    height="25px"
-                  />
-                  <span>Add to Cart</span>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="itm-searched">
-              <div class="a-s-discount">-25%</div>
-              <div class="itm-s-img">
-                <img
-                  src="../resources/asus.png"
-                  alt="Lato Milk 0.5kg Tin packed"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="itm-s-dtl">
-                <div class="itm-name">
-                  Asus Computer - 4GB RAM - 500GB Hard Disk
-                </div>
-                <div class="price-current">UGX 5000</div>
-                <div class="price-prev">UGX 7500</div>
-                <div class="location">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <span>Lira</span>
-                </div>
-                <div class="delivery-by">
-                  <i class="fab fa-telegram-plane"></i>
-                  Yammie Delivery
-                </div>
-                <div class="a-t-c">
-                  <img
-                    src="../resources/shopping_cart_add_white.svg"
-                    alt=""
-                    width="25px"
-                    height="25px"
-                  />
-                  <span>Add to Cart</span>
-                </div>
-              </div>
-            </a>
-          </div>
+          <div class="itms-ctr" id="s-itms-ctr"></div>
         </div>
-        <div class="ctlg-sort">
+        <div class="ctlg-sort" id="ctlg-sort">
           <h3>Sort By Price</h3>
           <form action="#" method="POST" class="price-form">
             <div class="price-slide">
@@ -738,7 +210,7 @@
             <button class="sort-btn">Apply</button>
           </form>
           <h3>Sort By Seller Location</h3>
-          <form action="#" method="POST" style="border: none;">
+          <form action="#" method="POST" style="border: none">
             <ul class="sort-list">
               <li class="input-field">
                 <input type="checkbox" name="" id="" />
@@ -780,15 +252,9 @@
     </div>
     <footer class="footer">
       <div class="ftr-sm-s">
-        <span>
-          Terms &amp; Conditions
-        </span>
-        <span>
-          Help Center
-        </span>
-        <span>
-          Contact Us
-        </span>
+        <span> Terms &amp; Conditions </span>
+        <span> Help Center </span>
+        <span> Contact Us </span>
       </div>
       <div class="ftr-up">
         <div class="ftr-u-first">
@@ -808,14 +274,14 @@
           </div>
           <div class="ftr-app">
             <h3>Get the Yammie App On . . . .</h3>
-            <div class="ftr-app-stores" style="margin-top: 15px;">
+            <div class="ftr-app-stores" style="margin-top: 15px">
               <a href="">
                 <img
                   src="../resources/play-store-3.jpg"
                   alt=""
                   height="45"
                   width="150"
-                  style="margin-right: 5px;"
+                  style="margin-right: 5px"
                 />
               </a>
               <a href="">
@@ -990,6 +456,92 @@
         thumbRight.classList.remove("active");
       });
       //price slider end
+      //search
+      let urlParams = new URLSearchParams(window.location.search);
+      let v_search = urlParams.get("q");
+      let validSearch = v_search.length > 0 ? v_search : "all";
+      document.getElementById("s-word").innerHTML = validSearch;
+
+      console.log(validSearch);
+
+      xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          let searchData = JSON.parse(xhr.responseText);
+          console.log(searchData);
+          console.log(typeof searchData);
+          if (searchData.length === 0) {
+            let noData = `<div class="no-itms">
+              <img
+                src="../resources/undraw_blank_canvas_3rbb.svg"
+                width="50%"
+                height="50%"
+                alt=""
+              />
+                <span>Sorry, 'Lato' is not Found. Try Requesting Your Item.
+                </span>
+                <button id="ctlg-rq-btn">Make A Request</button>
+            </div>`;
+            document.getElementById("ctlg-ctr").innerHTML = noData;
+            document.getElementById("ctlg-ctr").style.justifyContent = "center";
+            document.getElementById("ctlg-ctr").style.justifyContent = "center";
+            document.getElementById("title").innerHTML = "No Items Got";
+          } else {
+            let itmsSearched = "";
+            searchData.forEach((itm) => {
+              itmsSearched += `
+              <a href="../home/item.html?i=${itm.item_id}" class="itm-searched">
+              <div class="a-s-discount">-25%</div>
+              <div class="itm-s-img">
+                <img
+                  src="../resources/asus.png"
+                  alt="Lato Milk 0.5kg Tin packed"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <div class="itm-s-dtl">
+                <div class="itm-name">
+                  ${itm.item_name} - ${itm.item_qty_description}
+                </div>
+                <div class="price-current">${itm.item_price}</div>
+                <div class="price-prev">UGX 7500</div>
+                <div class="location">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Lira</span>
+                </div>
+                <div class="delivery-by">
+                  <i class="fab fa-telegram-plane"></i>
+                  Yammie Delivery
+                </div>
+                <div class="a-t-c">
+                  <img
+                    src="../resources/shopping_cart_add_white.svg"
+                    alt=""
+                    width="25px"
+                    height="25px"
+                  />
+                  <span>Add to Cart</span>
+                </div>
+              </div>
+            </a>`;
+            });
+            document.getElementById("s-itms-ctr").innerHTML = itmsSearched;
+            document.getElementById(
+              "title"
+            ).innerHTML = `${validSearch} @ Yammie. Online Shopping for Groceries`;
+          }
+        }
+      };
+      xhr.open(
+        "GET",
+        `http://localhost:3000/api/search?q=${validSearch}`,
+        true
+      );
+      // xhr.setRequestHeader("Content-type", "application/json");
+      xhr.send();
+
+      //search end
     </script>
     <!--scripts-->
   </body>

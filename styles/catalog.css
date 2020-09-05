@@ -62,9 +62,11 @@
   width: 75%;
   margin: 5px 25px;
   padding: 5px 0px;
+  box-shadow: 3px 3px 5px #e2e2e2;
   border-radius: 15px;
   border: none;
   outline: none;
+  color: white;
   background: linear-gradient(
     to right,
     rgba(250, 164, 6, 0.9),
@@ -72,6 +74,7 @@
   );
   font-size: 18px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 .sort-btn:hover {
   background: linear-gradient(
@@ -79,6 +82,7 @@
     rgba(250, 164, 6, 0.9),
     rgba(250, 164, 6, 0.7)
   );
+  transform: scale(1.04);
 }
 
 /* price slider*/
@@ -188,6 +192,7 @@ input[type="range"]::-webkit-slider-thumb {
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   column-gap: 1.5rem;
   row-gap: 2rem;
+  position: relative;
 }
 .itm-searched {
   /* cursor: alias; */
@@ -253,3 +258,87 @@ input[type="range"]::-webkit-slider-thumb {
   color: orange;
 }
 /* one item end*/
+/*no data */
+.no-itms {
+  /* background-color: #fff; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+.no-itms > span {
+  font-size: 20px;
+}
+#ctlg-rq-btn {
+  width: 45%;
+  margin: 5px 25px;
+  padding: 15px 0px;
+  font-size: 20px;
+  box-shadow: 3px 3px 5px #e2e2e2;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  color: white;
+  background: linear-gradient(
+    to right,
+    rgba(250, 164, 6, 0.9),
+    rgba(250, 164, 6, 0.7)
+  );
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+#ctlg-rq-btn:hover {
+  background: linear-gradient(
+    to left,
+    rgba(250, 164, 6, 0.9),
+    rgba(250, 164, 6, 0.7)
+  );
+  transform: scale(1.04);
+}
+/*no data end*/
+
+@media screen and (max-width: 768px) {
+  .ctlg-ctr {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .search-input {
+    display: none;
+  }
+  .ctlg-m-ctr {
+    margin: 10px auto;
+    width: 95vw;
+  }
+  .a-t-c {
+    transform: scale(1);
+    padding: 5px;
+    width: 100px;
+    font-size: 14px;
+  }
+  .a-t-c > img {
+    display: none;
+  }
+  .itm-searched {
+    width: 150px;
+    height: fit-content;
+  }
+  .itms-ctr {
+    padding: 10px 30px 10px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    column-gap: 1.5rem;
+    row-gap: 2rem;
+  }
+  .ctlg-sort {
+    flex: 1;
+    margin: 10px 5px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+    height: fit-content;
+  }
+  #ctlg-rq-btn {
+    width: 60%;
+  }
+}

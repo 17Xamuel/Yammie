@@ -47,7 +47,7 @@
       .cr-i-c > input {
         padding: 10px 5px;
         font-size: 20px;
-        width: 450px;
+        width: 300px;
         border: none;
         outline: none;
       }
@@ -74,7 +74,7 @@
       .cr-email {
         position: relative;
       }
-      .used-e,
+      #used-e,
       .password,
       .gender,
       .phone-m {
@@ -82,6 +82,7 @@
         color: red;
         font-size: 14px;
         opacity: 0;
+        transition: all 0.3s ease-in-out;
       }
       .cr-lastname,
       .cr-password,
@@ -150,6 +151,72 @@
         font-weight: bold;
         margin: 10px 20px;
       }
+      @media screen and (max-width: 1024px) {
+        .cr-m-ctr {
+          display: block;
+        }
+        .cr-ctr {
+          width: 95vw;
+          margin: 10px auto;
+          margin-top: 20px;
+          display: flex;
+          justify-content: space-around;
+          flex-direction: column;
+          align-items: center;
+          height: fit-content;
+        }
+        .cr-heading {
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .cr-form {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          height: fit-content;
+        }
+        .cr-f-1,
+        .cr-f-2,
+        .cr-f-3 {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .cr-firstname,
+        .cr-email,
+        .cr-phone-n {
+          margin-right: 0px;
+          margin-top: 30px;
+        }
+        .cr-lastname,
+        .cr-password,
+        .cr-gender {
+          margin-left: 0px;
+          margin-top: 30px;
+        }
+        .cr-btn-c {
+          margin-top: 35px;
+        }
+        .cr-o-btn {
+          margin: 10px 0px;
+        }
+        .cr-o-btn > .fab {
+          right: 2px;
+          font-size: 15px;
+        }
+      }
+      @media screen and (max-width: 765px) {
+        .cr-o-btn {
+          width: 50vw;
+          padding: 5px;
+          font-size: 14px;
+          margin: 10px 0px;
+        }
+        .cr-o-btn > .fab {
+          right: 2px;
+          font-size: 15px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -170,12 +237,18 @@
         </a>
       </div>
       <div class="search">
-        <form action="#">
+        <form
+          id="f-search"
+          autocomplete="off"
+          action="../home/catalog.html"
+          method="GET"
+        >
           <input
             type="text"
-            name=""
+            name="q"
             placeholder="Search Groceries...."
             class="navsearch"
+            id="v-search"
           />
           <button type="submit" id="search-button">
             <i class="fas fa-search"></i>
@@ -233,7 +306,7 @@
         <div class="cr-heading">
           <h2>Create Your Yammie Account</h2>
         </div>
-        <form onsubmit="crte()" class="cr-form" autocomplete="off" action="#">
+        <form class="cr-form" autocomplete="off" id="cr-form">
           <div class="cr-f-1">
             <div class="cr-firstname cr-i-c">
               <i class="fas fa-user-circle"></i>
@@ -251,7 +324,7 @@
               <i class="fas fa-envelope"></i>
               <span class="cr-p-h" id="cr-p-h-e">E-mail</span>
               <input type="email" id="cr-email" />
-              <div class="used-e">This email Exists</div>
+              <div id="used-e"></div>
             </div>
             <div class="cr-password cr-i-c">
               <i class="fas fa-lock"></i>
@@ -280,12 +353,10 @@
             </div>
           </div>
           <div class="cr-btn-c">
-            <button type="submit" class="cr-btn">
-              Create Your Account
-            </button>
-            <span style="align-self: flex-end;">
+            <button type="submit" class="cr-btn">Create Your Account</button>
+            <span style="align-self: flex-end">
               Already Have An Account?
-              <a href="/account/login.html" style="color: orange;">Login</a>
+              <a href="/account/login.html" style="color: orange">Login</a>
             </span>
           </div>
         </form>
@@ -299,15 +370,9 @@
     </div>
     <footer class="footer">
       <div class="ftr-sm-s">
-        <span>
-          Terms &amp; Conditions
-        </span>
-        <span>
-          Help Center
-        </span>
-        <span>
-          Contact Us
-        </span>
+        <span> Terms &amp; Conditions </span>
+        <span> Help Center </span>
+        <span> Contact Us </span>
       </div>
       <div class="ftr-up">
         <div class="ftr-u-first">
@@ -327,14 +392,14 @@
           </div>
           <div class="ftr-app">
             <h3>Get the Yammie App On . . . .</h3>
-            <div class="ftr-app-stores" style="margin-top: 15px;">
+            <div class="ftr-app-stores" style="margin-top: 15px">
               <a href="">
                 <img
                   src="../resources/play-store-3.jpg"
                   alt=""
                   height="45"
                   width="150"
-                  style="margin-right: 5px;"
+                  style="margin-right: 5px"
                 />
               </a>
               <a href="">
@@ -427,23 +492,6 @@
     <!--scripts-->
 
     <script>
-      //cart item number
-      const cartValue = document.getElementById("cartNumberItems");
-
-      if (cartValue.textContent == 1) {
-        cartValue.style.padding = "0px 9px";
-      }
-      if (cartValue.textContent < 10 && cartValue.textContent != 1) {
-        cartValue.style.padding = "1px 6px";
-      }
-      if (cartValue.textContent >= 10) {
-        cartValue.style.padding = "1px 4px";
-      }
-      if (cartValue.textContent == 11) {
-        cartValue.style.letterSpacing = "1px";
-        cartValue.style.padding = "1px 6px";
-      }
-      //cart item number end
       //input focus
       function focus(input, elMove, elMoveGroup, icon) {
         document.querySelector(input).addEventListener("focus", () => {
@@ -483,8 +531,69 @@
         eyeIcon.classList.toggle("fa-eye-slash");
       });
       //eye password icon ends
+      //form
+
+      let fm = document.querySelector("#cr-form");
+      fm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let fn = document.querySelector("#cr-f-name");
+        let ln = document.querySelector("#cr-l-name");
+        let email = document.querySelector("#cr-email");
+        let pd = document.querySelector("#cr-password");
+        let phne = document.querySelector("#cr-phone");
+        let gender = document.querySelector("#cr-gender");
+
+        function validate() {
+          let user = {};
+          if (gender.value == "MALE" || gender.value == "FEMALE") {
+            user.c_gender = gender.value;
+          } else {
+            document.querySelector(".gender").style.opacity = "1";
+            return false;
+          }
+          if (pd.value.length < 6) {
+            document.querySelector(".password").style.opacity = "1";
+            return false;
+          } else {
+            user.c_password = pd.value;
+          }
+
+          if (phne.value.length == 10 && phne.value.charAt(0) == "0") {
+            user.c_phone = phne.value;
+          } else {
+            document.querySelector(".phone-m").style.opacity = "1";
+            return false;
+          }
+
+          user.c_email = email.value;
+          user.c_first_name = fn.value;
+          user.c_last_name = ln.value;
+          return user;
+        }
+
+        let validUser = validate();
+        if (validUser === false) {
+          return;
+        } else {
+          xhr = new XMLHttpRequest();
+          xhr.onreadystatechange = () => {
+            if (xhr.readyState == 4 && xhr.status == 401) {
+              // document.getElementById("demo").innerHTML = xhttp.responseText;
+              document.querySelector("#used-e").style.opacity = "1";
+              document.querySelector("#used-e").innerHTML = xhr.responseText;
+            }
+            if (xhr.responseText === "inserted") {
+              location.replace("http://127.0.0.1:5500/home/index.html");
+            }
+          };
+          xhr.open("POST", "http://localhost:3000/api/customer/insert", true);
+          xhr.setRequestHeader("Content-type", "application/json");
+          xhr.send(JSON.stringify(validUser));
+        }
+      });
+      //form end
     </script>
-    <script src="./in.js"></script>
     <!--scripts-->
   </body>
 </html>

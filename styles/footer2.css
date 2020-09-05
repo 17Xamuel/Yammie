@@ -55,23 +55,24 @@
 }
 
 .footer-form-button {
-  padding: 5px;
+  padding: 10px;
+  font-size: 17px;
+  color: white;
   border: 0px;
   outline: none;
-  color: black;
   background-color: orange;
-  opacity: 0.8;
-  font-weight: bold;
   margin: 5px 5px;
-  border-radius: 5px;
+  border-radius: 25px;
+  width: 40%;
   transition: all 0.4s ease-in-out;
+  transform: scale(0.9);
 }
 .footer-form-button:hover {
-  opacity: 0.6;
+  transform: translateY(-2px);
+  transform: scale(1);
   cursor: pointer;
 }
 .footer-h4 {
-  opacity: 0.9;
   /* all h4's in the footer to have the same opacity. */
 }
 .footer-list {
@@ -80,15 +81,15 @@
 }
 .footer-list > li {
   margin-top: 10px;
+  transition: all 0.5s ease-in-out;
 }
 .footer-list > .second-list {
   margin-top: 10px;
   color: white;
-  opacity: 0.8;
 }
 .footer-list > li > a {
   color: white;
-  opacity: 0.8;
+
   transition: all 0.3s ease-in;
   text-decoration: none;
 }
@@ -96,11 +97,15 @@
   text-decoration: none;
   color: orange;
 }
+.footer-list > li:hover {
+  transform: translateX(7px);
+}
 .social-icons {
   margin-top: 10px;
+  margin-left: 20px;
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 1024px) {
   .ftr-sm-s {
     display: flex;
     justify-content: space-around;

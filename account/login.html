@@ -88,7 +88,7 @@
       }
       .lg-i-c .fas {
         font-size: 25px;
-        color: orange;
+        color: black;
       }
       .cr-y-btn{
         width: 250px;
@@ -96,16 +96,17 @@
         font-size: 18px;
         border: 0px;
         outline: none;
-        background-color: orange;
+        background-color: #009578;
         color: white;
-        border-radius: 5px;
+        border-radius: 30px;
         box-shadow: 5px 5px 7px #e2e2e2;
-        transform: translateY(-2px);
+        /* transform: translateY(-2px); */
         cursor: pointer;
         transition: all .3s ease-in-out;
       }
       .cr-y-btn:hover{
-        transform: translateY(-4px);
+        /* transform: translateY(-4px); */
+         transform: scale(1.03);
       }
       .lg-btn-c {
         width: 80%;
@@ -114,20 +115,22 @@
       }
       .lg-btn {
         padding: 15px 5px;
-        width: 100%;
+        margin:0px auto;
+        width: 70%;
         font-size: 20px;
         border: none;
         outline: none;
         background-color: orange;
         color: white;
-        border-radius: 5px;
+        border-radius: 30px;
         box-shadow: 2px 2px 5px #c3c3c3;
-        transform: translateY(-4px);
+        /* transform: translateY(-4px); */
         cursor: pointer;
         transition: all 0.3s ease-in-out;
       }
       .lg-btn:hover {
-        transform: translateY(-7px);
+        /* transform: translateY(-7px); */
+        transform: scale(1.03);
         box-shadow: 5px 5px 7px #c3c3c3;
       }
       .rem-me{
@@ -137,12 +140,78 @@
       .forgot-p{
         align-self: flex-end;
         margin-top: 5px;
+        text-decoration: underline;
       }
       .forgot-p > a{
         transition: all .3s ease-in-out;
       }
       .forgot-p:hover > a{
         color: orange;
+      }
+      @media screen and (max-width: 1024px){
+        .lg-ctr {
+        width: 70vw;
+        margin: 15px auto;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        align-items: center; 
+        height: fit-content;
+      }
+      .lg-info {
+        width: 90%;
+        margin: 0 auto;
+        padding: 5px 20px 5px 5px;
+        border-right: none;
+      }
+      .lg-form {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      .lg-btn-c {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+      }
+      }
+      @media screen and (max-width: 765px){
+        .lg-ctr {
+        width: 90vw;
+        margin: 15px auto;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        align-items: center; 
+        height: fit-content;
+      }
+      .lg-info {
+        width: 90%;
+        margin: 0 auto;
+        padding: 5px 20px 5px 5px;
+        border-right: none;
+      }
+      .lg-form {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      .lg-i-c > input {
+        padding: 10px 5px;
+        font-size: 20px;
+        width: 70%;
+        border: none;
+        outline: none;
+      }
+      .lg-btn-c {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+      }
       }
     </style>
   </head>
@@ -164,12 +233,18 @@
         </a>
       </div>
       <div class="search">
-        <form action="#">
+        <form
+          id="f-search"
+          autocomplete="off"
+          action="../home/catalog.html"
+          method="GET"
+        >
           <input
             type="text"
-            name=""
+            name="q"
             placeholder="Search Groceries...."
             class="navsearch"
+            id="v-search"
           />
           <button type="submit" id="search-button">
             <i class="fas fa-search"></i>
@@ -234,7 +309,7 @@
             "<strong>LOGIN</strong> to get personlized shopping, your likes and make your
             payments easily. <br />
             <h2>Create Your Yammie Account</h2>
-            <a href="/account/register.html"> <button class="cr-y-btn">CREATE ACCOUNT</button></a><br />
+            <a href="/account/register.html"> <button class="cr-y-btn">JOIN THE TREND</button></a><br />
             <p>
               Get Your Shopping easy with yammie
             </p>
@@ -348,7 +423,7 @@
             <li class="second-list">
               <a href="mailto:#">
                 <i class="fas fa-envelope"></i>
-                customer@yummie.com
+                customer@yammie.com
               </a>
             </li>
             <li class="second-list">
@@ -358,22 +433,22 @@
               </a>
             </li>
           </ul>
-          <form action="#">
+          <form action="#" autocomplete="off">
             <input
               type="text"
               name=""
               id="comment"
-              placeholder="Leave a Comment"
+              placeholder="How are you Feeling Now...?"
             />
             <br />
             <input
               type="text"
               name=""
               id="customer-email"
-              placeholder="Email or Phone Number(Optional)"
+              placeholder="Email..."
             />
             <br />
-            <button class="footer-form-button">submit</button>
+            <button class="footer-form-button">Send</button>
           </form>
         </div>
         <div class="ftr-u-fourth">
@@ -404,30 +479,14 @@
     <!--scripts-->
 
     <script>
-      //cart item number
-      const cartValue = document.getElementById("cartNumberItems");
-
-      if (cartValue.textContent == 1) {
-        cartValue.style.padding = "0px 9px";
-      }
-      if (cartValue.textContent < 10 && cartValue.textContent != 1) {
-        cartValue.style.padding = "1px 6px";
-      }
-      if (cartValue.textContent >= 10) {
-        cartValue.style.padding = "1px 4px";
-      }
-      if (cartValue.textContent == 11) {
-        cartValue.style.letterSpacing = "1px";
-        cartValue.style.padding = "1px 6px";
-      }
-      //cart item number end
       //input focus
-      function focus(input, elMove, elMoveGroup) {
+      function focus(input, elMove, elMoveGroup, icon) {
         document.querySelector(input).addEventListener("focus", () => {
           document.querySelector(elMove).style.fontSize = "13px";
           document.querySelector(elMove).style.transform = "translateY(-15px)";
           document.querySelector(elMoveGroup).style.borderBottom =
             "1px solid orange";
+          document.querySelector(icon).style.color = "orange";
         });
         document.querySelector(input).addEventListener("blur", () => {
           if (document.querySelector(input).value === "") {
@@ -438,10 +497,11 @@
           }
           document.querySelector(elMoveGroup).style.borderBottom =
             "1px solid #93a3b3";
+          document.querySelector(icon).style.color = "black";
         });
       }
-      focus("#cr-f-name", "#cr-p-h-f", ".cr-email");
-      focus("#cr-l-name", "#cr-p-h-l", ".cr-password");
+      focus("#cr-f-name", "#cr-p-h-f", ".cr-email", ".lg-i-c .fa-envelope");
+      focus("#cr-l-name", "#cr-p-h-l", ".cr-password", ".lg-i-c .fa-lock");
       //input focus end
       
 

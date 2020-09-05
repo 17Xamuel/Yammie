@@ -69,17 +69,6 @@ displayCategories(
   document.getElementById("ctg-stationery"),
   document.getElementById("ctg-dtl-stationery")
 );
-// animate menu bars
-menu.addEventListener("click", () => {
-  sideNav.classList.toggle("activeSideNav");
-  menuLine1.classList.toggle("rotateLine1");
-  menuLine2.classList.toggle("rotateLine2");
-  menuLine3.classList.toggle("rotateLine3");
-});
-
-closeAppBanner.addEventListener("click", () => {
-  AppBanner.style.display = "none";
-});
 
 // Promotions timer
 const timerFunc = () => {
