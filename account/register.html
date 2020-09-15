@@ -76,12 +76,17 @@
       }
       #used-e,
       .password,
-      .gender,
       .phone-m {
         position: absolute;
         color: red;
-        font-size: 14px;
         opacity: 0;
+        font-size: 14px;
+        transition: all 0.3s ease-in-out;
+      }
+      .gender {
+        opacity: 1;
+        position: absolute;
+        font-size: 14px;
         transition: all 0.3s ease-in-out;
       }
       .cr-lastname,
@@ -230,9 +235,9 @@
         <a href="../home/index.html">
           <img
             src="../resources/yammie.png"
-            alt="YUMMY"
+            alt="YAMMIE"
             width="200"
-            height="75"
+            height="95%"
           />
         </a>
       </div>
@@ -256,49 +261,149 @@
         </form>
       </div>
       <div class="cart-login">
-        <div class="login" id="login">
+        <a class="login" id="login" href="">
           <img src="../resources/person.svg" alt="" />
-          <span class="login-text">Account</span>
-        </div>
-        <div class="cart">
+          <span class="h-greeting">Good Morning,</span>
+          <span class="login-text">My Account</span>
+        </a>
+        <a class="cart" href="">
           <img src="../resources/shopping-cart.svg" alt="" />
           <span class="cart-number" id="cartNumberItems">11</span>
           <span class="cart-text">Cart</span>
-        </div>
+        </a>
       </div>
       <div id="sideNav">
-        <ul class="sideList1">
-          <li class="sideNavlistItem">item 1</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
+        <ul class="s-n-1">
+          <h3 class="sn-categories">Categories</h3>
+          <li class="n-l-itm">
+            <a href="./easy-market.html">
+              <i class="fas fa-shopping-basket ctg-icon"></i>
+              EasyMarket with Yammie
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="quick-foods.html">
+              <i class="fas fa-pizza-slice ctg-icon"></i>
+              Fast Foods &amp; Drinks
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="phones.html">
+              <i class="fas fa-headphones-alt ctg-icon"></i>
+              Phones &amp; Accessories
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./electronics.html">
+              <i class="fas fa-charging-station ctg-icon"></i>
+              Electronics
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./computing.html">
+              <i class="fas fa-desktop ctg-icon"></i>
+              Computing &amp; Accessories
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./stationery.html">
+              <i class="fas fa-paperclip ctg-icon"></i>
+              Stationery
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./clothing.html">
+              <i class="fas fa-tshirt ctg-icon"></i>
+              Clothes &amp; Shoes
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./kitchen.html">
+              <i class="fas fa-utensils ctg-icon"></i>
+              Kitchen Staff &amp; Utensils
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./kids.html">
+              <i class="fas fa-child ctg-icon"></i>
+              Kid's Section
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./diy.html">
+              <img src="../resources/clean-hands.png" alt="" />
+              Cleaning, Healthy &amp; Beauty
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="">
+              <i class="fas fa-layer-group ctg-icon"></i>
+              All Items
+            </a>
+          </li>
         </ul>
-        <ul class="sideList2">
-          <li class="sideNavlistItem">item 1</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
+        <ul class="s-n-4">
+          <h3>My Account</h3>
+          <li>
+            <i class="fas fa-user"></i>
+            <span>My Profile</span>
+          </li>
+          <li>
+            <i class="fas fa-box"></i>
+            <span>My Orders</span>
+          </li>
+
+          <li>
+            <i class="fas fa-dolly-flatbed"></i>
+            <span>Pending Orders</span>
+          </li>
+          <li>
+            <i class="fas fa-thumbs-up"></i>
+            <span><a href="#">Liked Items</a></span>
+          </li>
+          <li>
+            <i class="fas fa-address-card"></i>
+            <span>My Address</span>
+          </li>
+          <li>
+            <i class="fas fa-user-edit"></i>
+            <span>Edit My Profile</span>
+          </li>
+          <button class="s-n-logout">LOG OUT</button>
         </ul>
-        <ul class="sideList3">
-          <li class="sideNavlistItem">item 1</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
+        <ul class="s-n-2">
+          <h3 class="s-n-how">Products &amp; Groceries</h3>
+          <li><a href="#">Special Order</a></li>
+          <li><a href="#">Delivery Time</a></li>
+          <li><a href="#">Payment Methods</a></li>
+          <li><a href="#">Request An Item</a></li>
+          <li><a href="#">Report an Item</a></li>
+          <li><a href="#">Return Policy</a></li>
         </ul>
-        <ul class="sideList4">
-          <li class="sideNavlistItem">item 1</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
+        <ul class="s-n-3">
+          <h3 class="s-n-how">Explore Yammie</h3>
+          <li><a href="#">About Yammie</a></li>
+          <li><a href="#">How to Order</a></li>
+          <li><a href="#">Our Partners</a></li>
+          <li><a href="#">Terms &amp; Conditions For Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
         </ul>
+        <div class="ftr-down">
+          <div class="ftr-official">
+            &copy; 2020 Yammie. All rights reserved
+            <div class="social-icons">
+              <a href="" class="icon-button"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="" class="icon-button"><i class="fab fa-twitter"></i></a>
+              <a href="" class="icon-button"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="" class="icon-button"><i class="fab fa-youtube"></i></a>
+              <a href="" class="icon-button"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="cr-m-ctr">
@@ -311,12 +416,12 @@
             <div class="cr-firstname cr-i-c">
               <i class="fas fa-user-circle"></i>
               <span class="cr-p-h" id="cr-p-h-f">First Name</span>
-              <input type="text" id="cr-f-name" />
+              <input type="text" id="cr-f-name" required />
             </div>
             <div class="cr-lastname cr-i-c">
               <i class="fas fa-user-circle"></i>
               <span class="cr-p-h" id="cr-p-h-l">Last Name</span>
-              <input type="text" id="cr-l-name" />
+              <input type="text" id="cr-l-name" required />
             </div>
           </div>
           <div class="cr-f-2">
@@ -330,7 +435,7 @@
               <i class="fas fa-lock"></i>
               <i class="fas fa-eye eye-icon"></i>
               <span class="cr-p-h" id="cr-p-h-p">Password</span>
-              <input type="password" id="cr-password" />
+              <input type="password" id="cr-password" required />
               <div class="password">Should be More than 5 characters</div>
             </div>
           </div>
@@ -549,11 +654,16 @@
           if (gender.value == "MALE" || gender.value == "FEMALE") {
             user.c_gender = gender.value;
           } else {
-            document.querySelector(".gender").style.opacity = "1";
+            document.querySelector(".gender").style.color = "red";
+            document.querySelector(".gender").innerHTML =
+              "Please Select MALE or FEMALE";
             return false;
           }
           if (pd.value.length < 6) {
             document.querySelector(".password").style.opacity = "1";
+            setTimeout(() => {
+              document.querySelector(".password").style.opacity = "0";
+            }, 8000);
             return false;
           } else {
             user.c_password = pd.value;
@@ -563,12 +673,15 @@
             user.c_phone = phne.value;
           } else {
             document.querySelector(".phone-m").style.opacity = "1";
+            setTimeout(() => {
+              document.querySelector(".phone-m").style.opacity = "0";
+            }, 8000);
             return false;
           }
 
           user.c_email = email.value;
-          user.c_first_name = fn.value;
-          user.c_last_name = ln.value;
+          user.c_first_name = fn.value.trim();
+          user.c_last_name = ln.value.trim();
           return user;
         }
 
@@ -582,6 +695,9 @@
               // document.getElementById("demo").innerHTML = xhttp.responseText;
               document.querySelector("#used-e").style.opacity = "1";
               document.querySelector("#used-e").innerHTML = xhr.responseText;
+              setTimeout(() => {
+                document.querySelector("#used-e").style.opacity = "0";
+              }, 10000);
             }
             if (xhr.responseText === "inserted") {
               location.replace("http://127.0.0.1:5500/home/index.html");

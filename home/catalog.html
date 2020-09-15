@@ -10,9 +10,25 @@
     <link rel="stylesheet" href="../styles/products.css" />
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../font-awesome/css/all.css" />
-    <title id="title"></title>
+    <title id="title">&commat; Yammie</title>
   </head>
   <body>
+    <!--add c popup-->
+    <div id="pop-up-overlay"></div>
+    <div class="popup">
+      <button class="close-pp" onclick="imageDialogClose()">&times;</button>
+      <div class="pp-content">
+        <h2 id="text-add"></h2>
+        <div id="text-add-m"></div>
+        <a href="../cart/cart.html">
+          <button class="check-ct">Check Cart</button>
+        </a>
+        <button class="cont" onclick="imageDialogClose()">
+          Continue Shopping
+        </button>
+      </div>
+    </div>
+    <!--add c popup-->
     <div class="search-nav">
       <div class="logo">
         <div class="menu">
@@ -23,9 +39,9 @@
         <a href="../home/index.html">
           <img
             src="../resources/yammie.png"
-            alt="YUMMY"
+            alt="YAMMIE"
             width="200"
-            height="75"
+            height="95%"
           />
         </a>
       </div>
@@ -49,49 +65,149 @@
         </form>
       </div>
       <div class="cart-login">
-        <div class="login" id="login">
+        <a class="login" id="login" href="">
           <img src="../resources/person.svg" alt="" />
-          <span class="login-text">Account</span>
-        </div>
-        <div class="cart">
+          <span class="h-greeting">Good Morning,</span>
+          <span class="login-text">My Account</span>
+        </a>
+        <a class="cart" href="">
           <img src="../resources/shopping-cart.svg" alt="" />
           <span class="cart-number" id="cartNumberItems">11</span>
           <span class="cart-text">Cart</span>
-        </div>
+        </a>
       </div>
       <div id="sideNav">
-        <ul class="sideList1">
-          <li class="sideNavlistItem">item 1</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
+        <ul class="s-n-1">
+          <h3 class="sn-categories">Categories</h3>
+          <li class="n-l-itm">
+            <a href="./easy-market.html">
+              <i class="fas fa-shopping-basket ctg-icon"></i>
+              EasyMarket with Yammie
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="quick-foods.html">
+              <i class="fas fa-pizza-slice ctg-icon"></i>
+              Fast Foods &amp; Drinks
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="phones.html">
+              <i class="fas fa-headphones-alt ctg-icon"></i>
+              Phones &amp; Accessories
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./electronics.html">
+              <i class="fas fa-charging-station ctg-icon"></i>
+              Electronics
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./computing.html">
+              <i class="fas fa-desktop ctg-icon"></i>
+              Computing &amp; Accessories
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./stationery.html">
+              <i class="fas fa-paperclip ctg-icon"></i>
+              Stationery
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./clothing.html">
+              <i class="fas fa-tshirt ctg-icon"></i>
+              Clothes &amp; Shoes
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./kitchen.html">
+              <i class="fas fa-utensils ctg-icon"></i>
+              Kitchen Staff &amp; Utensils
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./kids.html">
+              <i class="fas fa-child ctg-icon"></i>
+              Kid's Section
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./diy.html">
+              <img src="../resources/clean-hands.png" alt="" />
+              Cleaning, Healthy &amp; Beauty
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="">
+              <i class="fas fa-layer-group ctg-icon"></i>
+              All Items
+            </a>
+          </li>
         </ul>
-        <ul class="sideList2">
-          <li class="sideNavlistItem">item 1</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
+        <ul class="s-n-4">
+          <h3>My Account</h3>
+          <li>
+            <i class="fas fa-user"></i>
+            <span>My Profile</span>
+          </li>
+          <li>
+            <i class="fas fa-box"></i>
+            <span>My Orders</span>
+          </li>
+
+          <li>
+            <i class="fas fa-dolly-flatbed"></i>
+            <span>Pending Orders</span>
+          </li>
+          <li>
+            <i class="fas fa-thumbs-up"></i>
+            <span><a href="#">Liked Items</a></span>
+          </li>
+          <li>
+            <i class="fas fa-address-card"></i>
+            <span>My Address</span>
+          </li>
+          <li>
+            <i class="fas fa-user-edit"></i>
+            <span>Edit My Profile</span>
+          </li>
+          <button class="s-n-logout">LOG OUT</button>
         </ul>
-        <ul class="sideList3">
-          <li class="sideNavlistItem">item 1</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
+        <ul class="s-n-2">
+          <h3 class="s-n-how">Products &amp; Groceries</h3>
+          <li><a href="#">Special Order</a></li>
+          <li><a href="#">Delivery Time</a></li>
+          <li><a href="#">Payment Methods</a></li>
+          <li><a href="#">Request An Item</a></li>
+          <li><a href="#">Report an Item</a></li>
+          <li><a href="#">Return Policy</a></li>
         </ul>
-        <ul class="sideList4">
-          <li class="sideNavlistItem">item 1</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
+        <ul class="s-n-3">
+          <h3 class="s-n-how">Explore Yammie</h3>
+          <li><a href="#">About Yammie</a></li>
+          <li><a href="#">How to Order</a></li>
+          <li><a href="#">Our Partners</a></li>
+          <li><a href="#">Terms &amp; Conditions For Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
         </ul>
+        <div class="ftr-down">
+          <div class="ftr-official">
+            &copy; 2020 Yammie. All rights reserved
+            <div class="social-icons">
+              <a href="" class="icon-button"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="" class="icon-button"><i class="fab fa-twitter"></i></a>
+              <a href="" class="icon-button"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="" class="icon-button"><i class="fab fa-youtube"></i></a>
+              <a href="" class="icon-button"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -373,23 +489,9 @@
     </footer>
     <!--scripts-->
     <script>
-      //cart item number
-      const cartValue = document.getElementById("cartNumberItems");
-
-      if (cartValue.textContent == 1) {
-        cartValue.style.padding = "0px 9px";
-      }
-      if (cartValue.textContent < 10 && cartValue.textContent != 1) {
-        cartValue.style.padding = "1px 6px";
-      }
-      if (cartValue.textContent >= 10) {
-        cartValue.style.padding = "1px 4px";
-      }
-      if (cartValue.textContent == 11) {
-        cartValue.style.letterSpacing = "1px";
-        cartValue.style.padding = "1px 6px";
-      }
-      //cart item number end
+      let yammie = localStorage.getItem(
+        "https://yammieshoppers.com/useLocalStorage/Storage"
+      );
       //price slider
       let inputLeft = document.getElementById("input-slide-left");
       let inputRight = document.getElementById("input-slide-right");
@@ -461,15 +563,11 @@
       let v_search = urlParams.get("q");
       let validSearch = v_search.length > 0 ? v_search : "all";
       document.getElementById("s-word").innerHTML = validSearch;
-
-      console.log(validSearch);
-
+      localStorage.clear();
       xhr = new XMLHttpRequest();
       xhr.onreadystatechange = () => {
         if (xhr.readyState == 4 && xhr.status == 200) {
           let searchData = JSON.parse(xhr.responseText);
-          console.log(searchData);
-          console.log(typeof searchData);
           if (searchData.length === 0) {
             let noData = `<div class="no-itms">
               <img
@@ -490,7 +588,7 @@
             let itmsSearched = "";
             searchData.forEach((itm) => {
               itmsSearched += `
-              <a href="../home/item.html?i=${itm.item_id}" class="itm-searched">
+              <article class="itm-searched">
               <div class="a-s-discount">-25%</div>
               <div class="itm-s-img">
                 <img
@@ -501,7 +599,10 @@
                 />
               </div>
               <div class="itm-s-dtl">
-                <div class="itm-name">
+                <div class="seller">
+                  <b>Seller:</b> Yammie Shoppers
+                </div>
+                <div class="itm-name" style="font-size:16px;">
                   ${itm.item_name} - ${itm.item_qty_description}
                 </div>
                 <div class="price-current">${itm.item_price}</div>
@@ -514,22 +615,25 @@
                   <i class="fab fa-telegram-plane"></i>
                   Yammie Delivery
                 </div>
-                <div class="a-t-c">
+                <div class="a-t-c add-to-c">
                   <img
                     src="../resources/shopping_cart_add_white.svg"
                     alt=""
                     width="25px"
                     height="25px"
                   />
-                  <span>Add to Cart</span>
+                  <span class="" data-id=${itm.item_id}>Add to Cart</span>
                 </div>
               </div>
-            </a>`;
+            </article>`;
             });
             document.getElementById("s-itms-ctr").innerHTML = itmsSearched;
             document.getElementById(
               "title"
-            ).innerHTML = `${validSearch} @ Yammie. Online Shopping for Groceries`;
+            ).innerHTML = `${validSearch} &commat; Yammie. Online Shopping for Groceries`;
+
+            let btns = [...document.querySelectorAll(".add-to-c")];
+            // add to cart here
           }
         }
       };
@@ -542,6 +646,32 @@
       xhr.send();
 
       //search end
+    </script>
+    <script>
+      function imageDialogClose() {
+        document.querySelector(".popup").classList.remove("pp-active");
+        document.querySelector("#pop-up-overlay").classList.remove("active");
+      }
+      function cartNumber() {
+        let cartNumberItems = document.querySelector("#cartNumberItems");
+      }
+    </script>
+    <script>
+      let yammieUsr = "";
+      if (yammie) {
+        let xhr1 = new XMLHttpRequest();
+        xhr1.onreadystatechange = () => {
+          if (xhr1.readyState == 4 && xhr1.status == 200) {
+            [yammieUsr] = JSON.parse(xhr1.responseText);
+            let greeting = document.querySelector(".h-greeting");
+            let account = document.querySelector(".login-text");
+            greeting.classList.add("g-active");
+            account.innerHTML = yammieUsr.c_first_name.toUpperCase();
+          }
+        };
+        xhr1.open("GET", `http://localhost:3000/api/customer/${yammie}`, true);
+        xhr1.send();
+      }
     </script>
     <!--scripts-->
   </body>

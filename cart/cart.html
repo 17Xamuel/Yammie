@@ -13,6 +13,8 @@
       /*cart*/
       .cart-ctr {
         width: 100%;
+        display: flex;
+        flex-direction: column;
       }
       .head-ctr {
         font-weight: bold;
@@ -30,6 +32,39 @@
       .head-ctr,
       .cart-itm {
         display: flex;
+      }
+      .cart-tt {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 5px 10px;
+      }
+      .cart-tt > .cart-tt-ctr > span {
+        font-size: 18px;
+      }
+      .cart-tt-p {
+        margin-left: 40px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .cart-btns {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 5px 10px;
+      }
+      .cart-btns > button {
+        border: none;
+        outline: none;
+        background-color: #ffbb00;
+        font-size: 20px;
+        width: 30%;
+        height: 50px;
+        margin: 5px;
+        border-radius: 5px;
+        color: white;
+        box-shadow: 2px 2px 5px #cac9c9;
+        cursor: pointer;
       }
       .ct-itm-name-hd,
       .ct-itm-name {
@@ -57,9 +92,6 @@
       .ct-itm-name {
         display: flex;
       }
-      /* .ct-left {
-         flex: 1;
-      } */
       .ct-right {
         display: flex;
         flex-direction: column;
@@ -70,7 +102,7 @@
         justify-content: space-around;
       }
       /*itm end*/
-      /*qty*/
+      /* itm qty */
       .ct-itm-qty {
         display: flex;
         align-items: center;
@@ -78,14 +110,14 @@
       }
       .ct-qty-center > button {
         border-radius: 50%;
-        background-color: orange;
+        background-color: #ffbb00;
         border: none;
         outline: none;
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
         color: white;
         margin: 0px 15px;
-        font-size: 25px;
+        font-size: 20px;
         cursor: pointer;
         opacity: 0.8;
         transition: all 0.2s ease-in-out;
@@ -94,11 +126,11 @@
         opacity: 1;
       }
       .ct-qty-center > span {
-        font-size: 30px;
+        font-size: 20px;
         padding: 0px 15px;
         border-bottom: 1px solid #000;
       }
-      /*qty end*/
+      /*qty end /*
 
       /*unit price*/
       .ct-itm-unit-price {
@@ -106,6 +138,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+      }
+      .cart-t-price {
+        font-size: 20px;
       }
       .save {
         color: rgb(2, 88, 2);
@@ -146,7 +181,7 @@
       .see-all {
         display: flex;
         justify-content: space-between;
-        background-color: orange;
+        background-color: #ffbb00;
         padding: 10px;
         font-size: 1rem;
         text-transform: uppercase;
@@ -203,22 +238,32 @@
         }
         .ct-qty-center > button {
           border-radius: 50%;
-          background-color: orange;
+          background-color: #ffbb00;
           border: none;
           outline: none;
           width: 20px;
           height: 20px;
           color: white;
           margin: 0px 5px;
-          font-size: 18px;
+          font-size: 16px;
           cursor: pointer;
           opacity: 0.8;
           transition: all 0.2s ease-in-out;
         }
         .ct-qty-center > span {
-          font-size: 24px;
+          font-size: 18px;
           padding: 0px 15px;
           border: none;
+        }
+        .cart-btns {
+          width: 100%;
+          display: flex;
+          flex-direction: column-reverse;
+          justify-content: center;
+          padding: 5px 10px;
+        }
+        .cart-btns > button {
+          width: 100%;
         }
       }
       /*media end*/
@@ -235,9 +280,9 @@
         <a href="../home/index.html">
           <img
             src="../resources/yammie.png"
-            alt="YUMMY"
+            alt="YAMMIE"
             width="200"
-            height="75"
+            height="95%"
           />
         </a>
       </div>
@@ -261,194 +306,169 @@
         </form>
       </div>
       <div class="cart-login">
-        <div class="login" id="login">
+        <a class="login" id="login" href="">
           <img src="../resources/person.svg" alt="" />
-          <span class="login-text">Account</span>
-        </div>
-        <div class="cart">
+          <span class="h-greeting">Good Morning,</span>
+          <span class="login-text">My Account</span>
+        </a>
+        <a class="cart" href="">
           <img src="../resources/shopping-cart.svg" alt="" />
-          <span class="cart-number" id="cartNumberItems">10</span>
+          <span class="cart-number" id="cartNumberItems">11</span>
           <span class="cart-text">Cart</span>
-        </div>
+        </a>
       </div>
       <div id="sideNav">
-        <ul class="sideList1">
-          <li class="sideNavlistItem">item 1</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
+        <ul class="s-n-1">
+          <h3 class="sn-categories">Categories</h3>
+          <li class="n-l-itm">
+            <a href="./easy-market.html">
+              <i class="fas fa-shopping-basket ctg-icon"></i>
+              EasyMarket with Yammie
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="quick-foods.html">
+              <i class="fas fa-pizza-slice ctg-icon"></i>
+              Fast Foods &amp; Drinks
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="phones.html">
+              <i class="fas fa-headphones-alt ctg-icon"></i>
+              Phones &amp; Accessories
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./electronics.html">
+              <i class="fas fa-charging-station ctg-icon"></i>
+              Electronics
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./computing.html">
+              <i class="fas fa-desktop ctg-icon"></i>
+              Computing &amp; Accessories
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./stationery.html">
+              <i class="fas fa-paperclip ctg-icon"></i>
+              Stationery
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./clothing.html">
+              <i class="fas fa-tshirt ctg-icon"></i>
+              Clothes &amp; Shoes
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./kitchen.html">
+              <i class="fas fa-utensils ctg-icon"></i>
+              Kitchen Staff &amp; Utensils
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./kids.html">
+              <i class="fas fa-child ctg-icon"></i>
+              Kid's Section
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="./diy.html">
+              <img src="../resources/clean-hands.png" alt="" />
+              Cleaning, Healthy &amp; Beauty
+            </a>
+          </li>
+          <li class="n-l-itm">
+            <a href="">
+              <i class="fas fa-layer-group ctg-icon"></i>
+              All Items
+            </a>
+          </li>
         </ul>
-        <ul class="sideList2">
-          <li class="sideNavlistItem">item 1</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
+        <ul class="s-n-4">
+          <h3>My Account</h3>
+          <li>
+            <i class="fas fa-user"></i>
+            <span>My Profile</span>
+          </li>
+          <li>
+            <i class="fas fa-box"></i>
+            <span>My Orders</span>
+          </li>
+
+          <li>
+            <i class="fas fa-dolly-flatbed"></i>
+            <span>Pending Orders</span>
+          </li>
+          <li>
+            <i class="fas fa-thumbs-up"></i>
+            <span><a href="#">Liked Items</a></span>
+          </li>
+          <li>
+            <i class="fas fa-address-card"></i>
+            <span>My Address</span>
+          </li>
+          <li>
+            <i class="fas fa-user-edit"></i>
+            <span>Edit My Profile</span>
+          </li>
+          <button class="s-n-logout">LOG OUT</button>
         </ul>
-        <ul class="sideList3">
-          <li class="sideNavlistItem">item 1</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
+        <ul class="s-n-2">
+          <h3 class="s-n-how">Products &amp; Groceries</h3>
+          <li><a href="#">Special Order</a></li>
+          <li><a href="#">Delivery Time</a></li>
+          <li><a href="#">Payment Methods</a></li>
+          <li><a href="#">Request An Item</a></li>
+          <li><a href="#">Report an Item</a></li>
+          <li><a href="#">Return Policy</a></li>
         </ul>
-        <ul class="sideList4">
-          <li class="sideNavlistItem">item 1</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
-          <li class="sideNavlistItem">item 2</li>
+        <ul class="s-n-3">
+          <h3 class="s-n-how">Explore Yammie</h3>
+          <li><a href="#">About Yammie</a></li>
+          <li><a href="#">How to Order</a></li>
+          <li><a href="#">Our Partners</a></li>
+          <li><a href="#">Terms &amp; Conditions For Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
         </ul>
+        <div class="ftr-down">
+          <div class="ftr-official">
+            &copy; 2020 Yammie. All rights reserved
+            <div class="social-icons">
+              <a href="" class="icon-button"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="" class="icon-button"><i class="fab fa-twitter"></i></a>
+              <a href="" class="icon-button"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="" class="icon-button"><i class="fab fa-youtube"></i></a>
+              <a href="" class="icon-button"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="ct-m-ctr">
       <h2 class="ct-heading">My Cart (5 items)</h2>
-      <div class="cart-ctr">
-        <div class="head-ctr">
-          <div class="ct-itm-name-hd">ITEM</div>
-          <div class="ct-itm-qty-hd">QUANTITY</div>
-          <div class="ct-itm-unit-price-hd">UNIT PRICE</div>
-          <div class="ct-itm-sub-total-hd">SUB. TOTAL</div>
+      <div class="head-ctr">
+        <div class="ct-itm-name-hd">ITEM</div>
+        <div class="ct-itm-qty-hd">QUANTITY</div>
+        <div class="ct-itm-unit-price-hd">UNIT PRICE</div>
+        <div class="ct-itm-sub-total-hd">SUB. TOTAL</div>
+      </div>
+      <div class="cart-ctr" id="ct-items"></div>
+      <div class="cart-tt">
+        <div class="cart-tt-ctr">
+          <span>TOTAL : </span>
+          <span class="cart-tt-p">UGX 350900</span>
         </div>
-        <div class="cart-itm">
-          <div class="cart-itm-sm">
-            <div class="ct-sm-top">
-              <div class="ct-sm-img">
-                <img
-                  src="../resources/phone_1.png"
-                  alt="Iphone"
-                  width="100px"
-                  height="100px"
-                />
-              </div>
-              <div class="ct-sm-name-price">
-                <h3>
-                  Iphone 11 Pro Max. 6GB RAM, 512GB ROM, Long Battery Life.
-                </h3>
-                <h2>UGX 4500</h2>
-                <div class="delivery">YammieDelivery</div>
-              </div>
-            </div>
-            <div class="ct-sm-bottom">
-              <div class="ct-sm-b-left">
-                <span>
-                  <i class="fas fa-trash"></i>
-                  Remove From Cart
-                </span>
-              </div>
-              <div class="ct-sm-b-right">
-                <div class="ct-qty-center">
-                  <button>&minus;</button>
-                  <span class="ct-number">4</span>
-                  <button>&plus;</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="ct-itm-name">
-            <div class="ct-left">
-              <img
-                src="../resources/phone_1.png"
-                alt="Iphone"
-                width="120px"
-                height="120px"
-              />
-            </div>
-            <div class="ct-right">
-              <div class="ct-itm">
-                <div class="seller">Yammie Shoppers</div>
-                <h3>
-                  Iphone 11 Pro Max. 6GB RAM, 512GB ROM, Long Battery Life.
-                </h3>
-              </div>
-              <div class="delivery">YammieDelivery</div>
-              <div class="like-remove">
-                <span>
-                  <i class="far fa-heart"></i>
-                  Like
-                </span>
-                <span>
-                  <i class="fas fa-trash"></i>
-                  Remove From Cart
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="ct-itm-qty">
-            <div class="ct-qty-center">
-              <button>&minus;</button>
-              <span class="ct-number">4</span>
-              <button>&plus;</button>
-            </div>
-          </div>
-          <div class="ct-itm-unit-price">
-            <div class="ct-a-price">
-              <h2>UGX 5000</h2>
-            </div>
-            <div class="ct-discount-s">
-              <div class="discount">-30%</div>
-              <div class="save">Save: UGX 1700</div>
-            </div>
-          </div>
-          <div class="ct-itm-sub-total">
-            <h2>UGX 4500</h2>
-          </div>
-        </div>
-        <div class="cart-itm">
-          <div class="ct-itm-name">
-            <div class="ct-left">
-              <img
-                src="../resources/phone_1.png"
-                alt="Iphone"
-                width="120px"
-                height="120px"
-              />
-            </div>
-            <div class="ct-right">
-              <div class="ct-itm">
-                <div class="seller">Yammie Shoppers</div>
-                <h3>
-                  Iphone 11 Pro Max. 6GB RAM, 512GB ROM, Long Battery Life.
-                </h3>
-              </div>
-              <div class="delivery">YammieDelivery</div>
-              <div class="like-remove">
-                <span>
-                  <i class="far fa-heart"></i>
-                  Like
-                </span>
-                <span>
-                  <i class="fas fa-trash"></i>
-                  Remove From Cart
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="ct-itm-qty">
-            <div class="ct-qty-center">
-              <button>&minus;</button>
-              <span class="ct-number">4</span>
-              <button>&plus;</button>
-            </div>
-          </div>
-          <div class="ct-itm-unit-price">
-            <div class="ct-a-price">
-              <h2>UGX 5000</h2>
-            </div>
-            <div class="ct-discount-s">
-              <div class="discount">-30%</div>
-              <div class="save">Save: UGX 1700</div>
-            </div>
-          </div>
-          <div class="ct-itm-sub-total">
-            <h2>UGX 4500</h2>
-          </div>
-        </div>
+      </div>
+      <div class="cart-btns">
+        <button>Continue Shopping</button>
+        <button>Start Order</button>
       </div>
       <div class="category">
         <div class="see-all">
@@ -595,24 +615,344 @@
 
     <!--scripts-->
     <script>
-      //cart item number
-      // const cartValue = document.getElementById("cartNumberItems");
+      //cart array
+      let cart = JSON.parse(localStorage.getItem("ct"));
+      let cartData = [];
+      let cartDom = "";
+      let test = 4;
+      console.log(cartData);
+      console.log(cartDom);
+      console.log(test);
+      cartData.forEach((el) => {
+        console.log(test);
+        cartDom += `
+        <div class="cart-itm">
+          <div class="cart-itm-sm">
+             <div class="ct-sm-top">
+               <div class="ct-sm-img">
+                 <img
+                   src="../resources/phone_1.png"
+                   alt="Iphone"
+                   width="100px"
+                   height="100px"
+                 />
+               </div>
+               <div class="ct-sm-name-price">
+                 <h4>
+                50000
+                 </h4>
+                 <span class="cart-t-price">UGX 5000</span>
+                 <div class="delivery">YammieDelivery</div>
+               </div>
+             </div>
+             <div class="ct-sm-bottom">
+               <div class="ct-sm-b-left">
+                 <span>
+                   <i class="fas fa-trash"></i>
+                   Remove From Cart
+                 </span>
+               </div>
+               <div class="ct-sm-b-right">
+                 <div class="ct-qty-center">
+                   <button class="btn-i" onclick="reduceCartNumber(${
+                     item.number
+                   },${cartId})">&minus;</button>
+                   <span class="ct-number">3</span>
+                   <button onclick="increaseCartNumber(${
+                     item.number
+                   },${cartId})">&plus;</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="ct-itm-name">
+             <div class="ct-left">
+               <img
+                 src="../resources/phone_1.png"
+                 alt="Iphone"
+                 width="120px"
+                 height="120px"
+               />
+             </div>
+             <div class="ct-right">
+               <div class="ct-itm">
+                 <div class="seller">Yammie Shoppers</div>
+                 <h3>
+               Product Name
+                 </h3>
+               </div>
+               <div class="delivery">YammieDelivery</div>
+               <div class="like-remove">
+                 <span>
+                   <i class="far fa-heart"></i>
+                   Like
+                 </span>
+                 <span>
+                   <i class="fas fa-trash"></i>
+                   Remove From Cart
+                 </span>
+               </div>
+             </div>
+           </div>
+           <div class="ct-itm-qty">
+             <div class="ct-qty-center">
+               <button onclick="">&minus;</button>
+               <span class="ct-number">4</span>
+               <button>&plus;</button>
+             </div>
+           </div>
+           <div class="ct-itm-unit-price">
+             <div class="ct-a-price">
+               <span class="cart-t-price">UGX 6000</span>
+             </div>
+             <div class="ct-discount-s">
+               <div class="discount" ${
+                 cartItemData.item_discount ? "" : 'style="display:none;"'
+               }>
+                 ${cartItemData.item_discount}%
+               </div>
+               <div class="save" ${
+                 cartItemData.item_discount ? "" : 'style="display:none;"'
+               }>
+                 Save: UGX 50000
+               </div>
+             </div>
+           </div>
+           <div class="ct-itm-sub-total">
+             <span class="cart-t-price">UGX 77000</span>
+           </div>
+         </div>
+        `;
+        console.log(cartDom);
+      });
+      // document.querySelector("#ct-items").innerHTML = cartDOM;
 
-      // if (cartValue.textContent == 1) {
-      //   cartValue.style.padding = "0px 9px";
+      cart.forEach((cartItem) => {
+        let xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            let [arrSimple] = JSON.parse(xhr.responseText);
+            cartData.push(arrSimple);
+          }
+        };
+
+        xhr.open(
+          "GET",
+          `http://localhost:3000/api/cart/item/${cartItem.i}`,
+          true
+        );
+        xhr.send();
+      });
+      // let cartData = cart.map((el) => {
+      //   return el.i;
+      // });
+
+      // console.log(cartData);
+      // console.log(cart);
+
+      // let xhr = new XMLHttpRequest();
+
+      // xhr.open("GET", `http://localhost:3000/api/cart/item/${cartData}`, true);
+      // xhr.send();
+      // function reduceCartNumber(number, id) {
+      //   cart.forEach((el) => {
+      //     if ((el.i = id)) {
+      //       number--;
+      //       el.number = number;
+      //       localStorage.setItem("ct", JSON.stringify(cart));
+      //       window.location.reload();
+      //     }
+      //   });
       // }
-      // if (cartValue.textContent < 10 && cartValue.textContent != 1) {
-      //   cartValue.style.padding = "1px 6px";
+      // function increaseCartNumber(number, id) {
+      //   cart.forEach((el) => {
+      //     if ((el.i = id)) {
+      //       number++;
+      //       el.number = number;
+      //       localStorage.setItem("ct", JSON.stringify(cart));
+      //       window.location.reload();
+      //     }
+      //   });
       // }
-      // if (cartValue.textContent >= 10) {
-      //   cartValue.style.padding = "1px 4px";
-      // }
-      // if (cartValue.textContent == 11) {
-      //   cartValue.style.letterSpacing = "1px";
-      //   cartValue.style.padding = "1px 6px";
-      // }
-      //cart item number end
+
+      // cart.forEach((item) => {
+      //   const cartId = item.i;
+      //   let xhr = new XMLHttpRequest();
+      //   xhr.onreadystatechange = () => {
+      //     if (xhr.readyState == 4 && xhr.status == 200) {
+      //       let [cartItemData] = JSON.parse(xhr.responseText);
+
+      //       document.querySelector("#ct-items").innerHTML += `
+      //       <div class="cart-itm">
+      //     <div class="cart-itm-sm">
+      //       <div class="ct-sm-top">
+      //         <div class="ct-sm-img">
+      //           <img
+      //             src="../resources/phone_1.png"
+      //             alt="Iphone"
+      //             width="100px"
+      //             height="100px"
+      //           />
+      //         </div>
+      //         <div class="ct-sm-name-price">
+      //           <h4>
+      //             ${cartItemData.item_name} - ${
+      //         cartItemData.item_qty_description
+      //       }
+      //           </h4>
+      //           <span class="cart-t-price">UGX ${
+      //             cartItemData.item_discount
+      //               ? cartItemData.item_price -
+      //                 (cartItemData.item_discount
+      //                   ? (cartItemData.item_discount *
+      //                       cartItemData.item_price) /
+      //                     100
+      //                   : cartItemData.item_price)
+      //               : cartItemData.item_price
+      //           }</span>
+      //           <div class="delivery">YammieDelivery</div>
+      //         </div>
+      //       </div>
+      //       <div class="ct-sm-bottom">
+      //         <div class="ct-sm-b-left">
+      //           <span>
+      //             <i class="fas fa-trash"></i>
+      //             Remove From Cart
+      //           </span>
+      //         </div>
+      //         <div class="ct-sm-b-right">
+      //           <div class="ct-qty-center">
+      //             <button class="btn-i" onclick="reduceCartNumber(${
+      //               item.number
+      //             },${cartId})">&minus;</button>
+      //             <span class="ct-number">${item.number}</span>
+      //             <button onclick="increaseCartNumber(${
+      //               item.number
+      //             },${cartId})">&plus;</button>
+      //           </div>
+      //         </div>
+      //       </div>
+      //     </div>
+      //     <div class="ct-itm-name">
+      //       <div class="ct-left">
+      //         <img
+      //           src="../resources/phone_1.png"
+      //           alt="Iphone"
+      //           width="120px"
+      //           height="120px"
+      //         />
+      //       </div>
+      //       <div class="ct-right">
+      //         <div class="ct-itm">
+      //           <div class="seller">Yammie Shoppers</div>
+      //           <h3>
+      //             ${cartItemData.item_name} - ${
+      //         cartItemData.item_qty_description
+      //       }
+      //           </h3>
+      //         </div>
+      //         <div class="delivery">YammieDelivery</div>
+      //         <div class="like-remove">
+      //           <span>
+      //             <i class="far fa-heart"></i>
+      //             Like
+      //           </span>
+      //           <span>
+      //             <i class="fas fa-trash"></i>
+      //             Remove From Cart
+      //           </span>
+      //         </div>
+      //       </div>
+      //     </div>
+      //     <div class="ct-itm-qty">
+      //       <div class="ct-qty-center">
+      //         <button onclick="">&minus;</button>
+      //         <span class="ct-number">${item.number}</span>
+      //         <button>&plus;</button>
+      //       </div>
+      //     </div>
+      //     <div class="ct-itm-unit-price">
+      //       <div class="ct-a-price">
+      //         <span class="cart-t-price">UGX ${
+      //           cartItemData.item_discount
+      //             ? cartItemData.item_price -
+      //               (cartItemData.item_discount
+      //                 ? (cartItemData.item_discount * cartItemData.item_price) /
+      //                   100
+      //                 : cartItemData.item_price)
+      //             : cartItemData.item_price
+      //         }</span>
+      //       </div>
+      //       <div class="ct-discount-s">
+      //         <div class="discount" ${
+      //           cartItemData.item_discount ? "" : 'style="display:none;"'
+      //         }>
+      //           ${cartItemData.item_discount}%
+      //         </div>
+      //         <div class="save" ${
+      //           cartItemData.item_discount ? "" : 'style="display:none;"'
+      //         }>
+      //           Save: UGX ${
+      //             cartItemData.item_discount
+      //               ? (cartItemData.item_discount * cartItemData.item_price) /
+      //                 100
+      //               : cartItemData.item_price
+      //           }
+      //         </div>
+      //       </div>
+      //     </div>
+      //     <div class="ct-itm-sub-total">
+      //       <span class="cart-t-price">${
+      //         (cartItemData.item_discount
+      //           ? (cartItemData.item_discount * cartItemData.item_price) / 100
+      //           : cartItemData.item_price) * 2
+      //       }</span>
+      //     </div>
+      //   </div>
+      //       `;
+      //     }
+      //   };
+      //   xhr.open("GET", `http://localhost:3000/api/cart/item/${cartId}`, true);
+      //   xhr.send();
+      // });
+      // let inBtns = document.querySelectorAll(".btn-i");
+      // console.log(inBtns);
     </script>
-    <!--scripts-->
+    <script>
+      // animate menu  bars
+      const menu = document.querySelector(".menu");
+      const sideNav = document.querySelector("#sideNav");
+      const menuLine1 = document.querySelector(".line1");
+      const menuLine2 = document.querySelector(".line2");
+      const menuLine3 = document.querySelector(".line3");
+
+      menu.addEventListener("click", () => {
+        sideNav.classList.toggle("activeSideNav");
+        menuLine1.classList.toggle("rotateLine1");
+        menuLine2.classList.toggle("rotateLine2");
+        menuLine3.classList.toggle("rotateLine3");
+      });
+
+      let yammieUsr = "";
+      let yammie = localStorage.getItem(
+        "https://yammieshoppers.com/useLocalStorage/Storage"
+      );
+      if (yammie) {
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            [yammieUsr] = JSON.parse(xhr.responseText);
+            console.log(yammieUsr);
+            let greeting = document.querySelector(".h-greeting");
+            let account = document.querySelector(".login-text");
+            greeting.classList.add("g-active");
+            account.innerHTML = yammieUsr.c_first_name.toUpperCase();
+          }
+        };
+        xhr.open("GET", `http://localhost:3000/api/customer/${yammie}`, true);
+        xhr.send();
+      }
+    </script>
   </body>
 </html>

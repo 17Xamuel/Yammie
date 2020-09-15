@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../font-awesome/css/all.css" />
-    <title>Samuel Josh @Yammie | online Store</title>
+    <title>Samuel Josh &commat; Yammie | online Store</title>
     <style>
       .pf-ctr {
         width: 65vw;
@@ -147,9 +147,9 @@
         <a href="../home/index.html">
           <img
             src="../resources/yammie.png"
-            alt="YUMMY"
+            alt="YAMMIE"
             width="200"
-            height="75"
+            height="95%"
           />
         </a>
       </div>
@@ -173,75 +173,76 @@
         </form>
       </div>
       <div class="cart-login">
-        <div class="login" id="login">
+        <a class="login" id="login" href="">
           <img src="../resources/person.svg" alt="" />
-          <span class="login-text">Account</span>
-        </div>
-        <div class="cart">
+          <span class="h-greeting">Good Morning,</span>
+          <span class="login-text">My Account</span>
+        </a>
+        <a class="cart" href="">
           <img src="../resources/shopping-cart.svg" alt="" />
           <span class="cart-number" id="cartNumberItems">11</span>
           <span class="cart-text">Cart</span>
-        </div>
+        </a>
       </div>
       <div id="sideNav">
         <ul class="s-n-1">
           <h3 class="sn-categories">Categories</h3>
           <li class="n-l-itm">
-            <a href="../home/easy-market.html">
+            <a href="./easy-market.html">
               <i class="fas fa-shopping-basket ctg-icon"></i>
               EasyMarket with Yammie
             </a>
           </li>
           <li class="n-l-itm">
-            <a href="../home/quick-foods.html">
+            <a href="quick-foods.html">
               <i class="fas fa-pizza-slice ctg-icon"></i>
               Fast Foods &amp; Drinks
             </a>
           </li>
           <li class="n-l-itm">
-            <a href="../home/phones.html">
+            <a href="phones.html">
               <i class="fas fa-headphones-alt ctg-icon"></i>
               Phones &amp; Accessories
             </a>
           </li>
           <li class="n-l-itm">
-            <a href="../home/electronics.html">
+            <a href="./electronics.html">
               <i class="fas fa-charging-station ctg-icon"></i>
               Electronics
             </a>
           </li>
           <li class="n-l-itm">
-            <a href="../home/computing.html">
+            <a href="./computing.html">
               <i class="fas fa-desktop ctg-icon"></i>
               Computing &amp; Accessories
             </a>
           </li>
           <li class="n-l-itm">
-            <a href="../home/stationery.html">
+            <a href="./stationery.html">
               <i class="fas fa-paperclip ctg-icon"></i>
               Stationery
             </a>
           </li>
           <li class="n-l-itm">
-            <a href="../home/clothing.html">
+            <a href="./clothing.html">
               <i class="fas fa-tshirt ctg-icon"></i>
               Clothes &amp; Shoes
             </a>
           </li>
           <li class="n-l-itm">
-            <a href="../home/kitchen.html">
+            <a href="./kitchen.html">
               <i class="fas fa-utensils ctg-icon"></i>
               Kitchen Staff &amp; Utensils
             </a>
           </li>
           <li class="n-l-itm">
-            <a href="../home/kids.html">
+            <a href="./kids.html">
               <i class="fas fa-child ctg-icon"></i>
               Kid's Section
             </a>
           </li>
           <li class="n-l-itm">
-            <a href="../home/diy.html">
+            <a href="./diy.html">
               <img src="../resources/clean-hands.png" alt="" />
               Cleaning, Healthy &amp; Beauty
             </a>
@@ -690,6 +691,8 @@
         editClick.classList.add("active");
       });
       //profile
+    </script>
+    <script>
       // animate menu  bars
       const menu = document.querySelector(".menu");
       const sideNav = document.querySelector("#sideNav");
@@ -703,6 +706,26 @@
         menuLine2.classList.toggle("rotateLine2");
         menuLine3.classList.toggle("rotateLine3");
       });
+
+      let yammieUsr = "";
+      let yammie = localStorage.getItem(
+        "https://yammieshoppers.com/useLocalStorage/Storage"
+      );
+      if (yammie) {
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            [yammieUsr] = JSON.parse(xhr.responseText);
+            console.log(yammieUsr);
+            let greeting = document.querySelector(".h-greeting");
+            let account = document.querySelector(".login-text");
+            greeting.classList.add("g-active");
+            account.innerHTML = yammieUsr.c_first_name.toUpperCase();
+          }
+        };
+        xhr.open("GET", `http://localhost:3000/api/customer/${yammie}`, true);
+        xhr.send();
+      }
     </script>
     <!--scripts-->
   </body>

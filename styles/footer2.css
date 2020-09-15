@@ -51,7 +51,7 @@
   transition: all 0.2s ease-in;
 }
 .icon-button:hover {
-  color: orange;
+  color: #ffbb00;
 }
 
 .footer-form-button {
@@ -60,7 +60,7 @@
   color: white;
   border: 0px;
   outline: none;
-  background-color: orange;
+  background-color: #ffbb00;
   margin: 5px 5px;
   border-radius: 25px;
   width: 40%;
@@ -71,9 +71,6 @@
   transform: translateY(-2px);
   transform: scale(1);
   cursor: pointer;
-}
-.footer-h4 {
-  /* all h4's in the footer to have the same opacity. */
 }
 .footer-list {
   list-style-type: none;
@@ -95,7 +92,7 @@
 }
 .footer-list > li > a:hover {
   text-decoration: none;
-  color: orange;
+  color: #ffbb00;
 }
 .footer-list > li:hover {
   transform: translateX(7px);

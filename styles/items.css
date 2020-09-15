@@ -39,14 +39,14 @@
   color: black;
 }
 .ctg-name > a:hover {
-  color: orange;
+  color: #ffbb00;
   cursor: pointer;
 }
 .ctg-icon {
   padding-right: 5px;
 }
 .ctg-name:hover {
-  color: orange;
+  color: #ffbb00;
   cursor: pointer;
 }
 /* .ctg-item {
@@ -108,7 +108,7 @@
   margin-left: 10px;
   margin: 5px;
   font-weight: bold;
-  background-color: orange;
+  background-color: #ffbb00;
   letter-spacing: 0.4px;
   border: 1px solid #e2e2e2;
   cursor: pointer;

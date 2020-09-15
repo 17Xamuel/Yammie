@@ -2,6 +2,7 @@
 
 :root {
   --mainColor: #e0c70c;
+  --mainColor2: #f89938;
 }
 * {
   padding: 0px;
@@ -14,7 +15,7 @@ a {
 }
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f3efef;
+  background-color: #faf8f8;
 }
 
 @media screen and (max-width: 768px) {

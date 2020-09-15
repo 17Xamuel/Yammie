@@ -1,40 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="../resources/cartlink.png"
-      type="image/x-icon"
-    />
-    <title>
-      Yammie | Clothings and fashion - Online Store for your fashion
-    </title>
-    <link rel="stylesheet" href="../font-awesome/css/all.css" />
+    <link rel="shortcut icon" href="../resources/cartlink.png" />
+    <link rel="stylesheet" href="../styles/footer2.css" />
     <link rel="stylesheet" href="../styles/items.css" />
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../styles/products.css" />
-    <link rel="stylesheet" href="../styles/footer2.css" />
+    <link rel="stylesheet" href="../font-awesome/css/all.css" />
+    <title>Yammie | checkout - complete your order</title>
+
     <style>
-      .m-ctr {
+      .p-order-ctr {
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
         margin: 20px auto;
-        width: 85vw;
       }
-      .section-1 {
+      .p-order-progress {
+        height: 10px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        margin: 20px 0px;
+        border-radius: 15px;
+      }
+      .p-order-progress-b {
+        height: 10px;
+        width: 60%;
+        background-color: orange;
+        border-radius: 15px;
+      }
+      .p-order-steps {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+        column-gap: 1.1rem;
+        row-gap: 1.5rem;
+        margin: auto;
+      }
+      .p-order-s-1,
+      .p-order-s-2,
+      .p-order-s-3 {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 3px 3px 6px #cfcfcf;
+        height: fit-content;
+      }
+      .s-1-head {
         display: flex;
-        height: 350px;
+        justify-content: space-between;
+        padding: 5px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
       }
-      .section-2 {
+      .s-1-head > span > .fas {
+        padding-right: 10px;
+        color: rgb(16, 211, 16);
+        font-size: 22px;
+      }
+      .p-order-address {
+        padding: 5px 0px 5px 35px;
+      }
+      .edit {
+        color: orange;
+      }
+      #pay-form {
+        margin-top: 10px;
+      }
+      .mm-input {
         display: flex;
-        height: 300px;
+        align-items: center;
       }
-      .right,
-      .left,
-      .center {
-        flex: 1;
+      input[type="radio"] {
+      }
+      .check {
+        border: 2px solid orange;
+        padding: 10px;
+      }
+      #payment_method:checked .check {
+        border: none;
+      }
+      .p-order-procedure {
         margin: 10px 5px;
+      }
+      .p-order-procedure > ol {
+        margin-left: 25px;
+      }
+      .cd-image {
+        margin: 5px;
+      }
+      .am-t-p {
+        margin-right: 25px;
+      }
+      .-am {
+        display: flex;
+        width: 100%;
+        padding-right: 5px;
+        justify-content: space-between;
+        margin-right: 5px;
+      }
+      .total {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      .-btn-s-pyf {
+        width: 95%;
+        margin: 15px auto;
+        padding: 10px 0px;
+        font-size: 17px;
+        box-shadow: 3px 3px 5px #e2e2e2;
+        border-radius: 30px;
+        border: none;
+        outline: none;
+        color: white;
+        background-color: orange;
+        cursor: pointer;
+      }
+      .-btn-a-d {
+        width: 60%;
+        margin: 15px auto;
+        padding: 8px 0px;
+        font-size: 16px;
+        box-shadow: 3px 3px 5px #e2e2e2;
+        border-radius: 30px;
+        border: none;
+        outline: none;
+        color: white;
+        background-color: orange;
+        cursor: pointer;
+      }
+      /*radio button
+      //Later in the 
+      course
+      /*radio button*/
+      @media screen and (max-width: 1024px) {
+        .p-order-steps {
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          column-gap: 1.1rem;
+        }
       }
     </style>
   </head>
@@ -49,9 +152,9 @@
         <a href="../home/index.html">
           <img
             src="../resources/yammie.png"
-            alt="YAMMIE"
+            alt="YUMMY"
             width="200"
-            height="95%"
+            height="75"
           />
         </a>
       </div>
@@ -75,16 +178,15 @@
         </form>
       </div>
       <div class="cart-login">
-        <a class="login" id="login" href="">
+        <div class="login" id="login">
           <img src="../resources/person.svg" alt="" />
-          <span class="h-greeting">Good Morning,</span>
-          <span class="login-text">My Account</span>
-        </a>
-        <a class="cart" href="">
+          <span class="login-text">Account</span>
+        </div>
+        <div class="cart">
           <img src="../resources/shopping-cart.svg" alt="" />
           <span class="cart-number" id="cartNumberItems">11</span>
           <span class="cart-text">Cart</span>
-        </a>
+        </div>
       </div>
       <div id="sideNav">
         <ul class="s-n-1">
@@ -220,149 +322,131 @@
         </div>
       </div>
     </div>
-    <div class="m-ctr">
-      <div class="section-1">
-        <div class="left">
-          <a href="#" class="">
-            <img
-              src="../resources/image-slider/mask.jpg"
-              alt="yummie"
-              style="border-radius: 10px"
-              width="100%"
-              height="100%"
-            />
-          </a>
+    <div class="p-order-m-ctr">
+      <div class="p-order-ctr">
+        <h3 class="current-s">1. ADDRESS</h3>
+        <div class="p-order-progress">
+          <div class="p-order-progress-b"></div>
         </div>
-        <div class="right">
-          <a href="#" class="">
-            <img
-              src="../resources/image-slider/mask.jpg"
-              alt="yummie"
-              style="border-radius: 10px"
-              width="100%"
-              height="100%"
-            />
-          </a>
+        <div class="p-order-steps">
+          <div class="p-order-s-1">
+            <div class="s-1-head">
+              <span>
+                <i class="fas fa-check-circle"></i>
+                <b>Your Current Address</b>
+              </span>
+              <b class="edit">Edit</b>
+            </div>
+            <div class="p-order-address">
+              <div class="p-order-name"><b>Samuel Joshua</b></div>
+              <div class="p-order-residence">Pioneer</div>
+              <div class="p-order-email">sam@gmail.com</div>
+              <div class="p-order-phone">0789654356</div>
+              <button class="-btn-a-d">NEXT STEP</button>
+            </div>
+          </div>
+          <div class="p-order-s-2">
+            <div class="s-1-head">
+              <span>
+                <i class="fas fa-check-circle"></i>
+                <b>Delivery Method</b>
+              </span>
+              <b class="edit">Edit</b>
+            </div>
+            <div class="p-order-address">
+              <div class="p-order-name"><b>Door Step Delivery</b></div>
+              <div class="p-order-residence">We Reach At Your Residence.</div>
+              <div class="p-order-residence">
+                Fees: <span class="d-fees">UGX 550</span>
+              </div>
+              <div class="p-order-residence">
+                Delivered By: <span class="d-fees">Yammie Delivery</span>
+              </div>
+              <button class="-btn-a-d">NEXT STEP</button>
+            </div>
+          </div>
+          <div class="p-order-s-3">
+            <div class="s-1-head">
+              <span>
+                <i class="fas fa-check-circle"></i>
+                <b>Payment Details</b>
+              </span>
+            </div>
+            <div class="p-order-address">
+              <div class="p-order-name">
+                <b>Select Your Preferred Payment Method</b>
+              </div>
+              <form id="pay-form">
+                <div class="mm-input">
+                  <input
+                    type="radio"
+                    name="payment_method"
+                    id="payment_method"
+                    value="mm"
+                  />
+                  <div class="check"></div>
+                  <img src="../resources/mtn-mm.png" alt="" />
+                  <label for="payment_method">
+                    <b>Mobile Money</b> - MTN / AIRTEL
+                  </label>
+                </div>
+                <div class="p-order-procedure">
+                  <b>Mobile Money Payment Procedure:</b>
+                  <ol>
+                    <li>Click 'Finish Your Order'</li>
+                    <li>Fill In Details On The Next Page</li>
+                    <li>Click 'Pay Now'</li>
+                    <li>Check your phone for payment request</li>
+                    <li>Enter your PIN And Approve</li>
+                    <li>
+                      You will receive SMS/Email confirming a successful
+                      payment.
+                    </li>
+                  </ol>
+                </div>
+                <div class="mm-input">
+                  <input
+                    type="radio"
+                    name="payment_method"
+                    id="payment_method"
+                    value="mm"
+                  />
+                  <span class="cd-image">
+                    <img src="../resources/cash-on-delivery.png" alt="" />
+                  </span>
+                  <label for="payment_method">
+                    <b>Cash On Delivery.</b>
+                  </label>
+                </div>
+                <div class="am-t-p">
+                  <div class="sub-total -am">
+                    <span>SUB. TOTAL</span>
+                    <span><b>UGX 50400.</b></span>
+                  </div>
+                  <div class="-delivery-fees -am">
+                    <span><b>Delivery Fees</b></span>
+                    <span>UGX 0.</span>
+                  </div>
+                  <div class="total -am">
+                    <span><b>TOTAL</b></span>
+                    <span><b>UGX 50400.</b></span>
+                  </div>
+                </div>
+                <button type="submit" class="-btn-s-pyf">
+                  FINISH YOUR ORDER
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="category">
-        <div class="see-all">
-          <span>Your Phone Accessories</span>
-          <span>
-            Check
-            <i class="fas fa-chevron-right"></i>
-          </span>
-        </div>
-        <div class="items-container" class="phone-acs"></div>
-      </div>
-      <div class="category">
-        <div class="see-all">
-          <span>Your Phone Accessories</span>
-          <span>
-            Check
-            <i class="fas fa-chevron-right"></i>
-          </span>
-        </div>
-        <div class="items-container" class="phone-acs"></div>
-      </div>
-      <div class="category">
-        <div class="see-all">
-          <span>Your Phone Accessories</span>
-          <span>
-            Check
-            <i class="fas fa-chevron-right"></i>
-          </span>
-        </div>
-        <div class="items-container" class="phone-acs"></div>
-      </div>
-      <div class="category">
-        <div class="see-all">
-          <span>Your Phone Accessories</span>
-          <span>
-            Check
-            <i class="fas fa-chevron-right"></i>
-          </span>
-        </div>
-        <div class="items-container" class="phone-acs"></div>
-      </div>
-      <div class="section-2">
-        <div class="left">
-          <a href="#" class="">
-            <img
-              src="../resources/image-slider/mask.jpg"
-              alt="yummie"
-              style="border-radius: 10px"
-              width="100%"
-              height="100%"
-            />
-          </a>
-        </div>
-        <div class="center">
-          <a href="#" class="">
-            <img
-              src="../resources/image-slider/mask.jpg"
-              alt="yummie"
-              style="border-radius: 10px"
-              width="100%"
-              height="100%"
-            />
-          </a>
-        </div>
-        <div class="right">
-          <a href="#" class="">
-            <img
-              src="../resources/image-slider/mask.jpg"
-              alt="yummie"
-              style="border-radius: 10px"
-              width="100%"
-              height="100%"
-            />
-          </a>
-        </div>
-      </div>
-      <div class="category">
-        <div class="see-all">
-          <span>Your Phone Accessories</span>
-          <span>
-            Check
-            <i class="fas fa-chevron-right"></i>
-          </span>
-        </div>
-        <div class="items-container" class="phone-acs"></div>
-      </div>
-      <div class="category">
-        <div class="see-all">
-          <span>Your Phone Accessories</span>
-          <span>
-            Check
-            <i class="fas fa-chevron-right"></i>
-          </span>
-        </div>
-        <div class="items-container" class="phone-acs"></div>
-      </div>
-      <div class="category">
-        <div class="see-all">
-          <span>Your Phone Accessories</span>
-          <span>
-            Check
-            <i class="fas fa-chevron-right"></i>
-          </span>
-        </div>
-        <div class="items-container" class="phone-acs"></div>
-      </div>
-      <div class="category">
-        <div class="see-all">
-          <span>Your Phone Accessories</span>
-          <span>
-            Check
-            <i class="fas fa-chevron-right"></i>
-          </span>
-        </div>
-        <div class="items-container" class="phone-acs"></div>
-      </div>
-      <p></p>
     </div>
     <footer class="footer">
+      <div class="ftr-sm-s">
+        <span> Terms &amp; Conditions </span>
+        <span> Help Center </span>
+        <span> Contact Us </span>
+      </div>
       <div class="ftr-up">
         <div class="ftr-u-first">
           <div class="ftr-logo">
@@ -380,7 +464,7 @@
             </p>
           </div>
           <div class="ftr-app">
-            <h3>Get Our App On . . . .</h3>
+            <h3>Get the Yammie App On . . . .</h3>
             <div class="ftr-app-stores" style="margin-top: 15px">
               <a href="">
                 <img
@@ -478,40 +562,22 @@
         </div>
       </div>
     </footer>
+    <!--scripts-->
     <script>
-      // animate menu  bars
+      // animate menu bars
+      //var's
       const menu = document.querySelector(".menu");
-      const sideNav = document.querySelector("#sideNav");
       const menuLine1 = document.querySelector(".line1");
       const menuLine2 = document.querySelector(".line2");
       const menuLine3 = document.querySelector(".line3");
-
+      //var's end
       menu.addEventListener("click", () => {
         sideNav.classList.toggle("activeSideNav");
         menuLine1.classList.toggle("rotateLine1");
         menuLine2.classList.toggle("rotateLine2");
         menuLine3.classList.toggle("rotateLine3");
       });
-
-      let yammieUsr = "";
-      let yammie = localStorage.getItem(
-        "https://yammieshoppers.com/useLocalStorage/Storage"
-      );
-      if (yammie) {
-        let xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = () => {
-          if (xhr.readyState == 4 && xhr.status == 200) {
-            [yammieUsr] = JSON.parse(xhr.responseText);
-            console.log(yammieUsr);
-            let greeting = document.querySelector(".h-greeting");
-            let account = document.querySelector(".login-text");
-            greeting.classList.add("g-active");
-            account.innerHTML = yammieUsr.c_first_name.toUpperCase();
-          }
-        };
-        xhr.open("GET", `http://localhost:3000/api/customer/${yammie}`, true);
-        xhr.send();
-      }
     </script>
+    <!--scripts-->
   </body>
 </html>
