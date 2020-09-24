@@ -42,7 +42,7 @@
 }
 .login-text {
   padding: 5px 10px 10px 1px;
-  margin: 5px 50px 10px 5px;
+  margin: 5px 5px 10px 5px;
   font-size: 20px;
 }
 .cart-text {
@@ -147,6 +147,10 @@
   }
 }
 @media screen and (max-width: 1120px) {
+  .login-text {
+    padding: 0px;
+    margin: 0px;
+  }
   .cart-wrd {
     display: none;
   }
@@ -177,7 +181,7 @@
   }
 
   .search-nav {
-    padding: 0px 35px 0px 0px;
+    padding: 0px 15px 0px 0px;
     justify-content: space-between;
     background-color: #fff;
     font-size: 12px;

@@ -124,7 +124,7 @@
         font-size: 20px;
         border: none;
         outline: none;
-        background-color: orange;
+        background-color: #ffbb00;
         color: white;
         border-radius: 30px;
         box-shadow: 2px 2px 5px #c3c3c3;
@@ -150,7 +150,7 @@
         transition: all 0.3s ease-in-out;
       }
       .forgot-p:hover > a {
-        color: orange;
+        color: #ffbb00;
       }
       @media screen and (max-width: 1024px) {
         .lg-ctr {
@@ -406,7 +406,7 @@
         <div class="lg-info">
           <h1>
             Get Personilized Shopping With A
-            <span style="color: orange">Yammie Account</span>
+            <span style="color: #ffbb00">Yammie Account</span>
           </h1>
           "<strong>LOGIN</strong> to use your cart, get a personlized shopping,
           your likes and make your payments easily. <br />
@@ -582,8 +582,8 @@
           document.querySelector(elMove).style.fontSize = "13px";
           document.querySelector(elMove).style.transform = "translateY(-15px)";
           document.querySelector(elMoveGroup).style.borderBottom =
-            "1px solid orange";
-          document.querySelector(icon).style.color = "orange";
+            "1px solid #ffbb00";
+          document.querySelector(icon).style.color = "#ffbb00";
         });
         document.querySelector(input).addEventListener("blur", () => {
           if (document.querySelector(input).value === "") {
@@ -606,7 +606,6 @@
         let user = {};
         user.login = document.querySelector("#cr-f-name").value;
         user.auth = document.querySelector("#cr-l-name").value;
-        console.log(user);
         xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
           if (xhr.readyState == 4 && xhr.status == 200) {
@@ -629,7 +628,7 @@
                 "https://yammieshoppers.com/useLocalStorage/Storage",
                 res.yammie.toString()
               );
-              window.location.assign("http://127.0.0.1:5500/home/index.html");
+              window.history.back();
               // TO BE COVERED LATER
               // if(document.querySelector('#rem-me').value == true){
               //   console.log('not true')
@@ -642,6 +641,27 @@
         xhr.setRequestHeader("content-type", "application/json");
         xhr.send(JSON.stringify(user));
       });
+    </script>
+    <script>
+      let yammie = localStorage.getItem(
+        "https://yammieshoppers.com/useLocalStorage/Storage"
+      );
+      let yammieUsr = "";
+      if (yammie) {
+        let xhr1 = new XMLHttpRequest();
+        xhr1.onreadystatechange = () => {
+          if (xhr1.readyState == 4 && xhr1.status == 200) {
+            [yammieUsr] = JSON.parse(xhr1.responseText);
+            let greeting = document.querySelector(".h-greeting");
+            let account = document.querySelector(".login-text");
+            greeting.classList.add("g-active");
+            account.innerHTML = yammieUsr.c_first_name.toUpperCase();
+            account.style.marginRight = "75px";
+          }
+        };
+        xhr1.open("GET", `http://localhost:3000/api/customer/${yammie}`, true);
+        xhr1.send();
+      }
     </script>
     <!--scripts-->
   </body>

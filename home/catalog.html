@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../styles/products.css" />
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../font-awesome/css/all.css" />
-    <title id="title">&commat; Yammie</title>
+    <title id="title">Shop &commat; Yammie</title>
   </head>
   <body>
     <!--add c popup-->
@@ -18,8 +18,10 @@
     <div class="popup">
       <button class="close-pp" onclick="imageDialogClose()">&times;</button>
       <div class="pp-content">
-        <h2 id="text-add"></h2>
-        <div id="text-add-m"></div>
+        <h2 id="text-add">Item added to your Cart.</h2>
+        <div id="text-add-m">
+          Thank You. Click Check Cart to Continue OR continue Shopping
+        </div>
         <a href="../cart/cart.html">
           <button class="check-ct">Check Cart</button>
         </a>
@@ -72,7 +74,7 @@
         </a>
         <a class="cart" href="">
           <img src="../resources/shopping-cart.svg" alt="" />
-          <span class="cart-number" id="cartNumberItems">11</span>
+          <span class="cart-number" id="cartNumberItems"></span>
           <span class="cart-text">Cart</span>
         </a>
       </div>
@@ -563,7 +565,6 @@
       let v_search = urlParams.get("q");
       let validSearch = v_search.length > 0 ? v_search : "all";
       document.getElementById("s-word").innerHTML = validSearch;
-      localStorage.clear();
       xhr = new XMLHttpRequest();
       xhr.onreadystatechange = () => {
         if (xhr.readyState == 4 && xhr.status == 200) {
@@ -576,7 +577,9 @@
                 height="50%"
                 alt=""
               />
-                <span>Sorry, 'Lato' is not Found. Try Requesting Your Item.
+                <span>Sorry, '${validSearch}' did not match any item.
+                <br/>
+                Try Requesting Your Item.
                 </span>
                 <button id="ctlg-rq-btn">Make A Request</button>
             </div>`;
@@ -588,14 +591,18 @@
             let itmsSearched = "";
             searchData.forEach((itm) => {
               itmsSearched += `
-              <article class="itm-searched">
-              <div class="a-s-discount">-25%</div>
+              <article class="itm-searched" data-name="">
+              <div class="a-s-discount">
+                <span class="d">
+                  ${itm.item_discount !== null ? itm.item_discount + "%" : ""}
+                </span>
+              </div>
               <div class="itm-s-img">
                 <img
-                  src="../resources/asus.png"
+                  src="../resources/phone5.png"
                   alt="Lato Milk 0.5kg Tin packed"
-                  width="100%"
-                  height="100%"
+                  width="80%"
+                  height="80%"
                 />
               </div>
               <div class="itm-s-dtl">
@@ -605,8 +612,17 @@
                 <div class="itm-name" style="font-size:16px;">
                   ${itm.item_name} - ${itm.item_qty_description}
                 </div>
-                <div class="price-current">${itm.item_price}</div>
-                <div class="price-prev">UGX 7500</div>
+                <div class="price-current">${
+                  "UGX " +
+                  (itm.item_discount
+                    ? (itm.item_price * (100 - itm.item_discount)) / 100
+                    : itm.item_price)
+                }</div>
+                <div class="price-prev">${
+                  itm.item_discount
+                    ? "UGX " + (itm.item_price * itm.item_discount) / 100
+                    : ""
+                }</div>
                 <div class="location">
                   <i class="fas fa-map-marker-alt"></i>
                   <span>Lira</span>
@@ -622,7 +638,16 @@
                     width="25px"
                     height="25px"
                   />
-                  <span class="" data-id=${itm.item_id}>Add to Cart</span>
+                  <span class=""
+                  data-id=${itm.item_id}
+                  data-name=${itm.item_name.replace(/ /g, "_")}
+                  data-price=${itm.item_price}
+                  data-description=${itm.item_qty_description.replace(
+                    / /g,
+                    "_"
+                  )}
+                  data-discount=${itm.item_discount}
+                  >Add to Cart</span>
                 </div>
               </div>
             </article>`;
@@ -633,7 +658,60 @@
             ).innerHTML = `${validSearch} &commat; Yammie. Online Shopping for Groceries`;
 
             let btns = [...document.querySelectorAll(".add-to-c")];
-            // add to cart here
+            btns.forEach((btn) => {
+              btn.addEventListener("click", (e) => {
+                document
+                  .querySelector("#pop-up-overlay")
+                  .classList.add("active");
+                document.querySelector(".popup").classList.add("pp-active");
+                let cartItem = {
+                  id: e.target.dataset.id,
+                  name: e.target.dataset.name,
+                  price: e.target.dataset.price,
+                  discount: parseInt(e.target.dataset.discount),
+                  description: e.target.dataset.description,
+                  inCartNumber: 0,
+                  // newPrice: function () {
+                  //   return this.price * ((100 - this.discount) / 100);
+                  // },
+                  // save: function () {
+                  //   return this.price - this.newPrice();
+                  // },
+                };
+                cartNumbers(cartItem);
+              });
+            });
+            function cartNumbers(item) {
+              let cartNumber = parseInt(localStorage.getItem("cartNumber"));
+              if (cartNumber) {
+                localStorage.setItem("cartNumber", cartNumber + 1);
+                document.querySelector("#cartNumberItems").textContent =
+                  cartNumber + 1;
+              } else {
+                localStorage.setItem("cartNumber", 1);
+                document.querySelector("#cartNumberItems").textContent = 1;
+              }
+              setItem(item);
+            }
+            function setItem(item) {
+              let cartItems = localStorage.getItem("cartItems");
+              cartItems = JSON.parse(cartItems);
+              if (cartItems != null) {
+                if (cartItems[item.id] == undefined) {
+                  cartItems = {
+                    ...cartItems,
+                    [item.id]: item,
+                  };
+                }
+                cartItems[item.id].inCartNumber += 1;
+              } else {
+                item.inCartNumber = 1;
+                cartItems = {
+                  [item.id]: item,
+                };
+              }
+              localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            }
           }
         }
       };
@@ -652,8 +730,13 @@
         document.querySelector(".popup").classList.remove("pp-active");
         document.querySelector("#pop-up-overlay").classList.remove("active");
       }
-      function cartNumber() {
-        let cartNumberItems = document.querySelector("#cartNumberItems");
+      //cart Display
+      cartNumbersDisplay();
+      function cartNumbersDisplay() {
+        let cartNumber = parseInt(localStorage.getItem("cartNumber"));
+        document.querySelector("#cartNumberItems").textContent = cartNumber
+          ? cartNumber
+          : 0;
       }
     </script>
     <script>
@@ -667,6 +750,7 @@
             let account = document.querySelector(".login-text");
             greeting.classList.add("g-active");
             account.innerHTML = yammieUsr.c_first_name.toUpperCase();
+            account.style.marginRight = "75px";
           }
         };
         xhr1.open("GET", `http://localhost:3000/api/customer/${yammie}`, true);

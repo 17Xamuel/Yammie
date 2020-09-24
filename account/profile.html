@@ -37,7 +37,7 @@
         background-color: #c3c3c3;
       }
       .left > li.active {
-        background-color: orange;
+        background-color: #ffbb00;
         color: white;
       }
       .left > li > .fas {
@@ -61,7 +61,7 @@
         font-size: 17px;
         border: none;
         outline: none;
-        background-color: orange;
+        background-color: #ffbb00;
         color: white;
         border-radius: 5px;
         box-shadow: 2px 2px 5px #c3c3c3;
@@ -79,7 +79,7 @@
         font-size: 18px;
         border: none;
         outline: none;
-        background-color: orange;
+        background-color: #ffbb00;
         color: white;
         border-radius: 5px;
         box-shadow: 2px 2px 5px #c3c3c3;
@@ -721,6 +721,7 @@
             let account = document.querySelector(".login-text");
             greeting.classList.add("g-active");
             account.innerHTML = yammieUsr.c_first_name.toUpperCase();
+            account.style.marginRight = "75px";
           }
         };
         xhr.open("GET", `http://localhost:3000/api/customer/${yammie}`, true);
