@@ -178,7 +178,7 @@
           <span class="h-greeting">Good Morning,</span>
           <span class="login-text">My Account</span>
         </a>
-        <a class="cart" href="">
+        <a class="cart" href="../cart/cart.html">
           <img src="../resources/shopping-cart.svg" alt="" />
           <span class="cart-number" id="cartNumberItems">11</span>
           <span class="cart-text">Cart</span>
@@ -726,6 +726,13 @@
         };
         xhr.open("GET", `http://localhost:3000/api/customer/${yammie}`, true);
         xhr.send();
+      }
+      cartNumbersDisplay();
+      function cartNumbersDisplay() {
+        let cartNumber = parseInt(localStorage.getItem("cartNumber"));
+        document.querySelector("#cartNumberItems").textContent = cartNumber
+          ? cartNumber
+          : 0;
       }
     </script>
     <!--scripts-->

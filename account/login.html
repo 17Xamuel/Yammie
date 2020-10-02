@@ -598,6 +598,13 @@
       focus("#cr-f-name", "#cr-p-h-f", ".cr-email", ".lg-i-c .fa-envelope");
       focus("#cr-l-name", "#cr-p-h-l", ".cr-password", ".lg-i-c .fa-lock");
       //input focus end
+      cartNumbersDisplay();
+      function cartNumbersDisplay() {
+        let cartNumber = parseInt(localStorage.getItem("cartNumber"));
+        document.querySelector("#cartNumberItems").textContent = cartNumber
+          ? cartNumber
+          : 0;
+      }
     </script>
     <script>
       const lg = document.getElementById("lg");

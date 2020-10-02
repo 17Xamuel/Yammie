@@ -20,7 +20,9 @@
       <div class="pp-content">
         <h2 id="text-add">Item added to your Cart.</h2>
         <div id="text-add-m">
-          Thank You. Click Check Cart to Continue OR continue Shopping
+          Thank You.
+          <br />
+          Click Check Cart to Continue OR continue Shopping
         </div>
         <a href="../cart/cart.html">
           <button class="check-ct">Check Cart</button>
@@ -72,7 +74,7 @@
           <span class="h-greeting">Good Morning,</span>
           <span class="login-text">My Account</span>
         </a>
-        <a class="cart" href="">
+        <a class="cart" href="../cart/cart.html">
           <img src="../resources/shopping-cart.svg" alt="" />
           <span class="cart-number" id="cartNumberItems"></span>
           <span class="cart-text">Cart</span>
@@ -564,6 +566,14 @@
       let urlParams = new URLSearchParams(window.location.search);
       let v_search = urlParams.get("q");
       let validSearch = v_search.length > 0 ? v_search : "all";
+      let trial = /^[a-z]+$/i.test(validSearch);
+
+      if (trial) {
+        console.log("true");
+      } else {
+        console.log("not true");
+      }
+
       document.getElementById("s-word").innerHTML = validSearch;
       xhr = new XMLHttpRequest();
       xhr.onreadystatechange = () => {
@@ -631,14 +641,7 @@
                   <i class="fab fa-telegram-plane"></i>
                   Yammie Delivery
                 </div>
-                <div class="a-t-c add-to-c">
-                  <img
-                    src="../resources/shopping_cart_add_white.svg"
-                    alt=""
-                    width="25px"
-                    height="25px"
-                  />
-                  <span class=""
+                <div class="a-t-c add-to-c"
                   data-id=${itm.item_id}
                   data-name=${itm.item_name.replace(/ /g, "_")}
                   data-price=${itm.item_price}
@@ -647,7 +650,22 @@
                     "_"
                   )}
                   data-discount=${itm.item_discount}
-                  >Add to Cart</span>
+                >
+                  <img
+                    src="../resources/shopping_cart_add_white.svg"
+                    alt=""
+                    width="25px"
+                    height="25px"
+                    data-id=${itm.item_id}
+                    data-name=${itm.item_name.replace(/ /g, "_")}
+                    data-price=${itm.item_price}
+                    data-description=${itm.item_qty_description.replace(
+                      / /g,
+                      "_"
+                    )}
+                    data-discount=${itm.item_discount}
+                  />
+                  Add to Cart
                 </div>
               </div>
             </article>`;
@@ -657,30 +675,35 @@
               "title"
             ).innerHTML = `${validSearch} &commat; Yammie. Online Shopping for Groceries`;
 
-            let btns = [...document.querySelectorAll(".add-to-c")];
+            let btns = document.querySelectorAll(".add-to-c");
             btns.forEach((btn) => {
               btn.addEventListener("click", (e) => {
-                document
-                  .querySelector("#pop-up-overlay")
-                  .classList.add("active");
-                document.querySelector(".popup").classList.add("pp-active");
                 let cartItem = {
-                  id: e.target.dataset.id,
                   name: e.target.dataset.name,
                   price: e.target.dataset.price,
                   discount: parseInt(e.target.dataset.discount),
+                  cartItemAdded: e.target.dataset.id,
                   description: e.target.dataset.description,
                   inCartNumber: 0,
-                  // newPrice: function () {
-                  //   return this.price * ((100 - this.discount) / 100);
-                  // },
-                  // save: function () {
-                  //   return this.price - this.newPrice();
-                  // },
                 };
                 cartNumbers(cartItem);
+                wait();
               });
             });
+            function wait() {
+              let popUp = document.querySelector(".popup");
+              let pContent = popUp.innerHTML;
+              popUp.innerHTML = `
+              <div>
+              <div id="cartLoader"></div>
+              <br />
+              <div>Adding to Cart . . .
+              </div>
+              </div>`;
+              setTimeout(() => {
+                popUp.innerHTML = pContent;
+              }, 2000);
+            }
             function cartNumbers(item) {
               let cartNumber = parseInt(localStorage.getItem("cartNumber"));
               if (cartNumber) {
@@ -697,20 +720,23 @@
               let cartItems = localStorage.getItem("cartItems");
               cartItems = JSON.parse(cartItems);
               if (cartItems != null) {
-                if (cartItems[item.id] == undefined) {
+                if (cartItems[item.cartItemAdded] == undefined) {
                   cartItems = {
                     ...cartItems,
-                    [item.id]: item,
+                    [item.cartItemAdded]: item,
                   };
                 }
-                cartItems[item.id].inCartNumber += 1;
+                cartItems[item.cartItemAdded].inCartNumber += 1;
               } else {
                 item.inCartNumber = 1;
                 cartItems = {
-                  [item.id]: item,
+                  [item.cartItemAdded]: item,
                 };
               }
               localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+              document.querySelector("#pop-up-overlay").classList.add("active");
+              document.querySelector(".popup").classList.add("pp-active");
             }
           }
         }
@@ -726,6 +752,17 @@
       //search end
     </script>
     <script>
+      function waitClose() {
+        let popUp = document.querySelector(".popup");
+        let pContent = popUp.innerHTML;
+        popUp.innerHTML = `
+              <div>
+              <div id="cartLoader"></div>
+              <br />
+              <div>Please Wait. . .
+              </div>
+              </div>`;
+      }
       function imageDialogClose() {
         document.querySelector(".popup").classList.remove("pp-active");
         document.querySelector("#pop-up-overlay").classList.remove("active");

@@ -59,13 +59,93 @@
         outline: none;
         background-color: #ffbb00;
         font-size: 17px;
-        width: 20%;
-        height: 35px;
+        width: 25%;
+        height: 50px;
         margin: 5px;
         border-radius: 5px;
         color: white;
         box-shadow: 2px 2px 5px #cac9c9;
         cursor: pointer;
+        padding: 10px 5px;
+        opacity: 0.8;
+        transition: all 0.3s ease-in-out;
+      }
+      /*pop up */
+      #cartLoader {
+        border: 10px solid #f3f3f3;
+        border-top: 10px solid #ffbb00;
+        border-radius: 50%;
+        width: 75px;
+        height: 75px;
+        animation: spin 1.5s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      #pop-up-overlay.active {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 30;
+        transition: all 0.3s ease-in-out;
+      }
+      .close-pp {
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        font-size: 3.5rem;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-weight: 500;
+        background-color: #fff;
+      }
+
+      .popup {
+        background-color: white;
+        width: 35%;
+        height: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 5px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: 0.2s ease-in-out;
+        max-width: 90%;
+        z-index: 35;
+      }
+      .popup.pp-active {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .pp-content > a > button,
+      .pp-content > button {
+        cursor: pointer;
+        border: 0;
+        outline: 0;
+        background-color: #ffbb00;
+        padding: 10px 15px;
+        font-size: 20px;
+        margin: 20px 20px 20px 0px;
+        border-radius: 5px;
+        color: white;
+        box-shadow: 3px 3px 7px #c3c3c3;
+      }
+      /*pop up */
+      .cart-btns > button:hover {
+        opacity: 1;
       }
       .ct-itm-name-hd {
         text-align: center;
@@ -274,6 +354,19 @@
     </style>
   </head>
   <body>
+    <div id="pop-up-overlay"></div>
+    <div class="popup">
+      <button class="close-pp" onclick="imageDialogClose()">&times;</button>
+      <div class="pp-content">
+        <h2 id="text-add">Login</h2>
+        <div id="text-add-m">
+          You Need to login to Start Processing Your order.
+        </div>
+        <a href="../account/login.html">
+          <button class="check-ct">Login</button>
+        </a>
+      </div>
+    </div>
     <div class="search-nav">
       <div class="logo">
         <div class="menu">
@@ -471,7 +564,6 @@
         </div>
       </div>
       <div class="cart-btns">
-        <button>Continue Shopping</button>
         <button id="-o-st">Start Order</button>
       </div>
       <div class="category">
@@ -673,12 +765,12 @@
                 <div class="ct-qty-center">
                   <button
                     class="btn-i minus"
-                    data-id=${item.id}
+                    data-id=${item.cartItemAdded}
                   >&minus;</button>
                   <span class="ct-number">${item.inCartNumber}</span>
                   <button
                     class="plus"
-                    data-id=${item.id}
+                    data-id=${item.cartItemAdded}
                   >&plus;</button>
                 </div>
               </div>
@@ -714,12 +806,12 @@
             <div class="ct-qty-center">
               <button
                 class="btn-i minus"
-                data-id=${item.id}
+                data-id=${item.cartItemAdded}
               >&minus;</button>
               <span class="ct-number">${item.inCartNumber}</span>
               <button
                 class="plus"
-                data-id=${item.id}
+                data-id=${item.cartItemAdded}
               >&plus;</button>
             </div>
           </div>
@@ -801,6 +893,22 @@
             localStorage.setItem("cartItems", JSON.stringify(cartItems));
             window.location.reload();
           }
+        } else {
+          let cartDom = document.querySelector("#ct-items");
+          console.log("true");
+          cartDom.innerHTML = `<div class="no-itms">
+              <img
+                src="../resources/undraw_blank_canvas_3rbb.svg"
+                width="25%"
+                height="25%"
+                alt=""
+              />
+                <span>Oops!! Cart Looks Empty.
+                <br/>
+               Start Shopping to fill your Cart
+                </span>
+                <button id="cart-st">Start Shopping</button>
+            </div>`;
         }
       }
       displayCart();
@@ -841,7 +949,12 @@
           xhr2.send(JSON.stringify([totalAmount(), yammie]));
           window.location.assign("http://127.0.0.1:5500/orders/checkout.html");
         } else {
-          window.location.assign("http://127.0.0.1:5500/account/login.html");
+          function checkLogin() {
+            document.querySelector("#pop-up-overlay").classList.add("active");
+            document.querySelector(".popup").classList.add("pp-active");
+          }
+          checkLogin();
+          // window.location.assign("http://127.0.0.1:5500/account/login.html");
         }
       });
     </script>

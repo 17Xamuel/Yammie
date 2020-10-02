@@ -209,6 +209,12 @@
       .order-f {
         font-size: 24px;
       }
+      .-dm-e,
+      .-pm {
+        color: red;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+      }
       @media screen and (max-width: 1024px) {
         .p-order-steps {
           grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -312,12 +318,15 @@
                 <b>Delivery Method</b>
               </span>
             </div>
-            <div class="p-order-address deliver">
+            <form class="p-order-address deliver" id="-df">
               <b>Select Your Preferred Delivery Method</b>
               <div class="p-order-name">
-                <input type="radio" name="d-method" id="" /><b class="-d-method"
-                  >Door Step Delivery</b
-                >
+                <input
+                  type="radio"
+                  name="d-method"
+                  id="-d1"
+                  value="Door-step"
+                /><b class="-d-method">Door Step Delivery</b>
               </div>
               <div class="p-order-residence">We Reach At Your Residence.</div>
               <div class="p-order-residence">
@@ -327,9 +336,12 @@
                 Delivered By: <span class="d-fees">Yammie Delivery</span>
               </div>
               <div class="p-order-name">
-                <input type="radio" name="d-method" id="" /><b class="-d-method"
-                  >Free Pick Up</b
-                >
+                <input
+                  type="radio"
+                  name="d-method"
+                  id="-d2"
+                  value="Pick-Up"
+                /><b class="-d-method">Free Pick Up</b>
               </div>
               <div class="p-order-residence">
                 Get your items at the Yammie Store
@@ -341,8 +353,11 @@
                 Location:
                 <span class="d-fees">Next to Yammie SuperMarket</span>
               </div>
-              <button class="-btn-a-d" id="-s-2">NEXT STEP</button>
-            </div>
+              <button class="-btn-a-d" id="-s-2" type="submit">
+                NEXT STEP
+              </button>
+              <div class="-dm-e">Please Select a Delivery Method.</div>
+            </form>
           </div>
           <div class="p-order-s-3">
             <div class="s-1-head">
@@ -389,7 +404,7 @@
                     type="radio"
                     name="payment_method"
                     id="payment_method"
-                    value="mm"
+                    value="cod"
                   />
                   <span class="cd-image">
                     <img src="../resources/cash-on-delivery.png" alt="" />
@@ -407,16 +422,19 @@
                   </div>
                   <div class="-delivery-fees -am">
                     <span><b>Delivery Fees</b></span>
-                    <span>UGX <span id="delivery">0.</span></span>
+                    <span>UGX <span id="delivery">Waiting...</span></span>
                   </div>
                   <div class="total -am">
                     <span><b>TOTAL</b></span>
-                    <span><b>UGX 50400.</b></span>
+                    <span
+                      ><b>UGX <span id="total">Waiting...</span></b></span
+                    >
                   </div>
                 </div>
                 <button type="submit" class="-btn-s-pyf">
                   FINISH YOUR ORDER
                 </button>
+                <div class="-pm">Please Select a Payment Method.</div>
               </form>
             </div>
           </div>
@@ -425,6 +443,13 @@
     </div>
     <!--scripts-->
     <script>
+      let cartItems = localStorage.getItem("cartItems");
+      console.log(cartItems);
+    </script>
+    <script>
+      let directOrder = "";
+      let multiOrder = [];
+      let numberFormat = new Intl.NumberFormat();
       let yammie = localStorage.getItem(
         "https://yammieshoppers.com/useLocalStorage/Storage"
       );
@@ -447,19 +472,56 @@
         document.querySelector(".p-order-progress-b").style.width = "35%";
         document.querySelector(".current-s").textContent = "2. DELIVERY METHOD";
       });
-      let step2 = document.querySelector("#-s-2");
-      step2.addEventListener("click", (e) => {
-        let delivery = document.querySelector(".deliver");
-        delivery.style.opacity = "0.2";
-        document.querySelector(".deliver").style.pointerEvents = "none";
-        document.querySelector(".-s-i-3").style.color = "green";
-        document.querySelector(".payment").style.opacity = "1";
-        document.querySelector(".payment").style.pointerEvents = "all";
-        document.querySelector(".p-order-progress-b").style.width = "85%";
-        document.querySelector(".current-s").textContent = "3. PAYMENT METHOD";
+      let orderInfo = {};
+      let dForm = document.getElementById("-df");
+      dForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let formData = new FormData(dForm);
+        if (formData.has("d-method")) {
+          orderInfo.dm = formData.get("d-method");
+          let delivery = document.querySelector(".deliver");
+          delivery.style.opacity = "0.2";
+          document.querySelector(".deliver").style.pointerEvents = "none";
+          document.querySelector(".-s-i-3").style.color = "green";
+          document.querySelector(".payment").style.opacity = "1";
+          document.querySelector(".payment").style.pointerEvents = "all";
+          document.querySelector(".p-order-progress-b").style.width = "85%";
+          document.querySelector(".current-s").textContent =
+            "3. PAYMENT METHOD";
+          document.querySelector("#delivery").textContent =
+            orderInfo.dm == "Door-step" ? "550" : "300";
+
+          let xhr1 = new XMLHttpRequest();
+          xhr1.onreadystatechange = () => {
+            if (xhr1.readyState == 4 && xhr1.status == 200) {
+              let [amount] = JSON.parse(xhr1.responseText);
+              let pay = amount.c_cart_amount;
+              document.querySelector("#pay").textContent = numberFormat.format(
+                pay
+              );
+              // if(document.querySelector("#delivery").textContent !== '0')
+              let total =
+                parseInt(document.querySelector("#delivery").textContent) + pay;
+              document.querySelector(
+                "#total"
+              ).textContent = numberFormat.format(total);
+            }
+          };
+          xhr1.open(
+            "GET",
+            `http://localhost:3000/api/customer/cart/amount/${yammie}`,
+            true
+          );
+          xhr1.send();
+        } else {
+          document.querySelector(".-dm-e").style.opacity = "1";
+          setTimeout(() => {
+            document.querySelector(".-dm-e").style.opacity = "0";
+          }, 4000);
+        }
       });
 
-      let numberFormat = new Intl.NumberFormat();
       let xhr1 = new XMLHttpRequest();
       xhr1.onreadystatechange = () => {
         if (xhr1.readyState == 4 && xhr1.status == 200) {
@@ -474,6 +536,55 @@
         true
       );
       xhr1.send();
+
+      let pf = document.querySelector("#pay-form");
+      pf.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const order = new FormData(pf);
+        if (!order.has("payment_method")) {
+          document.querySelector(".-pm").style.opacity = "1";
+          setTimeout(() => {
+            document.querySelector(".-pm").style.opacity = "0";
+          }, 4000);
+        } else {
+          order.append("yammie", yammie);
+          let orderContent = localStorage.getItem("cartItems")
+            ? localStorage.getItem("cartItems")
+            : directOrder;
+          order.append("order", orderContent);
+          order.append("amount", document.querySelector("#total").textContent);
+          order.append("dm", orderInfo.dm);
+          order.forEach((key) => {
+            multiOrder.push(key);
+          });
+
+          let orderRequest = new XMLHttpRequest();
+          orderRequest.onreadystatechange = () => {
+            if (orderRequest.readyState == 4 && orderRequest.status == 200) {
+              localStorage.removeItem("cartItems");
+              localStorage.removeItem("cartNumber");
+              if (orderRequest.responseText == "mm") {
+                window.location.assign(
+                  "http://127.0.0.1:5500/orders/finishup.html"
+                );
+              } else {
+                localStorage.removeItem("cartNumber");
+                localStorage.removeItem("cartItems");
+                window.location.assign(
+                  "http://127.0.0.1:5500/orders/cashondelivery.html"
+                );
+              }
+            }
+          };
+          orderRequest.open(
+            "POST",
+            `http://localhost:3000/api/customer/order/register/new`,
+            true
+          );
+          orderRequest.setRequestHeader("Content-Type", "application/json");
+          orderRequest.send(JSON.stringify(multiOrder));
+        }
+      });
     </script>
     <!--scripts-->
   </body>
